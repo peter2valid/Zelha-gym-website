@@ -1,103 +1,63 @@
 <template>
-  <div class="bg-secondary min-h-screen">
+  <div>
+    <!-- Hero -->
+    <section class="relative py-28 overflow-hidden">
+      <img src="/images/577562443_818263040962429_8703738815204600603_n.jpg" alt="Zelha Fitness Timetable" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+        <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Plan Your Week</p>
+        <h1 class="text-white uppercase mb-6" style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95;">Class <span class="text-primary">Schedule</span></h1>
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+          Find the perfect time to sweat. Our weekly schedule features Spin, HIIT, Zumba and more — all led by expert coaches at our Juja studio.
+        </p>
+      </div>
+    </section>
 
-    <!-- Schedule Section -->
-    <section class="py-12 bg-secondary">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col lg:flex-row gap-10 items-start">
-
-          <!-- Left Column: Description + Image -->
-          <div class="lg:w-5/12 schedule-left opacity-0">
-            <h2 class="text-3xl font-bold text-white mb-4">Train With Us</h2>
-            <p class="text-gray-300 mb-6 leading-relaxed">
-              We are committed to providing a safe and motivating space with spin, HIIT, aerobics, Zumba and power training sessions for every fitness level.
-            </p>
-            <img
-              src="/images/7600786.jpg"
-              alt="Zelha Spin and Fitness Gym training"
-              class="shadow-xl w-full object-cover max-h-96"
-            />
+    <!-- Timetable Grid -->
+    <section class="bg-secondary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-16">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 border-l-4 border-primary pl-6">
+          <div>
+            <h2 class="text-white font-black uppercase tracking-wide text-2xl">Weekly Highlights</h2>
+            <p class="text-gray-400 text-sm mt-1">Sessions run Monday through Saturday. M-Pesa accepted for all classes.</p>
           </div>
-
-          <!-- Right Column: Schedule -->
-          <div class="lg:w-7/12 w-full schedule-table opacity-0">
-            <div v-if="timetable">
-
-              <!-- Mobile: Card layout -->
-              <div class="md:hidden space-y-4">
-                <div
-                  v-for="day in timetable.schedule"
-                  :key="day.day"
-                  class="bg-secondary border border-gray-800 p-4"
-                >
-                  <h3 class="text-primary font-bold text-lg mb-3 uppercase tracking-wide">{{ day.day }}</h3>
-                  <div v-if="day.sessions.length > 0" class="space-y-3">
-                    <div
-                      v-for="(session, sIdx) in day.sessions"
-                      :key="sIdx"
-                      class="flex justify-between items-start border-b border-gray-800 pb-2 last:border-0 last:pb-0"
-                    >
-                      <div>
-                        <span class="text-white font-semibold block">{{ session.class }}</span>
-                      </div>
-                      <span class="text-primary font-bold text-sm whitespace-nowrap ml-4">{{ session.time }}</span>
-                    </div>
-                  </div>
-                  <p v-else class="text-gray-500 italic">Rest Day</p>
-                </div>
-              </div>
-
-              <!-- Desktop: Table layout -->
-              <div class="hidden md:block overflow-x-auto">
-                <table class="w-full border-collapse">
-                  <thead>
-                    <tr class="border-b-2 border-primary">
-                      <th class="text-left text-primary font-bold py-3 px-4 text-sm uppercase tracking-wider">Day</th>
-                      <th class="text-left text-primary font-bold py-3 px-4 text-sm uppercase tracking-wider">Time</th>
-                      <th class="text-left text-primary font-bold py-3 px-4 text-sm uppercase tracking-wider">Class</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <template v-for="day in timetable.schedule" :key="day.day">
-                      <tr
-                        v-for="(session, sIdx) in day.sessions"
-                        :key="`${day.day}-${sIdx}`"
-                        class="border-b border-gray-800 hover:bg-secondary-light transition-colors duration-200"
-                      >
-                        <td
-                          v-if="sIdx === 0"
-                          :rowspan="day.sessions.length"
-                          class="py-3 px-4 align-top"
-                        >
-                          <span class="inline-block bg-primary text-secondary font-bold text-sm py-1.5 px-4 whitespace-nowrap">
-                            {{ day.day }}
-                          </span>
-                        </td>
-                        <td class="py-3 px-4 text-white font-semibold text-sm whitespace-nowrap">{{ session.time }}</td>
-                        <td class="py-3 px-4">
-                          <span class="text-white font-medium">{{ session.class }}</span>
-                        </td>
-                      </tr>
-                      <tr
-                        v-if="day.sessions.length === 0"
-                        class="border-b border-gray-800"
-                      >
-                        <td class="py-3 px-4">
-                          <span class="inline-block bg-gray-700 text-gray-300 font-bold text-sm py-1.5 px-4">
-                            {{ day.day }}
-                          </span>
-                        </td>
-                        <td colspan="2" class="py-3 px-4 text-gray-500 italic">Rest Day</td>
-                      </tr>
-                    </template>
-                  </tbody>
-                </table>
-              </div>
-
+          <div class="flex gap-4">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 bg-primary rounded-full"></span>
+              <span class="text-gray-300 text-[10px] font-black uppercase tracking-widest">Morning & Evening Sessions</span>
             </div>
-            <p v-else class="text-center text-gray-300">Loading timetable…</p>
           </div>
+        </div>
+      </div>
+      <TimetableGrid />
+    </section>
 
+    <!-- Class Types Legend -->
+    <section class="py-16 bg-secondary-light">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="text-center mb-12">
+          <h2 class="section-heading">Our Sessions</h2>
+          <p class="section-sub mt-2">What to expect in each class.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div v-for="type in classTypes" :key="type.name" class="p-6 border border-gray-800 bg-secondary/50 rounded-sm">
+            <h3 class="text-primary font-black uppercase tracking-wide mb-3">{{ type.name }}</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">{{ type.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-primary">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-black uppercase mb-4" style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(2rem, 6vw, 4rem);">
+          Book Your Spot
+        </h2>
+        <p class="text-black/70 text-lg mb-8">Some classes fill up fast! WhatsApp us to book your spot in advance or to enquire about specific sessions.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://wa.me/254702836266?text=Hi!%20I'd%20like%20to%20book%20a%20spot%20for%20a%20class%20at%20Zelha%20Fitness." target="_blank" class="bg-black text-primary px-10 py-4 font-black uppercase tracking-wide text-sm hover:bg-gray-900 transition-colors shadow-xl">Book via WhatsApp</a>
+          <NuxtLink to="/join" class="border-2 border-black text-black px-10 py-4 font-black uppercase tracking-wide text-sm hover:bg-black hover:text-primary transition-colors">Join as Member</NuxtLink>
         </div>
       </div>
     </section>
@@ -105,26 +65,14 @@
 </template>
 
 <script setup lang="ts">
-import { useAsyncData } from '#app'
-import { onMounted } from 'vue'
+import TimetableGrid from '~/components/TimetableGrid.vue'
 
-const { data: timetable } = await useAsyncData('timetable', () =>
-  queryContent('/timetable').findOne()
-)
+useHead({ title: 'Class Schedule — Zelha Spin and Fitness Gym' })
 
-onMounted(() => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-fade-in-up')
-        entry.target.classList.remove('opacity-0')
-        observer.unobserve(entry.target)
-      }
-    })
-  }, { threshold: 0.1 })
-
-  document.querySelectorAll('.schedule-left, .schedule-table').forEach((el) => {
-    observer.observe(el)
-  })
-})
+const classTypes = [
+  { name: 'Spin Cycling', desc: 'High-intensity indoor cycling that builds endurance and burns serious calories.' },
+  { name: 'HIIT', desc: 'Fast-paced interval training designed for maximum fat burn and metabolic boost.' },
+  { name: 'Strength Training', desc: 'Focused workouts using free weights to build lean muscle and power.' },
+  { name: 'Zumba & Aerobics', desc: 'Fun, energetic dance fitness and rhythmic movements for full-body conditioning.' },
+]
 </script>
