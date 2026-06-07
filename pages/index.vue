@@ -13,7 +13,7 @@
       </div>
     </section>
 
-    <!-- Who We Help: Scrollable on small mobile or clean grid -->
+    <!-- Who We Help -->
     <section class="py-16 md:py-24 bg-secondary">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div class="text-center mb-12 md:mb-16">
@@ -22,7 +22,9 @@
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5">
           <div v-for="group in whoWeHelp" :key="group.title" class="card-dark p-6 md:p-8 text-center rounded-sm group hover:-translate-y-1 transition-all duration-300">
-            <div class="text-4xl md:text-5xl mb-4 transform group-hover:scale-110 transition-transform">{{ group.icon }}</div>
+            <div class="flex justify-center mb-4">
+              <component :is="group.icon" class="w-10 h-10 md:w-12 md:h-12 text-primary transform group-hover:scale-110 transition-transform" />
+            </div>
             <h3 class="text-primary font-black text-xs md:text-sm uppercase tracking-widest leading-tight mb-2">{{ group.title }}</h3>
             <p class="text-gray-500 text-[10px] md:text-xs leading-relaxed">{{ group.desc }}</p>
           </div>
@@ -70,8 +72,8 @@
             </p>
             <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-6 md:gap-8">
               <div v-for="benefit in benefits" :key="benefit.title" class="flex gap-5">
-                <div class="w-12 h-12 md:w-14 md:h-14 bg-primary/10 border border-primary/20 rounded-full flex items-center justify-center text-2xl flex-shrink-0">
-                  {{ benefit.icon }}
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-primary/10 border border-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <component :is="benefit.icon" class="w-6 h-6 md:w-7 md:h-7 text-primary" />
                 </div>
                 <div>
                   <h3 class="text-white font-black text-sm uppercase tracking-widest mb-1">{{ benefit.title }}</h3>
@@ -80,8 +82,8 @@
               </div>
             </div>
             <div class="mt-12 flex flex-col sm:flex-row gap-4">
-              <NuxtLink to="/join" class="btn-primary px-10 py-4 text-xs">Join Today</NuxtLink>
-              <NuxtLink to="/about" class="btn-ghost px-10 py-4 text-xs">Our Full Story</NuxtLink>
+              <NuxtLink to="/join" class="btn-primary px-10 py-4 text-xs font-black uppercase">Join Today</NuxtLink>
+              <NuxtLink to="/about" class="btn-ghost px-10 py-4 text-xs font-black uppercase">Our Full Story</NuxtLink>
             </div>
           </div>
           <div class="order-1 lg:order-2 relative">
@@ -107,7 +109,7 @@
         </div>
         <TimetablePreview />
         <div class="text-center mt-12">
-          <NuxtLink to="/timetable" class="btn-primary text-xs px-10 py-4 w-full md:w-auto shadow-xl shadow-primary/10">View Full Weekly Schedule</NuxtLink>
+          <NuxtLink to="/timetable" class="btn-primary text-xs px-10 py-4 w-full md:w-auto shadow-xl shadow-primary/10 font-black uppercase">View Full Weekly Schedule</NuxtLink>
         </div>
       </div>
     </section>
@@ -131,13 +133,13 @@
                 {{ feature }}
               </li>
             </ul>
-            <a :href="`https://wa.me/254702836266?text=Hi!%20I'm%20interested%20in%20the%20${encodeURIComponent(plan.name)}%20plan.`" target="_blank" class="btn-primary text-xs py-4 w-full text-center justify-center font-black active:scale-95 transition-transform">
+            <a :href="`https://wa.me/254702836266?text=Hi!%20I'm%20interested%20in%20the%20${encodeURIComponent(plan.name)}%20plan.`" target="_blank" class="btn-primary text-xs py-4 w-full text-center justify-center font-black active:scale-95 transition-transform uppercase">
               Join Now
             </a>
           </div>
         </div>
         <div class="text-center mt-12 md:mt-16">
-          <NuxtLink to="/pricing" class="btn-outline text-xs px-10 py-4 w-full md:w-auto">View All Details & Policies</NuxtLink>
+          <NuxtLink to="/pricing" class="btn-outline text-xs px-10 py-4 w-full md:w-auto font-black uppercase">View All Details & Policies</NuxtLink>
         </div>
       </div>
     </section>
@@ -162,7 +164,7 @@
               </div>
             </div>
             <div class="mt-10">
-              <NuxtLink to="/trainers" class="btn-ghost text-xs px-8 py-4 w-full sm:w-auto text-center">Meet the Full Team</NuxtLink>
+              <NuxtLink to="/trainers" class="btn-ghost text-xs px-8 py-4 w-full sm:w-auto text-center font-black uppercase">Meet the Full Team</NuxtLink>
             </div>
           </div>
           <!-- Testimonials -->
@@ -197,7 +199,9 @@
             <h2 class="section-heading mb-10 text-left">Visit the Studio</h2>
             <div class="grid sm:grid-cols-2 lg:grid-cols-1 gap-10">
               <div v-for="loc in locationDetails" :key="loc.title" class="flex gap-5">
-                <span class="text-primary text-2xl mt-1">{{ loc.icon }}</span>
+                <div class="w-12 h-12 bg-primary/10 border border-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <component :is="loc.icon" class="w-6 h-6 text-primary" />
+                </div>
                 <div>
                   <h3 class="text-white font-black uppercase tracking-widest text-xs mb-2">{{ loc.title }}</h3>
                   <p class="text-gray-400 text-sm leading-relaxed" v-html="loc.content"></p>
@@ -205,8 +209,8 @@
               </div>
             </div>
             <div class="mt-12 flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/254702836266?text=Hi!%20I'd%20like%20directions%20to%20Zelha%20Fitness." target="_blank" class="btn-primary text-xs px-10 py-4 shadow-xl shadow-primary/10 text-center">Get Directions (WhatsApp)</a>
-              <NuxtLink to="/contact" class="btn-ghost text-xs px-10 py-4 text-center">Full Contact Info</NuxtLink>
+              <a href="https://wa.me/254702836266?text=Hi!%20I'd%20like%20directions%20to%20Zelha%20Fitness." target="_blank" class="btn-primary text-xs px-10 py-4 shadow-xl shadow-primary/10 text-center uppercase font-black">Get Directions</a>
+              <NuxtLink to="/contact" class="btn-ghost text-xs px-10 py-4 text-center uppercase font-black">Full Contact Info</NuxtLink>
             </div>
           </div>
           <div class="order-1 lg:order-2 rounded-sm overflow-hidden border border-gray-800 shadow-2xl h-[350px] md:h-[500px]">
@@ -237,8 +241,8 @@
           Join hundreds of members who train, sweat and grow at Juja's premier studio. First class is on us!
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <NuxtLink to="/join" class="btn-primary px-12 py-5 text-sm shadow-2xl shadow-primary/20 active:scale-95 transition-transform">Join Zelha Today</NuxtLink>
-          <a href="https://wa.me/254702836266?text=Hi!%20I'd%20like%20to%20book%20a%20free%20trial%20at%20Zelha%20Fitness." target="_blank" class="btn-outline px-12 py-5 text-sm active:scale-95 transition-transform font-black">Book Free Trial</a>
+          <NuxtLink to="/join" class="btn-primary px-12 py-5 text-sm shadow-2xl shadow-primary/20 active:scale-95 transition-transform uppercase font-black">Join Zelha Today</NuxtLink>
+          <a href="https://wa.me/254702836266?text=Hi!%20I'd%20like%20to%20book%20a%20free%20trial%20at%20Zelha%20Fitness." target="_blank" class="btn-outline px-12 py-5 text-sm active:scale-95 transition-transform font-black uppercase">Book Free Trial</a>
         </div>
         <p class="text-gray-600 text-[10px] md:text-xs mt-8 uppercase tracking-[0.3em] font-black">No commitment required • M-Pesa accepted</p>
       </div>
@@ -247,10 +251,25 @@
 </template>
 
 <script setup lang="ts">
+import { h } from 'vue'
 import Hero from '~/components/Hero.vue'
 import TimetablePreview from '~/components/TimetablePreview.vue'
+import StudioTour from '~/components/StudioTour.vue'
 
 useHead({ title: 'Zelha Spin and Fitness Gym — Juja\'s Premier Studio' })
+
+// Icon Components (Surgical SVG Icons)
+const UserIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' })])
+const FlameIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.99 7.99 0 0120 13a7.99 7.99 0 01-2.343 5.657z' })])
+const DumbbellIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M6.75 6.75h10.5M6.75 17.25h10.5M2.25 12h19.5M4.5 6.75v10.5M19.5 6.75v10.5M12 2.25v3.75M12 18v3.75' })])
+const ClockIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z' })])
+const TrophyIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' })])
+const AwardIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' })])
+const UsersIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' })])
+const ZapIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M13 10V3L4 14h7v7l9-11h-7z' })])
+const HeartIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' })])
+const MapPinIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z' }), h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M15 11a3 3 0 11-6 0 3 3 0 016 0z' })])
+const PhoneIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M3 5a2 2 0 012-2h3.28a1 1 0 011.94.484l-1.1 3.5a1 1 0 01-1.23.696l-1.57-.393a11 11 0 007.879 7.879l.393-1.57a1 1 0 01.696-1.23l3.5-1.1a1 1 0 011.085.39l2.1 3.1a1 1 0 01-.137 1.34l-3.3 2.5a1 1 0 01-1.077.127 15.006 15.006 0 01-9.9-9.9 1 1 0 01.127-1.077l2.5-3.3z' })])
 
 const stats = [
   { value: '200+', label: 'Active Members' },
@@ -260,11 +279,11 @@ const stats = [
 ]
 
 const whoWeHelp = [
-  { icon: '🏃', title: 'Beginners', desc: 'First time at a gym? We guide you every step.' },
-  { icon: '🔥', title: 'Weight Loss', desc: 'Science-backed fat loss programs that work.' },
-  { icon: '💪', title: 'Muscle Gain', desc: 'Build strength with our coaching and weights.' },
-  { icon: '⏱️', title: 'Busy Pros', desc: 'Efficient sessions that fit your schedule.' },
-  { icon: '🏆', title: 'Athletes', desc: 'High-performance conditioning and training.' },
+  { icon: UserIcon, title: 'Beginners', desc: 'First time at a gym? We guide you every step.' },
+  { icon: FlameIcon, title: 'Weight Loss', desc: 'Science-backed fat loss programs that work.' },
+  { icon: DumbbellIcon, title: 'Muscle Gain', desc: 'Build strength with our coaching and weights.' },
+  { icon: ClockIcon, title: 'Busy Pros', desc: 'Efficient sessions that fit your schedule.' },
+  { icon: TrophyIcon, title: 'Athletes', desc: 'High-performance conditioning and training.' },
 ]
 
 const programs = [
@@ -275,10 +294,10 @@ const programs = [
 ]
 
 const benefits = [
-  { icon: '🎓', title: 'Certified Coaches', desc: 'Levis and Martin are qualified experts in strength and cardio.' },
-  { icon: '🤝', title: 'Supportive Tribe', desc: 'Our members motivate each other. No one trains alone.' },
-  { icon: '⚡', title: 'Modern Gear', desc: 'Spin bikes, free weights and HIIT tools — all well maintained.' },
-  { icon: '🌱', title: 'Zero Judgment', desc: 'A welcoming space for every body type and fitness level.' },
+  { icon: AwardIcon, title: 'Certified Coaches', desc: 'Levis and Martin are qualified experts in strength and cardio.' },
+  { icon: UsersIcon, title: 'Supportive Tribe', desc: 'Our members motivate each other. No one trains alone.' },
+  { icon: ZapIcon, title: 'Modern Gear', desc: 'Spin bikes, free weights and HIIT tools — all well maintained.' },
+  { icon: HeartIcon, title: 'Zero Judgment', desc: 'A welcoming space for every body type and fitness level.' },
 ]
 
 const pricingPlans = [
@@ -337,8 +356,8 @@ const testimonials = [
 ]
 
 const locationDetails = [
-  { icon: '📍', title: 'Find Us', content: 'Kalimoni Highway View Plaza (Former Uchumi),<br/>Juja, Kenya (Near Juja Farm & Town CBD)' },
-  { icon: '🕐', title: 'Open Hours', content: 'Mon – Sat: 6:00 AM – 9:00 PM<br/>Sunday: Rest Day (Closed)' },
-  { icon: '📞', title: 'Contact', content: '0702 836 266 / 0110 719 277' },
+  { icon: MapPinIcon, title: 'Find Us', content: 'Kalimoni Highway View Plaza (Former Uchumi),<br/>Juja, Kenya (Near Juja Farm & Town CBD)' },
+  { icon: ClockIcon, title: 'Open Hours', content: 'Mon – Sat: 6:00 AM – 9:00 PM<br/>Sunday: Rest Day (Closed)' },
+  { icon: PhoneIcon, title: 'Contact', content: '0702 836 266 / 0110 719 277' },
 ]
 </script>

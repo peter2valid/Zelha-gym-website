@@ -66,9 +66,11 @@
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           <div v-for="value in coreValues" :key="value.title" class="card-dark p-6 text-center">
-            <div class="text-4xl mb-3">{{ value.icon }}</div>
+            <div class="flex justify-center mb-3">
+              <component :is="value.icon" class="w-10 h-10 text-primary" />
+            </div>
             <h3 class="text-primary font-black uppercase tracking-wide text-sm">{{ value.title }}</h3>
-            <p class="text-gray-500 text-xs mt-2">{{ value.desc }}</p>
+            <p class="text-gray-500 text-xs mt-2 uppercase font-black leading-tight">{{ value.desc }}</p>
           </div>
         </div>
       </div>
@@ -89,7 +91,7 @@
             </ul>
           </div>
           <div>
-            <img src="/images/7600786.jpg" alt="Zelha Fitness community" class="w-full h-80 object-cover" loading="lazy" />
+            <img src="/images/7600786.jpg" alt="Zelha Fitness community" class="w-full h-80 object-cover rounded-sm shadow-2xl" loading="lazy" />
           </div>
         </div>
       </div>
@@ -103,11 +105,13 @@
           <p class="section-sub mt-2 mx-auto">Everything you need for a complete workout — clean, modern and well-maintained.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          <div v-for="facility in facilities" :key="facility.name" class="card-dark p-5 flex gap-4">
-            <span class="text-primary text-2xl flex-shrink-0">{{ facility.icon }}</span>
+          <div v-for="facility in facilities" :key="facility.name" class="card-dark p-6 flex gap-5 group">
+            <div class="flex-shrink-0">
+              <component :is="facility.icon" class="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
+            </div>
             <div>
-              <h3 class="text-white font-bold text-sm uppercase tracking-wide">{{ facility.name }}</h3>
-              <p class="text-gray-500 text-sm mt-1">{{ facility.desc }}</p>
+              <h3 class="text-white font-black text-sm uppercase tracking-wide mb-1 leading-none">{{ facility.name }}</h3>
+              <p class="text-gray-500 text-xs leading-relaxed mt-2">{{ facility.desc }}</p>
             </div>
           </div>
         </div>
@@ -134,14 +138,30 @@
 </template>
 
 <script setup lang="ts">
+import { h } from 'vue'
+import StudioTour from '~/components/StudioTour.vue'
+
 useHead({ title: 'About Us — Zelha Spin and Fitness Gym' })
 
+// Icon Components
+const TrophyIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' })])
+const UsersIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' })])
+const ChartBarIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6' })])
+const ShieldCheckIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' })])
+const HeartIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' })])
+
+const BikeIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M5 16a3 3 0 100-6 3 3 0 000 6zM15 16a3 3 0 100-6 3 3 0 000 6zM15 13l-3-4-2 2-3-3M12 18V9' })])
+const DumbbellIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M6.75 6.75h10.5M6.75 17.25h10.5M2.25 12h19.5M4.5 6.75v10.5M19.5 6.75v10.5' })])
+const ZapIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M13 10V3L4 14h7v7l9-11h-7z' })])
+const SparklesIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z' })])
+const LockClosedIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z' })])
+
 const coreValues = [
-  { icon: '🏋️', title: 'Discipline', desc: 'Showing up consistently and pushing through challenges.' },
-  { icon: '🤝', title: 'Community', desc: 'Supporting and uplifting every member of the gym.' },
-  { icon: '📈', title: 'Progress', desc: 'Celebrating every step forward, big or small.' },
-  { icon: '🛡️', title: 'Safety', desc: 'Proper form, clean equipment and guided training.' },
-  { icon: '🌟', title: 'Respect', desc: 'For every person, at every fitness level.' },
+  { icon: TrophyIcon, title: 'Discipline', desc: 'Showing up consistently and pushing through challenges.' },
+  { icon: UsersIcon, title: 'Community', desc: 'Supporting and uplifting every member of the gym.' },
+  { icon: ChartBarIcon, title: 'Progress', desc: 'Celebrating every step forward, big or small.' },
+  { icon: ShieldCheckIcon, title: 'Safety', desc: 'Proper form, clean equipment and guided training.' },
+  { icon: HeartIcon, title: 'Respect', desc: 'For every person, at every fitness level.' },
 ]
 
 const whoForList = [
@@ -154,11 +174,11 @@ const whoForList = [
 ]
 
 const facilities = [
-  { icon: '🚴', name: 'Spin Studio', desc: 'Dedicated spin bikes with energetic music and lighting.' },
-  { icon: '🏋️', name: 'Free Weights Area', desc: 'Dumbbells, barbells and weight benches for all levels.' },
-  { icon: '❤️', name: 'Cardio Zone', desc: 'Treadmills and cardio equipment for endurance training.' },
-  { icon: '⚡', name: 'Functional Training', desc: 'Open floor for HIIT, boot camp and bodyweight training.' },
-  { icon: '🧹', name: 'Clean Environment', desc: 'Regularly cleaned and sanitized equipment and spaces.' },
-  { icon: '🔒', name: 'Safe Space', desc: 'Secure, well-lit facility monitored for member safety.' },
+  { icon: BikeIcon, name: 'Spin Studio', desc: 'Dedicated spin bikes with energetic music and lighting.' },
+  { icon: DumbbellIcon, name: 'Free Weights Area', desc: 'Dumbbells, barbells and weight benches for all levels.' },
+  { icon: HeartIcon, name: 'Cardio Zone', desc: 'Treadmills and cardio equipment for endurance training.' },
+  { icon: ZapIcon, name: 'Functional Training', desc: 'Open floor for HIIT, boot camp and bodyweight training.' },
+  { icon: SparklesIcon, name: 'Clean Environment', desc: 'Regularly cleaned and sanitized equipment and spaces.' },
+  { icon: LockClosedIcon, name: 'Safe Space', desc: 'Secure, well-lit facility monitored for member safety.' },
 ]
 </script>

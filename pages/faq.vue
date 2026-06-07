@@ -16,11 +16,13 @@
           <div v-for="(faq, i) in faqs" :key="i" class="border border-gray-800 overflow-hidden">
             <button
               @click="toggle(i)"
-              class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-secondary-light transition-colors duration-200"
+              class="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-secondary-light transition-colors duration-200 group"
               :aria-expanded="openIndex === i"
             >
-              <span class="text-white font-semibold text-sm pr-4">{{ faq.question }}</span>
-              <span class="text-primary text-xl font-black flex-shrink-0 transition-transform duration-300" :class="{ 'rotate-45': openIndex === i }">+</span>
+              <span class="text-white font-semibold text-sm pr-4 group-hover:text-primary transition-colors">{{ faq.question }}</span>
+              <span class="text-primary flex-shrink-0 transition-transform duration-300">
+                <component :is="openIndex === i ? MinusIcon : PlusIcon" class="w-5 h-5" />
+              </span>
             </button>
             <transition name="faq-body">
               <div v-if="openIndex === i" class="px-6 pb-5">
@@ -38,8 +40,8 @@
         <h2 class="section-heading mb-4">Still Have Questions?</h2>
         <p class="text-gray-400 mb-8">Our team is available on WhatsApp for quick answers. We respond fast!</p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="https://wa.me/254702836266?text=Hi!%20I%20have%20a%20question%20about%20Zelha%20Spin%20and%20Fitness%20Gym." target="_blank" class="btn-primary px-8 py-4 text-sm">Chat on WhatsApp</a>
-          <NuxtLink to="/contact" class="btn-outline px-8 py-4 text-sm">Contact Us</NuxtLink>
+          <a href="https://wa.me/254702836266?text=Hi!%20I%20have%20a%20question%20about%20Zelha%20Spin%20and%20Fitness%20Gym." target="_blank" class="btn-primary px-8 py-4 text-sm font-black uppercase">Chat on WhatsApp</a>
+          <NuxtLink to="/contact" class="btn-outline px-8 py-4 text-sm font-black uppercase">Contact Us</NuxtLink>
         </div>
       </div>
     </section>
@@ -47,7 +49,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, h } from 'vue'
 
 useHead({ title: 'FAQs — Zelha Spin and Fitness Gym' })
 
@@ -56,6 +58,10 @@ const openIndex = ref<number | null>(0)
 function toggle(i: number) {
   openIndex.value = openIndex.value === i ? null : i
 }
+
+// Icons
+const PlusIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '3', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M12 4.5v15m7.5-7.5h-15' })])
+const MinusIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '3', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M19.5 12h-15' })])
 
 const faqs = [
   {

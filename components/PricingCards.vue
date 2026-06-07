@@ -29,7 +29,9 @@
 
           <ul class="space-y-4 mb-10 flex-1">
             <li v-for="(item, i) in pkg.includes" :key="i" class="flex items-start gap-3 text-gray-300 text-sm">
-              <span class="text-primary font-black text-xs mt-1 flex-shrink-0">✓</span>
+              <span class="text-primary mt-1 flex-shrink-0">
+                <CheckIcon class="w-4 h-4" />
+              </span>
               <span class="leading-tight">{{ item }}</span>
             </li>
           </ul>
@@ -39,7 +41,7 @@
             <a
               :href="whatsAppLink(pkg.title)"
               target="_blank"
-              class="btn-primary text-xs py-4 w-full text-center justify-center shadow-xl shadow-primary/10 group-hover:bg-primary-dark transition-all active:scale-95"
+              class="btn-primary text-xs py-4 w-full text-center justify-center shadow-xl shadow-primary/10 group-hover:bg-primary-dark transition-all active:scale-95 uppercase font-black"
             >
               Enquire Now
             </a>
@@ -54,9 +56,14 @@
 </template>
 
 <script setup lang="ts">
+import { h } from 'vue'
+
 const { data: pricing } = await useAsyncData('pricing', () =>
   queryContent('/pricing').findOne()
 )
+
+// Icon
+const CheckIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '3', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M5 13l4 4L19 7' })])
 
 function whatsAppLink(pkgTitle: string) {
   const message = encodeURIComponent(

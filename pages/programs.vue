@@ -30,10 +30,12 @@
               <p class="text-gray-400 text-sm leading-relaxed mb-4">{{ prog.description }}</p>
 
               <div class="mb-4">
-                <h3 class="text-primary text-xs font-black uppercase tracking-widest mb-2">Key Benefits</h3>
-                <ul class="space-y-1">
+                <h3 class="text-primary text-xs font-black uppercase tracking-widest mb-3">Key Benefits</h3>
+                <ul class="space-y-2">
                   <li v-for="benefit in prog.benefits" :key="benefit" class="flex items-center gap-2 text-gray-300 text-sm">
-                    <span class="text-primary font-black text-xs">✓</span>
+                    <span class="text-primary flex-shrink-0">
+                      <CheckIcon class="w-4 h-4" />
+                    </span>
                     {{ benefit }}
                   </li>
                 </ul>
@@ -47,7 +49,7 @@
                 <a
                   :href="`https://wa.me/254702836266?text=Hi!%20I'm%20interested%20in%20the%20${encodeURIComponent(prog.name)}%20program%20at%20Zelha%20Fitness.`"
                   target="_blank"
-                  class="btn-primary text-xs px-4 py-2"
+                  class="btn-primary text-xs px-4 py-2 uppercase font-black"
                 >Enquire</a>
               </div>
             </div>
@@ -64,8 +66,8 @@
         </h2>
         <p class="text-black/70 text-lg mb-8">WhatsApp us and our trainers will help you pick the best program for your goals and fitness level.</p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="https://wa.me/254702836266?text=Hi!%20I%20need%20help%20choosing%20the%20right%20fitness%20program%20at%20Zelha." target="_blank" class="bg-black text-primary px-8 py-4 font-black uppercase tracking-wide text-sm hover:bg-gray-900 transition-colors">Chat on WhatsApp</a>
-          <NuxtLink to="/timetable" class="border-2 border-black text-black px-8 py-4 font-black uppercase tracking-wide text-sm hover:bg-black hover:text-primary transition-colors">View Schedule</NuxtLink>
+          <a href="https://wa.me/254702836266?text=Hi!%20I%20need%20help%20choosing%20the%20right%20fitness%20program%20at%20Zelha." target="_blank" class="bg-black text-primary px-8 py-4 font-black uppercase tracking-wide text-sm hover:bg-gray-900 transition-colors uppercase font-black">Chat on WhatsApp</a>
+          <NuxtLink to="/timetable" class="border-2 border-black text-black px-8 py-4 font-black uppercase tracking-wide text-sm hover:bg-black hover:text-primary transition-colors uppercase font-black">View Schedule</NuxtLink>
         </div>
       </div>
     </section>
@@ -73,7 +75,12 @@
 </template>
 
 <script setup lang="ts">
+import { h } from 'vue'
+
 useHead({ title: 'Programs — Zelha Spin and Fitness Gym' })
+
+// Icon
+const CheckIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '3', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M5 13l4 4L19 7' })])
 
 const programs = [
   {
