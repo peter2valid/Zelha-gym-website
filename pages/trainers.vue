@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/483933409_632196279569107_5415312179917941573_n.jpg" alt="Zelha Fitness Trainers" class="absolute inset-0 w-full h-full object-cover opacity-25" />
+      <img src="/images/483933409_632196279569107_5415312179917941573_n.jpg" alt="Zelha Fitness Trainers" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">The Experts</p>
@@ -20,7 +20,7 @@
           <div v-for="trainer in trainers" :key="trainer.name" class="card-dark p-8 flex flex-col sm:flex-row gap-8 items-start sm:items-center group">
             <div class="relative flex-shrink-0">
               <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary transition-colors duration-300 shadow-xl bg-black">
-                <img :src="trainer.image" :alt="trainer.name" class="w-full h-full object-cover" />
+                <img :src="trainer.image" :alt="trainer.name" class="w-full h-full object-cover" loading="lazy" decoding="async" />
               </div>
               <div class="absolute -bottom-2 -right-2 bg-primary text-black p-2 rounded-full shadow-lg">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

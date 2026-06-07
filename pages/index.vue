@@ -49,7 +49,7 @@
             class="group relative overflow-hidden bg-secondary border border-gray-800 hover:border-primary transition-all duration-500"
           >
             <div class="aspect-[4/3] md:aspect-[3/4] lg:aspect-square overflow-hidden">
-              <img :src="prog.image" :alt="prog.name" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+              <img :src="prog.image" :alt="prog.name" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" />
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 md:opacity-90"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
@@ -89,7 +89,7 @@
           <div class="order-1 lg:order-2 relative">
             <div class="absolute -top-6 -right-6 w-full h-full border-2 border-primary/20 translate-x-4 translate-y-4 -z-10 hidden md:block"></div>
             <div class="aspect-square sm:aspect-video lg:aspect-square overflow-hidden rounded-sm shadow-2xl">
-              <img src="/images/574572522_812280874893979_1305975096083296830_n.jpg" alt="Group training at Zelha Fitness" class="w-full h-full object-cover" loading="lazy" />
+              <img src="/images/574572522_812280874893979_1305975096083296830_n.jpg" alt="Group training at Zelha Fitness" class="w-full h-full object-cover" loading="lazy" decoding="async" />
             </div>
             <div class="absolute -bottom-6 -left-6 bg-primary text-black p-6 md:p-8 shadow-2xl">
               <div class="text-5xl md:text-6xl font-black leading-none" style="font-family: 'Bebas Neue', Impact, sans-serif;">100%</div>
@@ -156,7 +156,7 @@
             <div class="space-y-6">
               <div v-for="trainer in trainers" :key="trainer.name" class="card-dark p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center group border-transparent hover:border-primary/20">
                 <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors flex-shrink-0 bg-black">
-                  <img :src="trainer.image" :alt="trainer.name" class="w-full h-full object-cover" loading="lazy" />
+                  <img :src="trainer.image" :alt="trainer.name" class="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
                 <div>
                   <h3 class="text-primary font-black text-lg md:text-xl uppercase tracking-wide leading-none mb-1">{{ trainer.name }}</h3>
@@ -233,7 +233,7 @@
 
     <!-- Final CTA -->
     <section class="relative py-24 md:py-32 overflow-hidden text-center">
-      <img src="/images/483066964_632006999588035_23325673919236385_n.jpg" alt="Start your fitness journey" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <img src="/images/483066964_632006999588035_23325673919236385_n.jpg" alt="Start your fitness journey" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="lazy" decoding="async" />
       <div class="absolute inset-0 bg-black/80 backdrop-blur-sm lg:backdrop-blur-none"></div>
       <div class="relative z-10 max-w-3xl mx-auto px-4">
         <h2 class="text-white uppercase mb-6" style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(3rem, 10vw, 6rem); line-height: 0.9;">

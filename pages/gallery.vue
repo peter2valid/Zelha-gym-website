@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/7600786.jpg" alt="Zelha Fitness Gallery" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <img src="/images/7600786.jpg" alt="Zelha Fitness Gallery" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Inside the Studio</p>
@@ -18,7 +18,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           <div v-for="(img, i) in images" :key="i" class="group relative overflow-hidden aspect-square card-dark border-transparent">
-            <img :src="img.src" :alt="img.alt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+            <img :src="img.src" :alt="img.alt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex items-end p-5">
               <div class="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <p class="text-primary font-black uppercase tracking-widest text-[10px] mb-1">Zelha Fitness</p>

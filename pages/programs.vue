@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/483066964_632006999588035_23325673919236385_n.jpg" alt="Zelha Fitness Programs" class="absolute inset-0 w-full h-full object-cover opacity-25" />
+      <img src="/images/483066964_632006999588035_23325673919236385_n.jpg" alt="Zelha Fitness Programs" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">What We Offer</p>
@@ -19,7 +19,7 @@
         <div class="grid md:grid-cols-2 gap-6">
           <div v-for="prog in programs" :key="prog.name" class="card-dark overflow-hidden group">
             <div class="relative overflow-hidden h-56">
-              <img :src="prog.image" :alt="prog.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img :src="prog.image" :alt="prog.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               <div class="absolute bottom-4 left-4">
                 <span class="text-primary font-black uppercase tracking-widest text-xs">{{ prog.category }}</span>

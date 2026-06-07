@@ -6,6 +6,8 @@
       alt="Zelha Spin and Fitness Gym team training"
       class="absolute inset-0 object-cover w-full h-full"
       loading="eager"
+      fetchpriority="high"
+      decoding="async"
     />
     <!-- Multiple Layered Gradients for maximum readability on any screen -->
     <div class="absolute inset-0 bg-black/60 lg:bg-transparent"></div>

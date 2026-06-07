@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/574572522_812280874893979_1305975096083296830_n.jpg" alt="Zelha Spin and Fitness Gym" class="absolute inset-0 w-full h-full object-cover opacity-25" />
+      <img src="/images/574572522_812280874893979_1305975096083296830_n.jpg" alt="Zelha Spin and Fitness Gym" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Our Story</p>
@@ -30,10 +30,10 @@
             </p>
           </div>
           <div class="grid grid-cols-2 gap-3">
-            <img src="/images/577562443_818263040962429_8703738815204600603_n.jpg" alt="Spin classes at Zelha" class="w-full h-52 object-cover" loading="lazy" />
-            <img src="/images/483066964_632006999588035_23325673919236385_n.jpg" alt="Strength training" class="w-full h-52 object-cover mt-8" loading="lazy" />
-            <img src="/images/484517462_632196166235785_8102135649951883908_n.jpg" alt="Core training" class="w-full h-52 object-cover" loading="lazy" />
-            <img src="/images/483933409_632196279569107_5415312179917941573_n.jpg" alt="Our community" class="w-full h-52 object-cover mt-8" loading="lazy" />
+            <img src="/images/577562443_818263040962429_8703738815204600603_n.jpg" alt="Spin classes at Zelha" class="w-full h-52 object-cover" loading="lazy" decoding="async" />
+            <img src="/images/483066964_632006999588035_23325673919236385_n.jpg" alt="Strength training" class="w-full h-52 object-cover mt-8" loading="lazy" decoding="async" />
+            <img src="/images/484517462_632196166235785_8102135649951883908_n.jpg" alt="Core training" class="w-full h-52 object-cover" loading="lazy" decoding="async" />
+            <img src="/images/483933409_632196279569107_5415312179917941573_n.jpg" alt="Our community" class="w-full h-52 object-cover mt-8" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@
             </ul>
           </div>
           <div>
-            <img src="/images/7600786.jpg" alt="Zelha Fitness community" class="w-full h-80 object-cover rounded-sm shadow-2xl" loading="lazy" />
+            <img src="/images/7600786.jpg" alt="Zelha Fitness community" class="w-full h-80 object-cover rounded-sm shadow-2xl" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
