@@ -19,7 +19,9 @@
           </li>
         </ul>
         <div v-else class="flex flex-col items-center justify-center py-6 md:py-8 text-center">
-          <span class="text-2xl md:text-3xl mb-2 opacity-20">🧘</span>
+          <div class="mb-2 opacity-20 text-primary">
+            <SunIcon class="w-8 h-8" />
+          </div>
           <p class="text-gray-500 text-[10px] md:text-xs font-black uppercase tracking-widest">Rest Day</p>
           <p class="text-gray-600 text-[9px] md:text-[10px] mt-1 italic">No classes scheduled</p>
         </div>
@@ -32,7 +34,12 @@
 </template>
 
 <script setup lang="ts">
+import { h } from 'vue'
+
 const { data: timetable } = await useAsyncData('timetable-grid', () =>
   queryContent('/timetable').findOne()
 )
+
+// Icon
+const SunIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z' })])
 </script>

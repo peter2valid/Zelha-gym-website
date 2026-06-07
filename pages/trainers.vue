@@ -19,7 +19,9 @@
         <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div v-for="trainer in trainers" :key="trainer.name" class="card-dark p-8 flex flex-col sm:flex-row gap-8 items-start sm:items-center group">
             <div class="relative flex-shrink-0">
-              <img src="/assets/images/coach/1.jpg" :alt="trainer.name" class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-full border-4 border-primary/20 group-hover:border-primary transition-colors duration-300 shadow-xl" />
+              <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary transition-colors duration-300 shadow-xl bg-black">
+                <img :src="trainer.image" :alt="trainer.name" class="w-full h-full object-cover" />
+              </div>
               <div class="absolute -bottom-2 -right-2 bg-primary text-black p-2 rounded-full shadow-lg">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
@@ -73,8 +75,8 @@
         </h2>
         <p class="text-black/70 text-lg mb-8">Ready to start? Book a personal training session or join one of our group classes led by Levis and Martin.</p>
         <div class="flex flex-wrap justify-center gap-4">
-          <NuxtLink to="/join" class="bg-black text-primary px-8 py-4 font-black uppercase tracking-wide text-sm hover:bg-gray-900 transition-colors">Join Today</NuxtLink>
-          <a href="https://wa.me/254702836266?text=Hi!%20I'd%20like%20to%20train%20with%20Levis%20or%20Martin%20at%20Zelha%20Fitness." target="_blank" class="border-2 border-black text-black px-8 py-4 font-black uppercase tracking-wide text-sm hover:bg-black hover:text-primary transition-colors">Book a Session</a>
+          <NuxtLink to="/join" class="bg-black text-primary px-8 py-4 font-black uppercase tracking-wide text-sm hover:bg-gray-900 transition-colors uppercase">Join Today</NuxtLink>
+          <a href="https://wa.me/254702836266?text=Hi!%20I'd%20like%20to%20train%20with%20Levis%20or%20Martin%20at%20Zelha%20Fitness." target="_blank" class="border-2 border-black text-black px-8 py-4 font-black uppercase tracking-wide text-sm hover:bg-black hover:text-primary transition-colors uppercase">Book a Session</a>
         </div>
       </div>
     </section>
@@ -89,11 +91,13 @@ const trainers = [
     name: 'Levis Alozio',
     description: 'Levis specializes in high-performance conditioning and functional movement. He is passionate about helping members build a solid foundation of strength while keeping sessions energetic and challenging.',
     specialties: ['Strength Training', 'Aerobics', 'Spinning', 'HIIT', 'Kickboxing', 'Calisthenics'],
+    image: '/images/coach/1.jpg'
   },
   {
     name: 'Martin Muturi',
     description: 'Martin focuses on holistic fitness and endurance. With extensive experience in cardio-based training and aerobics, he helps members improve their stamina and overall well-being in a supportive environment.',
     specialties: ['Strength Training', 'Aerobics', 'Spinning', 'HIIT', 'Swimming'],
+    image: '/images/coach/2.png'
   },
 ]
 </script>

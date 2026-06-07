@@ -40,7 +40,7 @@
             <h2 class="section-heading">Our Programs</h2>
             <p class="section-sub mt-4">Something for every fitness goal. Taught by certified coaches who care about your form and results.</p>
           </div>
-          <NuxtLink to="/programs" class="btn-outline text-xs px-8 py-4 whitespace-nowrap self-start md:self-auto w-full md:w-auto text-center">See All Programs</NuxtLink>
+          <NuxtLink to="/programs" class="btn-outline text-xs px-8 py-4 whitespace-nowrap self-start md:self-auto w-full md:w-auto text-center font-black uppercase">See All Programs</NuxtLink>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           <div
@@ -129,7 +129,9 @@
             <p class="text-gray-500 text-[10px] uppercase font-black tracking-widest mb-6">{{ plan.period }}</p>
             <ul class="space-y-3 mb-10 flex-1">
               <li v-for="feature in plan.features" :key="feature" class="flex items-start gap-3 text-gray-300 text-sm">
-                <span class="text-primary font-black text-xs mt-0.5 flex-shrink-0">✓</span>
+                <span class="text-primary mt-0.5 flex-shrink-0">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                </span>
                 {{ feature }}
               </li>
             </ul>
@@ -153,8 +155,8 @@
             <h2 class="section-heading mb-8 md:mb-12 text-left">Meet Your Coaches</h2>
             <div class="space-y-6">
               <div v-for="trainer in trainers" :key="trainer.name" class="card-dark p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center group border-transparent hover:border-primary/20">
-                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors flex-shrink-0">
-                  <img src="/assets/images/coach/1.jpg" :alt="trainer.name" class="w-full h-full object-cover" loading="lazy" />
+                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors flex-shrink-0 bg-black">
+                  <img :src="trainer.image" :alt="trainer.name" class="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div>
                   <h3 class="text-primary font-black text-lg md:text-xl uppercase tracking-wide leading-none mb-1">{{ trainer.name }}</h3>
@@ -335,10 +337,12 @@ const trainers = [
   {
     name: 'Levis Alozio',
     specialties: 'Strength training, spin, kickboxing and calisthenics.',
+    image: '/images/coach/1.jpg'
   },
   {
     name: 'Martin Muturi',
     specialties: 'Strength training, HIIT and swimming classes.',
+    image: '/images/coach/2.png'
   },
 ]
 

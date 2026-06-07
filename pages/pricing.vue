@@ -28,7 +28,7 @@
             <div class="flex items-center gap-6 mb-8">
               <div class="flex flex-col items-center">
                 <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center p-2 mb-2">
-                  <img src="/public/favicon.png" alt="M-Pesa" class="w-full h-auto" />
+                  <img src="/favicon.png" alt="M-Pesa" class="w-full h-auto" />
                 </div>
                 <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest">M-Pesa Accepted</span>
               </div>

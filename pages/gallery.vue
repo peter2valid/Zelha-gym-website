@@ -78,7 +78,7 @@ const images = [
   { src: '/images/membership3.jpg', alt: 'Zumba Class' },
   { src: '/images/membersp4.jpeg', alt: 'Boot Camp' },
   { src: '/images/zelha banner.png', alt: 'Zelha Brand' },
-  { src: '/public/images/483066964_632006999588035_23325673919236385_n.jpg', alt: 'Gym Interior' },
-  { src: '/public/images/484517462_632196166235785_8102135649951883908_n.jpg', alt: 'Morning Session' },
+  { src: '/images/483066964_632006999588035_23325673919236385_n.jpg', alt: 'Gym Interior' },
+  { src: '/images/484517462_632196166235785_8102135649951883908_n.jpg', alt: 'Morning Session' },
 ]
 </script>
