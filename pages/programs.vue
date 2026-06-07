@@ -77,7 +77,39 @@
 <script setup lang="ts">
 import { h } from 'vue'
 
-useHead({ title: 'Programs — Zelha Spin and Fitness Gym' })
+// NEXT-LEVEL SEO INJECTION
+const siteTitle = 'Fitness Programs in Juja — Spin, HIIT, Strength & Zumba'
+const siteDesc = 'Discover the best fitness programs in Juja. From high-intensity Spin and HIIT classes to professional Strength Training and Zumba. Achieve your goals with expert coaches at Zelha Fitness.'
+const siteUrl = 'https://zelhafitness.com/programs'
+
+useHead({
+  title: siteTitle,
+  meta: [
+    { name: 'description', content: siteDesc },
+    { property: 'og:title', content: siteTitle },
+    { property: 'og:description', content: siteDesc },
+    { property: 'og:url', content: siteUrl },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:title', content: siteTitle },
+    { name: 'twitter:description', content: siteDesc },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        'itemListElement': [
+          { '@type': 'ListItem', 'position': 1, 'name': 'Spin Cycling' },
+          { '@type': 'ListItem', 'position': 2, 'name': 'HIIT Training' },
+          { '@type': 'ListItem', 'position': 3, 'name': 'Strength Training' },
+          { '@type': 'ListItem', 'position': 4, 'name': 'Personal Training' },
+          { '@type': 'ListItem', 'position': 5, 'name': 'Zumba Dance' },
+        ]
+      })
+    }
+  ]
+})
 
 // Icon
 const CheckIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '3', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M5 13l4 4L19 7' })])

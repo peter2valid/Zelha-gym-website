@@ -141,7 +141,41 @@
 import { h } from 'vue'
 import StudioTour from '~/components/StudioTour.vue'
 
-useHead({ title: 'About Us — Zelha Spin and Fitness Gym' })
+// NEXT-LEVEL SEO INJECTION
+const siteTitle = 'About Zelha Fitness — Our Story & Studio in Juja'
+const siteDesc = 'Learn about Zelha Spin and Fitness Gym. Juja\'s premier studio for professional coaching, energetic community, and high-end facilities. Explore our mission, vision and world-class gym equipment.'
+const siteUrl = 'https://zelhafitness.com/about'
+
+useHead({
+  title: siteTitle,
+  meta: [
+    { name: 'description', content: siteDesc },
+    { property: 'og:title', content: siteTitle },
+    { property: 'og:description', content: siteDesc },
+    { property: 'og:url', content: siteUrl },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:title', content: siteTitle },
+    { name: 'twitter:description', content: siteDesc },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'AboutPage',
+        'mainEntity': {
+          '@type': 'Gym',
+          'name': 'Zelha Spin and Fitness Gym',
+          'description': 'Juja\'s Premier Fitness Studio since founding.',
+          'location': {
+            '@type': 'Place',
+            'address': 'Kalimoni Highway View Plaza, Juja, Kenya'
+          }
+        }
+      })
+    }
+  ]
+})
 
 // Icon Components
 const TrophyIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' })])

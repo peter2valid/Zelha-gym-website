@@ -84,7 +84,36 @@
 </template>
 
 <script setup lang="ts">
-useHead({ title: 'Our Trainers — Zelha Spin and Fitness Gym' })
+// NEXT-LEVEL SEO INJECTION
+const siteTitle = 'Certified Fitness Coaches in Juja — Meet Our Trainers'
+const siteDesc = 'Meet Levis Alozio and Martin Muturi, our expert certified fitness coaches at Zelha Fitness. Specializing in Strength Training, Spin, HIIT, Kickboxing and more to help you reach your goals.'
+const siteUrl = 'https://zelhafitness.com/trainers'
+
+useHead({
+  title: siteTitle,
+  meta: [
+    { name: 'description', content: siteDesc },
+    { property: 'og:title', content: siteTitle },
+    { property: 'og:description', content: siteDesc },
+    { property: 'og:url', content: siteUrl },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:title', content: siteTitle },
+    { name: 'twitter:description', content: siteDesc },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        'itemListElement': [
+          { '@type': 'Person', 'name': 'Levis Alozio', 'jobTitle': 'Lead Fitness Coach' },
+          { '@type': 'Person', 'name': 'Martin Muturi', 'jobTitle': 'Lead Fitness Coach' },
+        ]
+      })
+    }
+  ]
+})
 
 const trainers = [
   {

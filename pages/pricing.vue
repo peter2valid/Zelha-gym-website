@@ -72,7 +72,36 @@
 <script setup lang="ts">
 import PricingCards from '~/components/PricingCards.vue'
 
-useHead({ title: 'Membership Pricing — Zelha Spin and Fitness Gym' })
+// NEXT-LEVEL SEO INJECTION
+const siteTitle = 'Gym Membership Pricing in Juja — Affordable Fitness Plans'
+const siteDesc = 'Check out affordable gym membership plans at Zelha Fitness Juja. Daily drop-ins from KSh 300, student discounts, and monthly plans. No hidden fees, M-Pesa accepted.'
+const siteUrl = 'https://zelhafitness.com/pricing'
+
+useHead({
+  title: siteTitle,
+  meta: [
+    { name: 'description', content: siteDesc },
+    { property: 'og:title', content: siteTitle },
+    { property: 'og:description', content: siteDesc },
+    { property: 'og:url', content: siteUrl },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:title', content: siteTitle },
+    { name: 'twitter:description', content: siteDesc },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'PriceSpecification',
+        'priceCurrency': 'KES',
+        'minPrice': '300',
+        'maxPrice': '3000',
+        'description': 'Monthly and daily membership rates for Zelha Spin and Fitness Gym.'
+      })
+    }
+  ]
+})
 
 const policies = [
   'Memberships are non-transferable and non-refundable.',

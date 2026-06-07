@@ -258,7 +258,70 @@ import Hero from '~/components/Hero.vue'
 import TimetablePreview from '~/components/TimetablePreview.vue'
 import StudioTour from '~/components/StudioTour.vue'
 
-useHead({ title: 'Zelha Spin and Fitness Gym — Juja\'s Premier Studio' })
+// SUPER SEO INJECTION
+const siteTitle = 'Zelha Spin and Fitness Gym — Juja\'s Premier Studio'
+const siteDesc = 'The best gym in Juja, Kenya. Safe and motivating space for Spin, HIIT, Strength Training, and Zumba. Join Zelha Fitness at Kalimoni Highway View Plaza. M-Pesa accepted!'
+const siteUrl = 'https://zelhafitness.com' // Replace with actual domain
+
+useHead({
+  title: siteTitle,
+  meta: [
+    { name: 'description', content: siteDesc },
+    // Open Graph / Facebook
+    { property: 'og:type', content: 'website' },
+    { property: 'og:url', content: siteUrl },
+    { property: 'og:title', content: siteTitle },
+    { property: 'og:description', content: siteDesc },
+    { property: 'og:image', content: `${siteUrl}/images/7600786.jpg` },
+    // Twitter
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:url', content: siteUrl },
+    { name: 'twitter:title', content: siteTitle },
+    { name: 'twitter:description', content: siteDesc },
+    { name: 'twitter:image', content: `${siteUrl}/images/7600786.jpg` },
+    // Keywords
+    { name: 'keywords', content: 'gym in juja, fitness center juja, spin classes juja, hiit training juja, zumba juja, strength training juja, affordable gym kiambu, zelha fitness, juja farm gym' }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Gym',
+        'name': 'Zelha Spin and Fitness Gym',
+        'image': [`${siteUrl}/images/7600786.jpg`, `${siteUrl}/images/zelha%20banner.png`],
+        'description': siteDesc,
+        '@id': siteUrl,
+        'url': siteUrl,
+        'telephone': '+254702836266',
+        'priceRange': 'KSh 400 - KSh 3000',
+        'address': {
+          '@type': 'PostalAddress',
+          'streetAddress': 'Kalimoni Highway View Plaza (Former Uchumi)',
+          'addressLocality': 'Juja',
+          'addressRegion': 'Kiambu',
+          'addressCountry': 'KE'
+        },
+        'geo': {
+          '@type': 'GeoCoordinates',
+          'latitude': -1.108053,
+          'longitude': 37.013838
+        },
+        'openingHoursSpecification': {
+          '@type': 'OpeningHoursSpecification',
+          'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          'opens': '06:00',
+          'closes': '21:00'
+        },
+        'sameAs': [
+          'https://www.instagram.com/zelhafitness',
+          'https://www.facebook.com/zelhaaFitness',
+          'https://www.tiktok.com/@zelhafitness'
+        ]
+      })
+    }
+  ]
+})
 
 // Icon Components (Surgical SVG Icons)
 const UserIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '2.5', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z' })])

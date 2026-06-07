@@ -67,7 +67,35 @@
 <script setup lang="ts">
 import TimetableGrid from '~/components/TimetableGrid.vue'
 
-useHead({ title: 'Class Schedule — Zelha Spin and Fitness Gym' })
+// NEXT-LEVEL SEO INJECTION
+const siteTitle = 'Gym Class Schedule in Juja — Spin, HIIT & Zumba Times'
+const siteDesc = 'View the weekly class timetable for Zelha Fitness Juja. Morning and evening sessions for Spin, HIIT, Aerobics, and Zumba. Plan your workout week and book your spot via WhatsApp.'
+const siteUrl = 'https://zelhafitness.com/timetable'
+
+useHead({
+  title: siteTitle,
+  meta: [
+    { name: 'description', content: siteDesc },
+    { property: 'og:title', content: siteTitle },
+    { property: 'og:description', content: siteDesc },
+    { property: 'og:url', content: siteUrl },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:title', content: siteTitle },
+    { name: 'twitter:description', content: siteDesc },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Schedule',
+        'name': 'Zelha Fitness Weekly Timetable',
+        'byDay': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        'description': 'Daily exercise classes including Spin and HIIT.'
+      })
+    }
+  ]
+})
 
 const classTypes = [
   { name: 'Spin Cycling', desc: 'High-intensity indoor cycling that builds endurance and burns serious calories.' },
