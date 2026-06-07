@@ -18,7 +18,9 @@ html {
   }
   .section-heading {
     font-family: 'Bebas Neue', Impact, sans-serif;
-    @apply text-4xl md:text-5xl text-primary uppercase tracking-wide;
+    @apply text-primary uppercase tracking-wide;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    line-height: 1;
   }
   .section-sub {
     @apply text-gray-400 text-base md:text-lg;
