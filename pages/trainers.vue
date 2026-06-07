@@ -4,17 +4,16 @@
       <div class="container mx-auto px-4">
         <h1 class="text-4xl font-bold text-primary mb-4 animate-fade-in-up">Meet Our Trainers</h1>
         <p class="text-gray-200 max-w-2xl mx-auto animate-fade-in-up delay-100">
-          Our certified trainers are passionate about helping you achieve your fitness goals. Get to know the faces behind our motivating workouts.
+          Meet the coaches behind our strength, spinning, aerobics and HIIT sessions.
         </p>
       </div>
     </section>
     <section class="py-12 bg-secondary">
       <div class="container mx-auto px-4 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div v-for="(trainer, i) in trainers" :key="i" class="bg-secondary-light p-6 shadow-lg text-center trainer-card opacity-0 hover:scale-105 transition transform duration-300">
-          <img :src="trainer.photo" :alt="trainer.name" class="w-40 h-40 mx-auto mb-4 object-cover border-4 border-primary" />
+          <img :src="coachPhoto" :alt="trainer.name" class="w-40 h-40 mx-auto mb-4 object-cover border-4 border-primary" />
           <h3 class="text-xl font-semibold text-primary mb-2">{{ trainer.name }}</h3>
-          <p class="text-gray-200 mb-2 font-medium">{{ trainer.role }}</p>
-          <p class="text-gray-400 text-sm">{{ trainer.bio }}</p>
+          <p class="text-gray-200 mb-2 font-medium">{{ trainer.specialties }}</p>
         </div>
       </div>
     </section>
@@ -23,25 +22,16 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
+import coachPhoto from '~/assets/images/coach/1.jpg'
 
 const trainers = [
   {
-    name: 'James Mwangi',
-    role: 'Spin Instructor',
-    bio: 'With over 5 years of experience, James brings energy and motivation to every spin class.',
-    photo: '/images/483066964_632006999588035_23325673919236385_n.jpg'
+    name: 'Levis Alozio',
+    specialties: 'Strength training, aerobics, spinning, HIIT, kickboxing and calisthenics.'
   },
   {
-    name: 'Mary Wambui',
-    role: 'HIIT Coach',
-    bio: 'Mary specialises in functional training and HIIT, ensuring workouts are effective and fun.',
-    photo: '/images/483933409_632196279569107_5415312179917941573_n.jpg'
-  },
-  {
-    name: 'Sarah Njoroge',
-    role: 'Strength Trainer',
-    bio: 'Sarah focuses on strength conditioning and mobility, helping clients build a strong foundation.',
-    photo: '/images/484517462_632196166235785_8102135649951883908_n.jpg'
+    name: 'Martin Muturi',
+    specialties: 'Strength training, aerobics, spinning, HIIT and swimming classes.'
   }
 ]
 

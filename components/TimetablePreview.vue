@@ -14,9 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import { useAsyncData } from '#app'
-
-
 const { data: timetable } = await useAsyncData('timetable-preview', () =>
   queryContent('/timetable').findOne()
 )

@@ -2,9 +2,9 @@
   <div>
     <section class="py-12 bg-secondary-light text-center">
       <div class="container mx-auto px-4">
-        <h1 class="text-4xl font-bold text-primary mb-4">Join Zelha Spin &amp; Fitness</h1>
+        <h1 class="text-4xl font-bold text-primary mb-4">Join Zelha Spin and Fitness Gym</h1>
         <p class="text-gray-200 max-w-2xl mx-auto">
-          Ready to start your fitness journey with us? Fill out the form below or contact us via WhatsApp to sign up for membership.
+          Ready to start your fitness journey? Fill out the form below or contact us on WhatsApp to sign up for membership.
         </p>
       </div>
     </section>
@@ -30,10 +30,10 @@
               <label class="block text-gray-200 mb-1">Package of Interest</label>
               <select v-model="form.package" class="w-full px-4 py-2 bg-secondary-light text-gray-100 border border-secondary focus:border-primary focus:outline-none" required>
                 <option value="" disabled>Select a package</option>
-                <option value="Unlimited Gym Access">Unlimited Gym Access</option>
-                <option value="Unlimited Spin Classes">Unlimited Spin Classes</option>
-                <option value="Personal Training Package">Personal Training Package</option>
-                <option value="Drop-in Spin Class">Drop-in Spin Class</option>
+                <option value="Gym Membership">Gym Membership</option>
+                <option value="Spin Class Package">Spin Class Package</option>
+                <option value="Drop-In Class">Drop-In Class</option>
+                <option value="Personal Training">Personal Training</option>
               </select>
             </div>
             <button type="submit" class="bg-primary text-secondary px-6 py-3 font-semibold hover:bg-primary-dark transition w-full">Submit</button>
@@ -57,7 +57,6 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { navigateTo } from '#app'
 
 // Simple form state (no backend integration). In a real site, you would submit this to a server.
 const form = reactive({
@@ -70,15 +69,15 @@ const form = reactive({
 function submitForm() {
   // For demonstration, redirect to WhatsApp prefilled message
   const message = encodeURIComponent(
-    `Hi Zelha Fitness, my name is ${form.name}. I am interested in the ${form.package} package. Please provide more details.`
+    `Hi Zelha Spin and Fitness Gym, my name is ${form.name}. I am interested in the ${form.package} package. Please provide more details.`
   )
-  const url = `https://wa.me/254110719277?text=${message}`
+  const url = `https://wa.me/254702836266?text=${message}`
   // navigateTo is used to navigate within the Nuxt app, but since this is an external URL we set window.location
   window.open(url, '_blank')
 }
 
 function whatsAppLink() {
-  const message = encodeURIComponent('Hi Zelha Fitness, I would like to join your gym. Please provide membership details.')
-  return `https://wa.me/254110719277?text=${message}`
+  const message = encodeURIComponent('Hi Zelha Spin and Fitness Gym, I would like to join your gym. Please provide membership details.')
+  return `https://wa.me/254702836266?text=${message}`
 }
 </script>

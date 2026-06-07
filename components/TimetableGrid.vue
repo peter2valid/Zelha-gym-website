@@ -13,7 +13,7 @@
           <ul v-if="day.sessions.length > 0" class="space-y-2">
             <li v-for="(session, index) in day.sessions" :key="index" class="flex flex-col">
               <span class="text-sm text-primary font-semibold">{{ session.time }}</span>
-              <span class="text-gray-100">{{ session.class }} with {{ session.coach }}</span>
+              <span class="text-gray-100">{{ session.class }}</span>
             </li>
           </ul>
           <p v-else class="text-gray-400">No classes scheduled.</p>
@@ -25,9 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { useAsyncData } from '#app'
 import { onMounted } from 'vue'
-
 
 const { data: timetable } = await useAsyncData('timetable', () =>
   queryContent('/timetable').findOne()

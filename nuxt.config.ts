@@ -16,11 +16,11 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      title: 'Zelha Spin & Fitness',
+      title: 'Zelha Spin and Fitness Gym',
       meta: [
         { name: 'charset', content: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Zelha Spin & Fitness in Juja, Kenya – boutique spin classes, HIIT and personal training.' }
+        { name: 'description', content: 'Zelha Spin and Fitness Gym in Juja, Kenya – spin, HIIT, strength training, Zumba and personal training.' }
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },

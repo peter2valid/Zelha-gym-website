@@ -4,7 +4,7 @@
       <div class="container mx-auto px-4">
         <h1 class="text-4xl font-bold text-primary mb-4 animate-fade-in-up">Gallery</h1>
         <p class="text-gray-200 max-w-2xl mx-auto animate-fade-in-up delay-100">
-          A glimpse into our studio and community. See the energy, dedication and fun that make Zelha Spin &amp; Fitness special.
+          A glimpse into our studio and community in Juja. See the energy, dedication and fun that make Zelha Spin and Fitness Gym special.
         </p>
       </div>
     </section>
@@ -25,7 +25,7 @@
 import { onMounted } from 'vue'
 
 const images = [
-  { src: '/images/7600786.jpg', alt: 'Zelha Fitness Team' },
+  { src: '/images/7600786.jpg', alt: 'Zelha Spin and Fitness Gym team' },
   { src: '/images/577562443_818263040962429_8703738815204600603_n.jpg', alt: 'Spin Bikes Studio' },
   { src: '/images/483066964_632006999588035_23325673919236385_n.jpg', alt: 'Strength Training' },
   { src: '/images/574572522_812280874893979_1305975096083296830_n.jpg', alt: 'Group HIIT Session' },

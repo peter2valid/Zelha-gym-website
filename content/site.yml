@@ -1,0 +1,38 @@
+businessName: "Zelha Spin and Fitness Gym"
+brandName: "Zelha Spin and Fitness Gym"
+tagline: "Your Premier Fitness Companion"
+description: >
+  We are committed to providing a safe and motivating space that makes you want to work out, ensuring your fitness journey is enjoyable and successful.
+location: "Kalimoni Highway View Plaza (Former Uchumi), Juja, Kenya"
+contacts:
+  phoneDisplay: "0702836266 / 0110719277"
+  primaryPhone: "0702836266"
+  whatsapp: "0702836266"
+  email: "zelhafitness@gmail.com"
+social:
+  instagram:
+    label: "@zelhafitness"
+    url: "https://www.instagram.com/zelhafitness"
+  tiktok:
+    label: "@zelhafitness"
+    url: "https://www.tiktok.com/@zelhafitness"
+  facebook:
+    label: "@zelhaaFitness"
+    url: "https://www.facebook.com/zelhaaFitness"
+classes:
+  - "Spin / cycling"
+  - "HIIT"
+  - "Strength training"
+  - "Personal training"
+  - "Boot camp"
+  - "Hikes"
+  - "Zumba"
+  - "Group fitness classes"
+trainers:
+  - name: "Levis Alozio"
+    specialties: "Strength training, aerobics, spinning, HIIT, kickboxing and calisthenics."
+  - name: "Martin Muturi"
+    specialties: "Strength training, aerobics, spinning, HIIT and swimming classes."
+approval:
+  approvedBy: "Wambui N"
+  role: "Receptionist"

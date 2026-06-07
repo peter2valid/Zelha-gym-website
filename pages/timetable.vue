@@ -10,13 +10,11 @@
           <div class="lg:w-5/12 schedule-left opacity-0">
             <h2 class="text-3xl font-bold text-white mb-4">Train With Us</h2>
             <p class="text-gray-300 mb-6 leading-relaxed">
-              At Zelha Spin &amp; Fitness, we focus on community‑driven workouts that challenge and inspire you.
-              Whether you're an early bird or an evening warrior, our coaches have sessions tailored for every
-              fitness level. Join us in Juja for the ultimate workout experience.
+              We are committed to providing a safe and motivating space with spin, HIIT, aerobics, Zumba and power training sessions for every fitness level.
             </p>
             <img
               src="/images/7600786.jpg"
-              alt="Zelha Fitness Training"
+              alt="Zelha Spin and Fitness Gym training"
               class="shadow-xl w-full object-cover max-h-96"
             />
           </div>
@@ -41,7 +39,6 @@
                     >
                       <div>
                         <span class="text-white font-semibold block">{{ session.class }}</span>
-                        <span class="text-gray-400 text-sm">{{ session.coach }}</span>
                       </div>
                       <span class="text-primary font-bold text-sm whitespace-nowrap ml-4">{{ session.time }}</span>
                     </div>
@@ -58,7 +55,6 @@
                       <th class="text-left text-primary font-bold py-3 px-4 text-sm uppercase tracking-wider">Day</th>
                       <th class="text-left text-primary font-bold py-3 px-4 text-sm uppercase tracking-wider">Time</th>
                       <th class="text-left text-primary font-bold py-3 px-4 text-sm uppercase tracking-wider">Class</th>
-                      <th class="text-left text-primary font-bold py-3 px-4 text-sm uppercase tracking-wider">Coach</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -81,7 +77,6 @@
                         <td class="py-3 px-4">
                           <span class="text-white font-medium">{{ session.class }}</span>
                         </td>
-                        <td class="py-3 px-4 text-gray-400 text-sm whitespace-nowrap">{{ session.coach }}</td>
                       </tr>
                       <tr
                         v-if="day.sessions.length === 0"
@@ -92,7 +87,7 @@
                             {{ day.day }}
                           </span>
                         </td>
-                        <td colspan="3" class="py-3 px-4 text-gray-500 italic">Rest Day</td>
+                        <td colspan="2" class="py-3 px-4 text-gray-500 italic">Rest Day</td>
                       </tr>
                     </template>
                   </tbody>

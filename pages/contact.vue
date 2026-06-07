@@ -4,7 +4,7 @@
       <div class="container mx-auto px-4">
         <h1 class="text-4xl font-bold text-primary mb-4">Contact Us</h1>
         <p class="text-gray-200 max-w-2xl mx-auto">
-          We’d love to hear from you. Reach out to us for membership inquiries, class bookings or general questions.
+          We’d love to hear from you. Reach out for membership inquiries, class bookings or general questions.
         </p>
       </div>
     </section>
@@ -13,18 +13,27 @@
         <!-- Contact Details -->
         <div>
           <h2 class="text-2xl font-semibold text-primary mb-4">Get in Touch</h2>
-          <p class="text-gray-200 mb-2">Kalimoni Highway View Plaza, off Thika Superhighway, Juja</p>
-          <p class="text-gray-200 mb-2">Phone: <a href="tel:+254110719277" class="text-primary hover:underline">+254 110 719 277</a></p>
-          <p class="text-gray-200 mb-6">Email: <a href="mailto:info@zelhafitness.com" class="text-primary hover:underline">info@zelhafitness.com</a></p>
+          <p class="text-gray-200 mb-2">Kalimoni Highway View Plaza (Former Uchumi), Juja, Kenya</p>
+          <p class="text-gray-200 mb-2">Phone: <a href="tel:+254702836266" class="text-primary hover:underline">0702836266</a> / <a href="tel:+254110719277" class="text-primary hover:underline">0110719277</a></p>
+          <p class="text-gray-200 mb-2">Email: <a href="mailto:zelhafitness@gmail.com" class="text-primary hover:underline">zelhafitness@gmail.com</a></p>
           <h3 class="text-xl font-semibold text-primary mb-2">WhatsApp</h3>
           <p class="text-gray-200 mb-4">Chat with us directly on WhatsApp for quick responses.</p>
-          <a href="https://wa.me/254110719277" target="_blank" class="inline-block bg-primary text-secondary px-6 py-3 font-semibold hover:bg-primary-dark transition">Message Us</a>
+          <a href="https://wa.me/254702836266" target="_blank" class="inline-block bg-primary text-secondary px-6 py-3 font-semibold hover:bg-primary-dark transition">Message Us</a>
+
+          <div class="mt-8">
+            <h3 class="text-xl font-semibold text-primary mb-3">Social Media</h3>
+            <ul class="space-y-2 text-gray-200">
+              <li><a href="https://www.instagram.com/zelhafitness" target="_blank" class="hover:text-primary">@zelhafitness on Instagram</a></li>
+              <li><a href="https://www.tiktok.com/@zelhafitness" target="_blank" class="hover:text-primary">@zelhafitness on TikTok</a></li>
+              <li><a href="https://www.facebook.com/zelhaaFitness" target="_blank" class="hover:text-primary">@zelhaaFitness on Facebook</a></li>
+            </ul>
+          </div>
 
           <div class="mt-10 border-t border-gray-800 pt-8">
             <h3 class="text-2xl font-semibold text-primary mb-3">Prefer WhatsApp?</h3>
             <p class="text-gray-200 mb-6">If you'd rather chat with us directly, tap the button below to open WhatsApp and we'll help you get started.</p>
             <a
-              href="https://wa.me/254110719277?text=Hi%2C%20I'd%20like%20to%20join%20Zelha%20Spin%20%26%20Fitness.%20I%20found%20you%20through%20your%20website!"
+              href="https://wa.me/254702836266?text=Hi%2C%20I'd%20like%20to%20join%20Zelha%20Spin%20and%20Fitness%20Gym.%20I%20found%20you%20through%20your%20website!"
               target="_blank"
               class="inline-flex items-center gap-3 bg-primary text-secondary px-8 py-4 font-bold text-lg hover:bg-primary-dark hover:scale-105 active:scale-95 transition transform duration-200 shadow-lg"
             >
@@ -43,7 +52,7 @@
             style="border:0;"
             referrerpolicy="no-referrer-when-downgrade"
             loading="lazy"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.072240219272!2d37.01383810000001!3d-1.1080531000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f472cf7d49123%3A0xc761d1367d2f441f!2sZelha%20Spin%20%26%20Fitness!5e0!3m2!1sen!2ske!4v1771178201794!5m2!1sen!2ske"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.072240219272!2d37.01383810000001!3d-1.1080531000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f472cf7d49123%3A0xc761d1367d2f441f!2sZelha%20Spin%20and%20Fitness%20Gym!5e0!3m2!1sen!2ske!4v1771178201794!5m2!1sen!2ske"
             allowfullscreen
           ></iframe>
         </div>

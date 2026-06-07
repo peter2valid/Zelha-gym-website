@@ -16,24 +16,23 @@
             loading="lazy"
           />
           <div class="p-6">
-          <h3 class="text-xl font-semibold text-primary mb-4">{{ pkg.title }}</h3>
-          <p class="text-2xl font-bold text-primary mb-2">
-            {{ currencySymbol(pkg.currency) }}{{ pkg.price }}
-            <span class="text-sm text-gray-400">/{{ pkg.duration }}</span>
-          </p>
-          <ul class="mb-4 space-y-1">
-            <li v-for="(item, i) in pkg.includes" :key="i" class="text-gray-200 flex items-start">
-              <span class="mr-2">•</span>{{ item }}
-            </li>
-          </ul>
-          <p class="text-sm text-gray-400 mb-4">Best for: {{ pkg.bestFor }}</p>
-          <a
-            :href="whatsAppLink(pkg.title)"
-            target="_blank"
-            class="block text-center bg-primary text-secondary py-2 font-semibold hover:bg-primary-dark transition"
-          >
-            Book Now
-          </a>
+            <h3 class="text-xl font-semibold text-primary mb-4">{{ pkg.title }}</h3>
+            <p class="text-lg font-bold text-primary mb-3">
+              {{ pkg.priceLabel }}
+            </p>
+            <ul class="mb-4 space-y-1">
+              <li v-for="(item, i) in pkg.includes" :key="i" class="text-gray-200 flex items-start">
+                <span class="mr-2">•</span>{{ item }}
+              </li>
+            </ul>
+            <p class="text-sm text-gray-400 mb-4">Best for: {{ pkg.bestFor }}</p>
+            <a
+              :href="whatsAppLink(pkg.title)"
+              target="_blank"
+              class="block text-center bg-primary text-secondary py-2 font-semibold hover:bg-primary-dark transition"
+            >
+              Book Now
+            </a>
           </div>
         </div>
       </div>
@@ -43,7 +42,6 @@
 </template>
 
 <script setup lang="ts">
-import { useAsyncData } from '#app'
 import { onMounted } from 'vue'
 
 const cardImages = [
@@ -53,27 +51,18 @@ const cardImages = [
   '/images/membersp4.jpeg'
 ]
 
+const { data: site } = await useSiteContent()
 const { data: pricing } = await useAsyncData('pricing', () =>
   queryContent('/pricing').findOne()
 )
 
-function currencySymbol(currency: string) {
-  switch (currency) {
-    case 'KES':
-      return 'KSh '
-    case 'USD':
-      return '$'
-    default:
-      return ''
-  }
-}
-
 // Build a WhatsApp deep link prefilled with the package name.
 function whatsAppLink(pkgTitle: string) {
+  const whatsappNumber = site.value?.contacts?.whatsapp ?? '0702836266'
   const message = encodeURIComponent(
-    `Hi Zelha Fitness, I am interested in the ${pkgTitle} package. Please provide more details.`
+    `Hi Zelha Spin and Fitness Gym, I am interested in the ${pkgTitle} package. Please provide more details.`
   )
-  return `https://wa.me/254110719277?text=${message}`
+  return `https://wa.me/254${whatsappNumber.slice(1)}?text=${message}`
 }
 
 onMounted(() => {

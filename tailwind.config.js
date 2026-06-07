@@ -1,28 +1,26 @@
-/**
- * TailwindCSS configuration for Zelha Spin & Fitness.
- *
- * This setup defines custom colours inspired by the black and yellow
- * theme provided by the user. It extends the default palette with
- * `primary` and `secondary` colours that can be used throughout
- * components and pages for consistent styling.
- */
 module.exports = {
   content: [
     './components/**/*.{vue,js,ts}',
     './pages/**/*.{vue,js,ts}',
-    './app.vue'
+    './app.vue',
+    './layouts/**/*.{vue,js,ts}'
   ],
   theme: {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#F5C400', // bright yellow for accents and call-to-action
-          dark: '#D7A800'
+          DEFAULT: '#F5C400',
+          dark: '#D7A800',
+          light: '#FFE566'
         },
         secondary: {
-          DEFAULT: '#000000', // deep black background
-          light: '#000000'
+          DEFAULT: '#080808',
+          light: '#111111'
         }
+      },
+      fontFamily: {
+        heading: ['"Bebas Neue"', 'Impact', 'sans-serif'],
+        body: ['Outfit', 'sans-serif']
       }
     }
   },
