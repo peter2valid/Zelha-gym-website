@@ -66,9 +66,6 @@
             <span class="text-gray-700 mx-1">/</span>
             <a href="tel:+254110719277" class="text-gray-400 hover:text-primary transition-colors">0110 719 277</a>
           </p>
-          <p>
-            <a href="mailto:zelhafitness@gmail.com" class="text-gray-400 hover:text-primary transition-colors break-all">zelhafitness@gmail.com</a>
-          </p>
           <div>
             <p class="text-gray-400 font-semibold mb-1">Opening Hours</p>
             <p class="text-gray-500">Mon – Sat: 6:00 AM – 9:00 PM</p>

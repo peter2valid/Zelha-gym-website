@@ -95,7 +95,7 @@ const contactInfo = [
     icon: '📍',
     title: 'Visit Us',
     content: 'Kalimoni Highway View Plaza (Former Uchumi),<br/>Juja, Kenya',
-    link: 'https://maps.app.goo.gl/4XW9pX8W5Q3J7Q6W9', // Add actual map link if possible
+    link: 'https://maps.app.goo.gl/4XW9pX8W5Q3J7Q6W9',
   },
   {
     icon: '📞',
@@ -104,10 +104,10 @@ const contactInfo = [
     link: 'tel:+254702836266',
   },
   {
-    icon: '✉️',
-    title: 'Email Us',
-    content: 'zelhafitness@gmail.com',
-    link: 'mailto:zelhafitness@gmail.com',
+    icon: '💬',
+    title: 'WhatsApp',
+    content: '0702 836 266',
+    link: 'https://wa.me/254702836266',
   },
   {
     icon: '🕐',

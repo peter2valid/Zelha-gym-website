@@ -114,6 +114,9 @@
       </div>
     </section>
 
+    <!-- Virtual Tour -->
+    <StudioTour />
+
     <!-- CTA -->
     <section class="py-16 bg-primary">
       <div class="max-w-3xl mx-auto px-4 text-center">

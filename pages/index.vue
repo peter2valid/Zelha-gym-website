@@ -186,6 +186,9 @@
       </div>
     </section>
 
+    <!-- Experience the Studio: Virtual Tour -->
+    <StudioTour />
+
     <!-- Location -->
     <section class="py-16 md:py-24 bg-secondary">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
@@ -336,6 +339,6 @@ const testimonials = [
 const locationDetails = [
   { icon: '📍', title: 'Find Us', content: 'Kalimoni Highway View Plaza (Former Uchumi),<br/>Juja, Kenya (Near Juja Farm & Town CBD)' },
   { icon: '🕐', title: 'Open Hours', content: 'Mon – Sat: 6:00 AM – 9:00 PM<br/>Sunday: Rest Day (Closed)' },
-  { icon: '📞', title: 'Contact', content: '0702 836 266 / 0110 719 277<br/>zelhafitness@gmail.com' },
+  { icon: '📞', title: 'Contact', content: '0702 836 266 / 0110 719 277' },
 ]
 </script>
