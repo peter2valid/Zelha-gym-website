@@ -1,74 +1,82 @@
 <template>
-  <header 
-    :class="[
-      'sticky top-0 z-50 transition-all duration-300 border-b',
-      scrolled ? 'bg-black/95 backdrop-blur-md border-gray-800 shadow-xl shadow-black/40 py-2' : 'bg-black border-transparent py-4'
-    ]"
-  >
-    <nav class="mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10 max-w-7xl">
-      <!-- Logo: Auto-adjusting size -->
-      <NuxtLink to="/" class="flex-shrink-0 transition-transform active:scale-95">
-        <img 
-          src="/images/headericon.png" 
-          alt="Zelha Spin and Fitness Gym" 
-          class="h-12 sm:h-14 lg:h-16 w-auto transition-all duration-300" 
-          :class="{ 'lg:h-14': scrolled }"
-        />
-      </NuxtLink>
-
-      <!-- Desktop Nav: Hidden on mobile/tablet -->
-      <ul class="hidden lg:flex items-center gap-1 uppercase text-[11px] font-black tracking-[0.15em] text-gray-400">
-        <li v-for="link in navLinks" :key="link.to">
-          <NuxtLink
-            :to="link.to"
-            class="px-3 py-2 hover:text-primary transition-colors duration-200 relative group"
-            :class="{ 'text-primary': isActive(link.to) }"
-          >
-            {{ link.label }}
-            <span 
-              class="absolute bottom-0 left-3 right-3 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
-              :class="{ 'scale-x-100': isActive(link.to) }"
-            ></span>
-          </NuxtLink>
-        </li>
-      </ul>
-
-      <!-- Action Area -->
-      <div class="flex items-center gap-4">
-        <NuxtLink
-          to="/join"
-          class="hidden md:inline-flex bg-primary text-black px-6 py-2.5 text-[11px] font-black uppercase tracking-widest hover:bg-primary-dark transition-all duration-200 shadow-lg shadow-primary/10 active:scale-95"
-        >
-          Join Now
+  <div class="sticky top-0 z-50">
+    <header 
+      :class="[
+        'transition-all duration-300 border-b',
+        scrolled ? 'bg-black/95 backdrop-blur-md border-gray-800 shadow-xl shadow-black/40 py-2' : 'bg-black border-transparent py-4'
+      ]"
+    >
+      <nav class="mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10 max-w-7xl">
+        <!-- Logo: Auto-adjusting size -->
+        <NuxtLink to="/" class="flex-shrink-0 transition-transform active:scale-95">
+          <img 
+            src="/images/headericon.png" 
+            alt="Zelha Spin and Fitness Gym" 
+            class="h-12 sm:h-14 lg:h-16 w-auto transition-all duration-300" 
+            :class="{ 'lg:h-14': scrolled }"
+          />
         </NuxtLink>
-        
-        <!-- Mobile Toggle: Large touch target -->
-        <button
-          @click="showMenu = !showMenu"
-          class="lg:hidden text-primary focus:outline-none p-2 -mr-2 transition-transform active:scale-90"
-          aria-label="Toggle Menu"
-        >
-          <div class="relative w-6 h-5">
-            <span 
-              class="absolute h-0.5 bg-current transition-all duration-300 left-0 right-0"
-              :class="showMenu ? 'rotate-45 top-2' : 'top-0'"
-            ></span>
-            <span 
-              class="absolute h-0.5 bg-current transition-all duration-300 left-0 right-0 top-2"
-              :class="showMenu ? 'opacity-0' : 'opacity-100'"
-            ></span>
-            <span 
-              class="absolute h-0.5 bg-current transition-all duration-300 left-0 right-0"
-              :class="showMenu ? '-rotate-45 top-2' : 'top-4'"
-            ></span>
-          </div>
-        </button>
-      </div>
-    </nav>
+
+        <!-- Desktop Nav: Hidden on mobile/tablet -->
+        <ul class="hidden lg:flex items-center gap-1 uppercase text-[11px] font-black tracking-[0.15em] text-gray-400">
+          <li v-for="link in navLinks" :key="link.to">
+            <NuxtLink
+              :to="link.to"
+              class="px-3 py-2 hover:text-primary transition-colors duration-200 relative group"
+              :class="{ 'text-primary': isActive(link.to) }"
+            >
+              {{ link.label }}
+              <span 
+                class="absolute bottom-0 left-3 right-3 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                :class="{ 'scale-x-100': isActive(link.to) }"
+              ></span>
+            </NuxtLink>
+          </li>
+        </ul>
+
+        <!-- Action Area -->
+        <div class="flex items-center gap-4">
+          <NuxtLink
+            to="/join"
+            class="hidden md:inline-flex bg-primary text-black px-6 py-2.5 text-[11px] font-black uppercase tracking-widest hover:bg-primary-dark transition-all duration-200 shadow-lg shadow-primary/10 active:scale-95"
+          >
+            Join Now
+          </NuxtLink>
+          
+          <!-- Mobile Toggle: Large touch target -->
+          <button
+            @click="showMenu = !showMenu"
+            class="lg:hidden text-primary focus:outline-none p-2 -mr-2 transition-transform active:scale-90"
+            aria-label="Toggle Menu"
+          >
+            <div class="relative w-6 h-5">
+              <span 
+                class="absolute h-0.5 bg-current transition-all duration-300 left-0 right-0"
+                :class="showMenu ? 'rotate-45 top-2' : 'top-0'"
+              ></span>
+              <span 
+                class="absolute h-0.5 bg-current transition-all duration-300 left-0 right-0 top-2"
+                :class="showMenu ? 'opacity-0' : 'opacity-100'"
+              ></span>
+              <span 
+                class="absolute h-0.5 bg-current transition-all duration-300 left-0 right-0"
+                :class="showMenu ? '-rotate-45 top-2' : 'top-4'"
+              ></span>
+            </div>
+          </button>
+        </div>
+      </nav>
+    </header>
 
     <!-- Mobile Menu Overlay -->
     <transition name="mobile-menu">
-      <div v-if="showMenu" class="lg:hidden fixed inset-x-0 top-[64px] sm:top-[72px] bottom-0 z-40 bg-black/98 backdrop-blur-xl overflow-y-auto">
+      <div 
+        v-if="showMenu" 
+        :class="[
+          'lg:hidden fixed inset-x-0 bottom-0 z-40 bg-black/98 backdrop-blur-xl overflow-y-auto',
+          scrolled ? 'top-[65px] sm:top-[73px]' : 'top-[81px] sm:top-[89px]'
+        ]"
+      >
         <div class="flex flex-col p-6 min-h-full">
           <ul class="flex flex-col gap-1 mb-8">
             <li v-for="link in navLinks" :key="link.to" class="border-b border-gray-900 last:border-0">
@@ -99,7 +107,7 @@
         </div>
       </div>
     </transition>
-  </header>
+  </div>
 </template>
 
 <script setup lang="ts">
