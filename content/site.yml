@@ -5,7 +5,8 @@ description: >
   We are committed to providing a safe and motivating space that makes you want to work out, ensuring your fitness journey is enjoyable and successful.
 location: "Kalimoni Highway View Plaza (Former Uchumi), Juja, Kenya"
 contacts:
-  phoneDisplay: "0702836266 / 0110719277"
+  phoneDisplay: "0702836266"
+  email: "zelhafitness@gmail.com"
   primaryPhone: "0702836266"
   whatsapp: "0702836266"
 social:
@@ -22,16 +23,28 @@ classes:
   - "Spin / cycling"
   - "HIIT"
   - "Strength training"
-  - "Personal training"
+  - "Step aerobics"
+  - "Zumba (cardio)"
   - "Boot camp"
-  - "Hikes"
-  - "Zumba"
   - "Group fitness classes"
+services:
+  - "Personal training"
+  - "Outdoors"
+  - "Swimming"
+hours:
+  weekdays: "Mon - Fri: opens 5:15 AM"
+  saturday: "Saturday: opens 6:30 AM"
+  sunday: "Sunday: closed"
 trainers:
-  - name: "Levis Alozio"
-    specialties: "Strength training, aerobics, spinning, HIIT, kickboxing and calisthenics."
   - name: "Martin Muturi"
-    specialties: "Strength training, aerobics, spinning, HIIT and swimming classes."
+    specialties: "Fitness coach, physiotherapist and swimming coach. Weight loss, bodybuilding, body recomposition."
+  - name: "Brian Kamau"
+    specialties: "Athletic performance, functional strength, 1-on-1 personal training."
+  - name: "Abby"
+    specialties: "Strength training."
+team:
+  - name: "Sarah"
+    role: "Receptionist"
 approval:
   approvedBy: "Wambui N"
   role: "Receptionist"

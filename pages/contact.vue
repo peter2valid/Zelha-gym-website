@@ -74,8 +74,61 @@
       </div>
     </section>
 
+    <!-- Complaints -->
+    <section id="complaints" class="py-16 bg-secondary-light scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">We're Listening</p>
+          <h2 class="section-heading mb-6">Raise a Complaint</h2>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            Something not right? Whether it's about equipment, cleanliness, a class, billing or how you were treated — tell us. Every complaint goes straight to management and is handled confidentially.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li v-for="step in complaintSteps" :key="step" class="flex items-start gap-3 text-gray-300 text-sm">
+              <span class="text-primary font-black flex-shrink-0">→</span>
+              {{ step }}
+            </li>
+          </ul>
+          <p class="text-gray-500 text-sm">
+            Prefer email? Write to
+            <a :href="`mailto:${COMPLAINTS_EMAIL}`" class="text-primary hover:underline">{{ COMPLAINTS_EMAIL }}</a>.
+            See also our <NuxtLink to="/terms#complaints" class="text-primary hover:underline">complaints policy</NuxtLink>.
+          </p>
+        </div>
+
+        <form ref="complaintForm" @submit.prevent="sendComplaint('email')" class="card-dark p-8 sm:p-10 border-primary/20 space-y-5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="c-name" class="block text-gray-400 text-xs font-black uppercase tracking-widest mb-2">Your Name</label>
+              <input id="c-name" v-model="complaint.name" type="text" required class="w-full px-4 py-3 bg-secondary text-gray-100 border border-gray-800 focus:border-primary focus:outline-none transition-colors" placeholder="e.g. Jane Wanjiku" />
+            </div>
+            <div>
+              <label for="c-phone" class="block text-gray-400 text-xs font-black uppercase tracking-widest mb-2">Phone</label>
+              <input id="c-phone" v-model="complaint.phone" type="tel" required class="w-full px-4 py-3 bg-secondary text-gray-100 border border-gray-800 focus:border-primary focus:outline-none transition-colors" placeholder="e.g. 0712 345 678" />
+            </div>
+          </div>
+          <div>
+            <label for="c-topic" class="block text-gray-400 text-xs font-black uppercase tracking-widest mb-2">What is it about?</label>
+            <select id="c-topic" v-model="complaint.topic" required class="w-full px-4 py-3 bg-secondary text-gray-100 border border-gray-800 focus:border-primary focus:outline-none transition-colors appearance-none">
+              <option value="" disabled>Choose a topic</option>
+              <option v-for="t in complaintTopics" :key="t" :value="t">{{ t }}</option>
+            </select>
+          </div>
+          <div>
+            <label for="c-details" class="block text-gray-400 text-xs font-black uppercase tracking-widest mb-2">Details</label>
+            <textarea id="c-details" v-model="complaint.details" rows="5" required class="w-full px-4 py-3 bg-secondary text-gray-100 border border-gray-800 focus:border-primary focus:outline-none transition-colors" placeholder="Tell us what happened, when, and how we can make it right."></textarea>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3 pt-2">
+            <button type="submit" class="btn-primary py-4 text-xs font-black uppercase">Send by Email</button>
+            <button type="button" @click="sendComplaint('whatsapp')" class="btn-outline py-4 text-xs font-black uppercase">Send via WhatsApp</button>
+          </div>
+          <p class="text-gray-600 text-[10px] uppercase tracking-widest text-center">Opens your email app or WhatsApp with your message ready to send.</p>
+        </form>
+      </div>
+    </section>
+
     <!-- FAQ Preview CTA -->
-    <section class="py-16 bg-secondary-light">
+    <section class="py-16 bg-secondary">
       <div class="max-w-4xl mx-auto px-4 text-center">
         <h2 class="section-heading mb-4">Have More Questions?</h2>
         <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Check out our frequently asked questions for quick answers about membership, pricing and classes.</p>
@@ -86,35 +139,90 @@
 </template>
 
 <script setup lang="ts">
-import { h } from 'vue'
+import { h, ref, reactive } from 'vue'
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL, COMPLAINTS_EMAIL, OPENING_HOURS, whatsAppUrl } from '~/utils/contact'
 
-useHead({ title: 'Contact Us — Zelha Spin and Fitness Gym' })
+const siteTitle = 'Contact Zelha Fitness — Gym in Juja, Thika Road'
+const siteDesc = 'Call, WhatsApp or email Zelha Spin and Fitness Gym at Kalimoni Highway View Plaza (Former Uchumi), Juja. Open from 5:15 AM weekdays and 6:30 AM Saturdays. Raise a complaint or send feedback.'
+
+useHead({
+  title: siteTitle,
+  meta: [
+    { name: 'description', content: siteDesc },
+    { property: 'og:title', content: siteTitle },
+    { property: 'og:description', content: siteDesc },
+    { property: 'og:url', content: 'https://zelhafitness.com/contact' },
+  ],
+})
 
 const contactInfo = [
   {
     icon: '📍',
     title: 'Visit Us',
-    content: 'Kalimoni Highway View Plaza (Former Uchumi),<br/>Juja, Kenya',
+    content: 'Kalimoni Highway View Plaza (Former Uchumi), Thika Road,<br/>Juja, Kenya<br/><span class="text-sm text-gray-500">P.O. Box 22161-00100 Nairobi</span>',
     link: 'https://maps.app.goo.gl/4XW9pX8W5Q3J7Q6W9',
   },
   {
     icon: '📞',
     title: 'Call Us',
-    content: '0702 836 266 / 0110 719 277',
-    link: 'tel:+254702836266',
+    content: PHONE_DISPLAY,
+    link: `tel:${PHONE_TEL}`,
   },
   {
     icon: '💬',
     title: 'WhatsApp',
-    content: '0702 836 266',
+    content: PHONE_DISPLAY,
     link: 'https://wa.me/254702836266',
+  },
+  {
+    icon: '✉️',
+    title: 'Email',
+    content: EMAIL,
+    link: `mailto:${EMAIL}`,
   },
   {
     icon: '🕐',
     title: 'Opening Hours',
-    content: 'Mon – Sat: 6:00 AM – 9:00 PM<br/>Sunday: Rest Day',
+    content: OPENING_HOURS.map(o => `${o.days}: ${o.hours}`).join('<br/>'),
   },
 ]
+
+const complaintTopics = [
+  'Equipment or facilities',
+  'Cleanliness',
+  'A class or trainer',
+  'Staff or customer service',
+  'Billing or payments',
+  'Safety concern',
+  'Other',
+]
+
+const complaintSteps = [
+  'Fill in the form with as much detail as you can.',
+  'Management acknowledges your complaint within 48 hours.',
+  'We follow up with you directly until it is resolved.',
+]
+
+const complaint = reactive({ name: '', phone: '', topic: '', details: '' })
+const complaintForm = ref<HTMLFormElement | null>(null)
+
+function sendComplaint(channel: 'email' | 'whatsapp') {
+  // The WhatsApp button isn't a submit button, so run the form's validation manually.
+  if (complaintForm.value && !complaintForm.value.reportValidity()) return
+  const body = `Name: ${complaint.name}
+Phone: ${complaint.phone}
+Topic: ${complaint.topic}
+
+${complaint.details}`
+  if (channel === 'whatsapp') {
+    window.open(whatsAppUrl(`COMPLAINT — Zelha Fitness
+
+${body}`), '_blank')
+    return
+  }
+  const subject = encodeURIComponent(`Complaint: ${complaint.topic || 'General'}`)
+  window.location.href = `mailto:${COMPLAINTS_EMAIL}?subject=${subject}&body=${encodeURIComponent(body)}`
+}
 
 // Simple functional components for icons to avoid extra SVG files or large strings
 const InstagramIcon = () => h('svg', { viewBox: '0 0 24 24' }, [h('path', { d: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z' })])

@@ -8,7 +8,7 @@
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Our Story</p>
         <h1 class="text-white uppercase mb-6" style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95;">About <span class="text-primary">Zelha</span> Fitness</h1>
         <p class="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-          A safe, motivating fitness community in the heart of Juja, Kenya — built for people who want real results.
+          A safe, motivating fitness community in the heart of Juja, Kenya — building stronger bodies and healthier minds for kids and adults alike.
         </p>
       </div>
     </section>
@@ -26,7 +26,7 @@
               Located at Kalimoni Highway View Plaza (Former Uchumi), we've grown into a vibrant community of members who train together, support each other, and celebrate each other's wins.
             </p>
             <p class="text-gray-400 leading-relaxed">
-              From energetic spin classes and HIIT sessions to strength training and personal coaching, everything we offer is designed to help you enjoy your fitness journey and achieve lasting results.
+              From energetic spin classes and HIIT sessions to strength training, swimming, outdoor sessions and personal coaching, everything we offer is designed to help you enjoy your fitness journey and achieve lasting results — for your body and your mind.
             </p>
           </div>
           <div class="grid grid-cols-2 gap-3">
@@ -57,8 +57,37 @@
       </div>
     </section>
 
+    <!-- Mental Wellness -->
+    <section class="py-16 md:py-24 bg-secondary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Mind &amp; Body</p>
+            <h2 class="section-heading mb-6">Mental Wellness for Kids &amp; Adults</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              At Zelha, fitness is about more than muscles. Regular movement is one of the most powerful tools for a healthy mind — it lifts mood, eases stress and anxiety, improves sleep and builds the confidence to take on life outside the gym.
+            </p>
+            <p class="text-gray-400 leading-relaxed">
+              That's true at every age. We create a welcoming, judgment-free space where children and adults alike can move, play, connect and feel good about themselves.
+            </p>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div v-for="group in wellness" :key="group.title" class="card-dark p-6">
+              <h3 class="text-primary font-black uppercase tracking-widest text-sm mb-4">{{ group.title }}</h3>
+              <ul class="space-y-3">
+                <li v-for="point in group.points" :key="point" class="flex items-start gap-2 text-gray-300 text-sm leading-snug">
+                  <span class="text-primary font-black flex-shrink-0">→</span>
+                  {{ point }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Core Values -->
-    <section class="py-16 bg-secondary">
+    <section class="py-16 bg-secondary-light">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div class="text-center mb-10">
           <h2 class="section-heading">Our Core Values</h2>
@@ -77,7 +106,7 @@
     </section>
 
     <!-- Who We're For -->
-    <section class="py-16 bg-secondary-light">
+    <section class="py-16 bg-secondary">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -98,7 +127,7 @@
     </section>
 
     <!-- Facilities -->
-    <section class="py-16 bg-secondary">
+    <section class="py-16 bg-secondary-light">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div class="text-center mb-10">
           <h2 class="section-heading">Our Facilities</h2>
@@ -143,7 +172,7 @@ import StudioTour from '~/components/StudioTour.vue'
 
 // NEXT-LEVEL SEO INJECTION
 const siteTitle = 'About Zelha Fitness — Our Story & Studio in Juja'
-const siteDesc = 'Learn about Zelha Spin and Fitness Gym. Juja\'s premier studio for professional coaching, energetic community, and high-end facilities. Explore our mission, vision and world-class gym equipment.'
+const siteDesc = 'Learn about Zelha Spin and Fitness Gym. Juja\'s premier fitness studio on Thika Road. Professional coaching, a supportive community and a focus on physical and mental wellness for kids and adults.'
 const siteUrl = 'https://zelhafitness.com/about'
 
 useHead({
@@ -198,7 +227,30 @@ const coreValues = [
   { icon: HeartIcon, title: 'Respect', desc: 'For every person, at every fitness level.' },
 ]
 
+const wellness = [
+  {
+    title: 'For Kids',
+    points: [
+      'Burn off energy in a fun, safe way',
+      'Build confidence, focus and discipline',
+      'Learn teamwork and make friends',
+      'Form healthy habits for life',
+    ],
+  },
+  {
+    title: 'For Adults',
+    points: [
+      'Relieve stress after a long day',
+      'Boost mood and mental clarity',
+      'Sleep better and feel more energised',
+      'Find community — no one trains alone',
+    ],
+  },
+]
+
 const whoForList = [
+  'Kids and teens building healthy habits and confidence',
+  'Adults looking to manage stress and boost mental wellness',
   'Beginners who have never set foot in a gym',
   'People wanting to lose weight and tone up',
   'Those looking to build muscle and strength',

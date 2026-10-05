@@ -14,10 +14,14 @@
     </section>
 
     <!-- Programs Grid -->
-    <section class="py-16 bg-secondary">
+    <section v-for="group in programGroups" :key="group.title" class="py-16" :class="group.bg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        <div class="grid md:grid-cols-2 gap-6">
-          <div v-for="prog in programs" :key="prog.name" class="card-dark overflow-hidden group">
+        <div class="text-center mb-12">
+          <h2 class="section-heading">{{ group.title }}</h2>
+          <p class="section-sub mt-3 max-w-2xl mx-auto">{{ group.sub }}</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div v-for="prog in group.items" :key="prog.name" class="card-dark overflow-hidden group flex flex-col">
             <div class="relative overflow-hidden h-56">
               <img :src="prog.image" :alt="prog.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -25,12 +29,13 @@
                 <span class="text-primary font-black uppercase tracking-widest text-xs">{{ prog.category }}</span>
               </div>
             </div>
-            <div class="p-6">
-              <h2 class="text-white font-black text-xl uppercase tracking-wide mb-2">{{ prog.name }}</h2>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="text-white font-black text-xl uppercase tracking-wide mb-2">{{ prog.name }}</h3>
+              <p v-if="prog.price" class="text-primary text-xs font-black uppercase tracking-widest mb-3">{{ prog.price }}</p>
               <p class="text-gray-400 text-sm leading-relaxed mb-4">{{ prog.description }}</p>
 
-              <div class="mb-4">
-                <h3 class="text-primary text-xs font-black uppercase tracking-widest mb-3">Key Benefits</h3>
+              <div class="mb-4 flex-1">
+                <h4 class="text-primary text-xs font-black uppercase tracking-widest mb-3">Key Benefits</h4>
                 <ul class="space-y-2">
                   <li v-for="benefit in prog.benefits" :key="benefit" class="flex items-center gap-2 text-gray-300 text-sm">
                     <span class="text-primary flex-shrink-0">
@@ -41,7 +46,7 @@
                 </ul>
               </div>
 
-              <div class="flex items-center justify-between pt-4 border-t border-gray-800">
+              <div class="flex items-center justify-between gap-4 pt-4 border-t border-gray-800">
                 <div>
                   <span class="text-gray-500 text-xs uppercase tracking-wide">Best for: </span>
                   <span class="text-gray-300 text-xs">{{ prog.bestFor }}</span>
@@ -78,9 +83,107 @@
 import { h } from 'vue'
 
 // NEXT-LEVEL SEO INJECTION
-const siteTitle = 'Fitness Programs in Juja — Spin, HIIT, Strength & Zumba'
-const siteDesc = 'Discover the best fitness programs in Juja. From high-intensity Spin and HIIT classes to professional Strength Training and Zumba. Achieve your goals with expert coaches at Zelha Fitness.'
+const siteTitle = 'Fitness Programs in Juja — Spin, HIIT, Step Aerobics, Zumba & Swimming'
+const siteDesc = 'Fitness programs at Zelha Spin and Fitness Gym, Juja (Thika Road): Spin, HIIT, Strength Training, Step Aerobics, Zumba (Cardio), Boot Camp, plus Personal Training from KSh 1,500, Outdoors and Swimming.'
 const siteUrl = 'https://zelhafitness.com/programs'
+
+const programGroups = [
+  {
+    title: 'Group Classes',
+    sub: 'Coach-led sessions on our weekly timetable — all included in your membership.',
+    bg: 'bg-secondary',
+    items: [
+      {
+        name: 'Spin / Cycling',
+        category: 'Cardio',
+        image: '/images/577562443_818263040962429_8703738815204600603_n.jpg',
+        description: 'High-energy indoor cycling sessions set to pumping music. Build cardiovascular endurance, burn calories and strengthen your legs — all without the weather.',
+        benefits: ['Burns 400–600 calories per session', 'Low-impact on joints', 'Great for all fitness levels', 'Improves heart health and stamina'],
+        bestFor: 'Cardio fans, weight loss, beginners',
+      },
+      {
+        name: 'HIIT Training',
+        category: 'High Intensity',
+        image: '/images/574572522_812280874893979_1305975096083296830_n.jpg',
+        description: 'High-Intensity Interval Training that alternates between intense bursts of activity and short recovery periods. Maximum results in minimum time.',
+        benefits: ['Burns fat long after the session', 'Boosts metabolism', 'Improves speed and endurance', 'No equipment needed for some sessions'],
+        bestFor: 'Everyone wanting fast results',
+      },
+      {
+        name: 'Strength Training',
+        category: 'Strength',
+        image: '/images/483066964_632006999588035_23325673919236385_n.jpg',
+        description: 'Progressive weight training using free weights, barbells and resistance equipment. Build lean muscle, increase bone density and improve posture.',
+        benefits: ['Build lean muscle mass', 'Increase metabolic rate', 'Improve bone health', 'Better daily functional strength'],
+        bestFor: 'Muscle gain, body recomposition',
+      },
+      {
+        name: 'Step Aerobics',
+        category: 'Cardio',
+        image: '/images/membersp4.jpeg',
+        description: 'Rhythmic, music-driven routines on a step platform. A classic cardio workout that builds stamina, coordination and leg strength — every Friday evening.',
+        benefits: ['Great cardio conditioning', 'Tones legs and glutes', 'Improves coordination and balance', 'Fun, upbeat group energy'],
+        bestFor: 'Cardio lovers, all fitness levels',
+      },
+      {
+        name: 'Zumba (Cardio)',
+        category: 'Dance Cardio',
+        image: '/images/membeship1.jpg',
+        description: "Latin-inspired dance cardio that doesn't feel like exercise. Zumba combines fun choreography with heart-pumping cardio for a workout you'll actually look forward to.",
+        benefits: ['Fun and energetic sessions', 'Burns 300–500 calories', 'Improves coordination', 'Great for stress relief'],
+        bestFor: 'Anyone who loves music and dancing',
+      },
+      {
+        name: 'Boot Camp',
+        category: 'Group Training',
+        image: '/images/484517462_632196166235785_8102135649951883908_n.jpg',
+        description: 'Military-inspired group training that combines strength, cardio and conditioning. Push your limits alongside motivated classmates with trainer guidance.',
+        benefits: ['Full-body conditioning', 'Team motivation and energy', 'Improves overall fitness', 'Burns serious calories'],
+        bestFor: 'Those who love group energy',
+      },
+      {
+        name: 'Aerobics & Group Fitness',
+        category: 'Group',
+        image: '/images/membership2.webp',
+        description: 'Instructor-led aerobics, power training, circuits and core workouts. Train with others, stay motivated, get results.',
+        benefits: ['Social, motivating environment', 'Structured workouts', 'Variety keeps it fresh', 'Suitable for all levels'],
+        bestFor: 'All fitness levels',
+      },
+    ],
+  },
+  {
+    title: 'Other Services',
+    sub: 'Go further with one-on-one coaching, outdoor adventures and swimming.',
+    bg: 'bg-secondary-light',
+    items: [
+      {
+        name: 'Personal Training',
+        category: '1-on-1 Coaching',
+        price: 'From KSh 1,500',
+        image: '/images/483933409_632196279569107_5415312179917941573_n.jpg',
+        description: 'Work one-on-one with a certified trainer who creates a plan tailored specifically to your body, goals and schedule. The fastest way to get results.',
+        benefits: ['Custom workout plan', 'Correct form and technique', 'Accountability and motivation', 'Faster, tracked progress'],
+        bestFor: 'Beginners, injury recovery, fast results',
+      },
+      {
+        name: 'Outdoors',
+        category: 'Outdoor Fitness',
+        image: '/images/7600786.jpg',
+        description: 'Hikes, outdoor boot camps and open-air sessions around Juja and beyond. Breathe fresh air, build endurance and connect with fellow members.',
+        benefits: ['Low-impact cardio', 'Mental health benefits', 'Community bonding', 'Explore beautiful Juja'],
+        bestFor: 'Nature lovers, stress relief, endurance',
+      },
+      {
+        name: 'Swimming',
+        category: 'Aquatics',
+        image: '/images/equipmeents.jpg',
+        description: 'Swimming classes with Coach Martin, our swimming coach — learn to swim, improve your technique or use the pool as low-impact, full-body training.',
+        benefits: ['Full-body, low-impact workout', 'Learn or improve technique', 'Builds lung capacity', 'Great for recovery days'],
+        bestFor: 'Beginners and improvers',
+      },
+    ],
+  },
+]
 
 useHead({
   title: siteTitle,
@@ -99,13 +202,9 @@ useHead({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        'itemListElement': [
-          { '@type': 'ListItem', 'position': 1, 'name': 'Spin Cycling' },
-          { '@type': 'ListItem', 'position': 2, 'name': 'HIIT Training' },
-          { '@type': 'ListItem', 'position': 3, 'name': 'Strength Training' },
-          { '@type': 'ListItem', 'position': 4, 'name': 'Personal Training' },
-          { '@type': 'ListItem', 'position': 5, 'name': 'Zumba Dance' },
-        ]
+        'itemListElement': programGroups
+          .flatMap(g => g.items)
+          .map((p, i) => ({ '@type': 'ListItem', 'position': i + 1, 'name': p.name })),
       })
     }
   ]
@@ -113,71 +212,4 @@ useHead({
 
 // Icon
 const CheckIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke-width': '3', viewBox: '0 0 24 24' }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M5 13l4 4L19 7' })])
-
-const programs = [
-  {
-    name: 'Spin / Cycling',
-    category: 'Cardio',
-    image: '/images/577562443_818263040962429_8703738815204600603_n.jpg',
-    description: 'High-energy indoor cycling sessions set to pumping music. Build cardiovascular endurance, burn calories and strengthen your legs — all without the weather.',
-    benefits: ['Burns 400–600 calories per session', 'Low-impact on joints', 'Great for all fitness levels', 'Improves heart health and stamina'],
-    bestFor: 'Cardio fans, weight loss, beginners',
-  },
-  {
-    name: 'HIIT Training',
-    category: 'High Intensity',
-    image: '/images/574572522_812280874893979_1305975096083296830_n.jpg',
-    description: 'High-Intensity Interval Training that alternates between intense bursts of activity and short recovery periods. Maximum results in minimum time.',
-    benefits: ['Burns fat long after the session', 'Boosts metabolism', 'Improves speed and endurance', 'No equipment needed for some sessions'],
-    bestFor: 'Everyone wanting fast results',
-  },
-  {
-    name: 'Strength Training',
-    category: 'Strength',
-    image: '/images/483066964_632006999588035_23325673919236385_n.jpg',
-    description: 'Progressive weight training using free weights, barbells and resistance equipment. Build lean muscle, increase bone density and improve posture.',
-    benefits: ['Build lean muscle mass', 'Increase metabolic rate', 'Improve bone health', 'Better daily functional strength'],
-    bestFor: 'Muscle gain, body recomposition',
-  },
-  {
-    name: 'Personal Training',
-    category: '1-on-1 Coaching',
-    image: '/images/483933409_632196279569107_5415312179917941573_n.jpg',
-    description: 'Work one-on-one with a certified trainer who creates a plan tailored specifically to your body, goals and schedule. The fastest way to get results.',
-    benefits: ['Custom workout plan', 'Correct form and technique', 'Accountability and motivation', 'Faster, tracked progress'],
-    bestFor: 'Beginners, injury recovery, fast results',
-  },
-  {
-    name: 'Boot Camp',
-    category: 'Group Training',
-    image: '/images/484517462_632196166235785_8102135649951883908_n.jpg',
-    description: 'Military-inspired group training that combines strength, cardio and conditioning. Push your limits alongside motivated classmates with trainer guidance.',
-    benefits: ['Full-body conditioning', 'Team motivation and energy', 'Improves overall fitness', 'Burns serious calories'],
-    bestFor: 'Those who love group energy',
-  },
-  {
-    name: 'Zumba Dance',
-    category: 'Dance Fitness',
-    image: '/images/membeship1.jpg',
-    description: 'Latin-inspired dance fitness that doesn\'t feel like exercise. Zumba combines fun choreography with cardio for a workout that you\'ll actually look forward to.',
-    benefits: ['Fun and energetic sessions', 'Burns 300–500 calories', 'Improves coordination', 'Great for stress relief'],
-    bestFor: 'Anyone who loves music and dancing',
-  },
-  {
-    name: 'Group Fitness Classes',
-    category: 'Group',
-    image: '/images/membership2.webp',
-    description: 'A variety of instructor-led group sessions including aerobics, circuit training and core workouts. Train with others, stay motivated, get results.',
-    benefits: ['Social, motivating environment', 'Structured workouts', 'Variety keeps it fresh', 'Suitable for all levels'],
-    bestFor: 'All fitness levels',
-  },
-  {
-    name: 'Hikes',
-    category: 'Outdoor Fitness',
-    image: '/images/7600786.jpg',
-    description: 'Organized outdoor hikes around Juja and the surrounding areas. Breathe fresh air, build endurance and connect with fellow members in nature.',
-    benefits: ['Low-impact cardio', 'Mental health benefits', 'Community bonding', 'Explore beautiful Juja'],
-    bestFor: 'Nature lovers, stress relief, endurance',
-  },
-]
 </script>

@@ -8,7 +8,7 @@
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Plan Your Week</p>
         <h1 class="text-white uppercase mb-6" style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95;">Class <span class="text-primary">Schedule</span></h1>
         <p class="text-gray-300 text-lg max-w-2xl mx-auto">
-          Find the perfect time to sweat. Our weekly schedule features Spin, HIIT, Zumba and more — all led by expert coaches at our Juja studio.
+          Find the perfect time to sweat. Our weekly schedule features Spin, HIIT, Step Aerobics, Zumba (Cardio), Boot Camp and more — plus on-demand 6 AM morning classes, Monday to Friday.
         </p>
       </div>
     </section>
@@ -19,15 +19,20 @@
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 border-l-4 border-primary pl-6">
           <div>
             <h2 class="text-white font-black uppercase tracking-wide text-2xl">Weekly Highlights</h2>
-            <p class="text-gray-400 text-sm mt-1">Sessions run Monday through Saturday. M-Pesa accepted for all classes.</p>
+            <p class="text-gray-400 text-sm mt-1">Sessions run Monday through Saturday. Gym opens 5:15 AM weekdays and 6:30 AM on Saturday.</p>
           </div>
           <div class="flex gap-4">
             <div class="flex items-center gap-2">
               <span class="w-3 h-3 bg-primary rounded-full"></span>
-              <span class="text-gray-300 text-[10px] font-black uppercase tracking-widest">Morning & Evening Sessions</span>
+              <span class="text-gray-300 text-[10px] font-black uppercase tracking-widest">Scheduled</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 border-2 border-dashed border-primary rounded-full"></span>
+              <span class="text-gray-300 text-[10px] font-black uppercase tracking-widest">On Demand</span>
             </div>
           </div>
         </div>
+        <MorningOnDemand />
       </div>
       <TimetableGrid />
     </section>
@@ -66,10 +71,11 @@
 
 <script setup lang="ts">
 import TimetableGrid from '~/components/TimetableGrid.vue'
+import MorningOnDemand from '~/components/MorningOnDemand.vue'
 
 // NEXT-LEVEL SEO INJECTION
-const siteTitle = 'Gym Class Schedule in Juja — Spin, HIIT & Zumba Times'
-const siteDesc = 'View the weekly class timetable for Zelha Fitness Juja. Morning and evening sessions for Spin, HIIT, Aerobics, and Zumba. Plan your workout week and book your spot via WhatsApp.'
+const siteTitle = 'Gym Class Timetable in Juja — Spin, HIIT, Step Aerobics & Zumba'
+const siteDesc = 'Weekly class timetable for Zelha Spin and Fitness Gym, Juja (Thika Road). Spin, HIIT, Step Aerobics, Zumba (Cardio), Boot Camp and outdoor sessions, plus on-demand 6 AM morning classes Monday to Friday. Book via WhatsApp.'
 const siteUrl = 'https://zelhafitness.com/timetable'
 
 useHead({
@@ -91,7 +97,7 @@ useHead({
         '@type': 'Schedule',
         'name': 'Zelha Fitness Weekly Timetable',
         'byDay': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        'description': 'Daily exercise classes including Spin and HIIT.'
+        'description': 'Weekly group fitness classes in Juja including Spin, HIIT, Step Aerobics, Zumba, Boot Camp and on-demand 6–7 AM morning classes.'
       })
     }
   ]
@@ -101,6 +107,10 @@ const classTypes = [
   { name: 'Spin Cycling', desc: 'High-intensity indoor cycling that builds endurance and burns serious calories.' },
   { name: 'HIIT', desc: 'Fast-paced interval training designed for maximum fat burn and metabolic boost.' },
   { name: 'Strength Training', desc: 'Focused workouts using free weights to build lean muscle and power.' },
-  { name: 'Zumba & Aerobics', desc: 'Fun, energetic dance fitness and rhythmic movements for full-body conditioning.' },
+  { name: 'Zumba (Cardio)', desc: 'Fun, energetic dance cardio that gets your heart rate up without feeling like a workout.' },
+  { name: 'Step Aerobics', desc: 'Rhythmic step-platform routines that build stamina, coordination and leg strength.' },
+  { name: 'Aerobics & Power', desc: 'Mid-week aerobics paired with power moves for full-body conditioning.' },
+  { name: 'HIIT / Boot Camp / Outdoors', desc: 'Saturday morning session — rotating between HIIT, boot camp and outdoor training.' },
+  { name: 'Morning On Demand', desc: '6:00 – 7:00 AM, Monday to Friday. Request your day on WhatsApp and we will confirm the class.' },
 ]
 </script>

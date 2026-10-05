@@ -64,7 +64,8 @@
 useHead({ title: 'Gallery — Zelha Spin and Fitness Gym' })
 
 const images = [
-  { src: '/images/7600786.jpg', alt: 'Zelha Fitness Team' },
+  { src: '/images/team/whole-team.jpg', alt: 'The Zelha Team' },
+  { src: '/images/7600786.jpg', alt: 'Zelha Fitness Community' },
   { src: '/images/577562443_818263040962429_8703738815204600603_n.jpg', alt: 'Spin Studio' },
   { src: '/images/483066964_632006999588035_23325673919236385_n.jpg', alt: 'Strength Training' },
   { src: '/images/574572522_812280874893979_1305975096083296830_n.jpg', alt: 'HIIT Session' },

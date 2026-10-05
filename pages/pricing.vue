@@ -8,7 +8,7 @@
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Affordable Fitness</p>
         <h1 class="text-white uppercase mb-6" style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95;">Membership <span class="text-primary">Plans</span></h1>
         <p class="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-          Transparent pricing for everyone. From daily drop-ins to monthly memberships with student discounts. Choose the plan that fits your lifestyle.
+          No joining fees. KSh 400 walk-in for everyone, individual plans from KSh 1,000 a week to KSh 28,000 a year, student plans from KSh 2,000 a month, group packages and personal training from KSh 1,500.
         </p>
       </div>
     </section>
@@ -48,6 +48,7 @@
                 {{ policy }}
               </li>
             </ul>
+            <NuxtLink to="/terms" class="inline-block mt-6 text-primary text-xs font-black uppercase tracking-widest hover:underline">Read full Terms &amp; Conditions →</NuxtLink>
           </div>
         </div>
       </div>
@@ -74,7 +75,7 @@ import PricingCards from '~/components/PricingCards.vue'
 
 // NEXT-LEVEL SEO INJECTION
 const siteTitle = 'Gym Membership Pricing in Juja — Affordable Fitness Plans'
-const siteDesc = 'Check out affordable gym membership plans at Zelha Fitness Juja. Daily drop-ins from KSh 300, student discounts, and monthly plans. No hidden fees, M-Pesa accepted.'
+const siteDesc = 'Gym membership prices in Juja, Thika Road. KSh 400 walk-in, KSh 1,000 weekly, KSh 3,000 monthly, KSh 28,000 yearly. Students from KSh 2,000 a month. Group packages, personal training from KSh 1,500. No joining fees.'
 const siteUrl = 'https://zelhafitness.com/pricing'
 
 useHead({
@@ -95,8 +96,8 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'PriceSpecification',
         'priceCurrency': 'KES',
-        'minPrice': '300',
-        'maxPrice': '3000',
+        'minPrice': '400',
+        'maxPrice': '28000',
         'description': 'Monthly and daily membership rates for Zelha Spin and Fitness Gym.'
       })
     }
@@ -104,10 +105,11 @@ useHead({
 })
 
 const policies = [
-  'Memberships are non-transferable and non-refundable.',
-  'Monthly memberships must be paid in full at the start of the period.',
-  'Student discount requires a valid student identification card.',
-  'Daily drop-ins are valid for the day of purchase only.',
-  'Personal training sessions must be booked at least 24 hours in advance.',
+  'No joining fees on any membership plan.',
+  'Memberships are for the named member only and are non-transferable.',
+  'The KSh 400 walk-in rate is the same for everyone, students included, and is valid for that day only.',
+  'Individual regular members can freeze for 7–21 days per monthly subscription with 12 hours notice.',
+  'Cancelling within 7 days attracts a KSh 1,500 fee. After 7 days, memberships are not refundable or transferable.',
+  'Student rates require proof of current enrolment.',
 ]
 </script>

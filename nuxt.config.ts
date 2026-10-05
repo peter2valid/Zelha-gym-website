@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       meta: [
         { name: 'charset', content: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Zelha Spin and Fitness Gym in Juja, Kenya – spin, HIIT, strength training, Zumba and personal training.' }
+        { name: 'description', content: 'Zelha Spin and Fitness Gym in Juja, Thika Road, Kenya – spin, HIIT, strength, step aerobics, Zumba, swimming and personal training. KSh 400 walk-in for everyone.' }
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },

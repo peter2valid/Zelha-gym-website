@@ -1,29 +1,48 @@
+# Sessions marked onDemand: true run on request — members tap "Request"
+# to send a WhatsApp message for that day's slot.
 schedule:
   - day: Monday
     sessions:
+      - time: "06:00 AM – 07:00 AM"
+        class: "Morning Class"
+        onDemand: true
       - time: "06:30 PM – 07:30 PM"
         class: "Spin"
   - day: Tuesday
     sessions:
+      - time: "06:00 AM – 07:00 AM"
+        class: "Morning Class"
+        onDemand: true
       - time: "06:30 PM – 07:30 PM"
         class: "HIIT"
   - day: Wednesday
     sessions:
+      - time: "06:00 AM – 07:00 AM"
+        class: "Morning Class"
+        onDemand: true
       - time: "08:00 AM – 09:00 AM"
         class: "Spin"
       - time: "06:30 PM – 07:30 PM"
-        class: "Aerobics and power training"
+        class: "Aerobics and Power Training"
   - day: Thursday
     sessions:
+      - time: "06:00 AM – 07:00 AM"
+        class: "Morning Class"
+        onDemand: true
+      - time: "05:00 PM – 06:00 PM"
+        class: "Spin"
       - time: "06:30 PM – 07:30 PM"
-        class: "Zumba dance"
+        class: "Zumba (Cardio)"
   - day: Friday
     sessions:
+      - time: "06:00 AM – 07:00 AM"
+        class: "Morning Class"
+        onDemand: true
       - time: "06:30 PM – 07:30 PM"
-        class: "HIIT"
+        class: "Step Aerobics"
   - day: Saturday
     sessions:
       - time: "08:00 AM – 09:00 AM"
-        class: "HIIT"
+        class: "HIIT / Boot Camp / Outdoors"
   - day: Sunday
     sessions: []

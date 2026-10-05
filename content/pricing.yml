@@ -1,29 +1,106 @@
-packages:
-  - title: "Gym Membership"
-    priceLabel: "KSh 3,000 regular / KSh 2,500 student per month"
-    includes:
-      - "Access to gym membership"
-      - "Student discount of KSh 500"
-      - "Group fitness access"
-    bestFor: "Regular members and students"
-  - title: "Spin Class Package"
-    priceLabel: "Included in the monthly or daily membership"
-    includes:
-      - "Spin and cycling sessions"
-      - "Cardio-focused workouts"
-      - "Access through membership"
-    bestFor: "Cycling and cardio fans"
-  - title: "Drop-In Class"
-    priceLabel: "KSh 400 regular / KSh 300 student per day"
-    includes:
-      - "Single-day access to scheduled classes"
-      - "Flexible visits for regulars and students"
-      - "Great for trying a class first"
-    bestFor: "Visitors who want flexibility"
+# Prices are in KSh. Use null for any price not yet confirmed —
+# the site shows "Ask us" with a WhatsApp enquiry button instead.
+# Source: Zelha membership plan documents (individual, student, group),
+# with the management rule that the day/walk-in rate is KSh 400 for everyone.
+
+walkIn:
+  price: 400
+  note: "One flat day rate for everyone — students included. No joining fees, no other charges."
+
+# Shared by every membership category.
+lockerStorage: 500
+
+memberships:
+  - category: "Regular"
+    title: "Individual Regular Membership"
+    tagline: "Unlimited access for one person"
+    perks:
+      - "No joining fees"
+      - "Unlimited gym access"
+      - "All group fitness sessions and classes"
+      - "Locker and shower facilities"
+      - "Easy membership freeze"
+      - "Refer a friend, get 10% off your renewal"
+      - "10% off your renewal in your birthday month"
+    plans:
+      - label: "Day"
+        price: 400
+      - label: "Week"
+        price: 1000
+      - label: "1 Month"
+        price: 3000
+        popular: true
+      - label: "3 Months"
+        price: 8000
+      - label: "6 Months"
+        price: 15000
+      - label: "1 Year"
+        price: 28000
+    terms:
+      - "Valid for the named member only and non-transferable."
+      - "Membership can be frozen for 7 to 21 consecutive days per monthly subscription, with at least 12 hours' notice."
+      - "Refer a friend who joins and get 10% off your next renewal."
+      - "Get 10% off your renewal during your birthday month."
+
+  - category: "Group"
+    title: "Group / Corporate Membership"
+    tagline: "For teams, friends and workplaces"
+    perks:
+      - "No joining fees"
+      - "Unlimited gym access"
+      - "All group fitness sessions and classes"
+      - "Locker and shower facilities"
+      - "10% off your renewal in your birthday month"
+    plans:
+      - label: "1 Month"
+        price: null
+      - label: "3 Months"
+        price: null
+      - label: "6 Months"
+        price: null
+      - label: "1 Year"
+        price: null
+    terms:
+      - "Group memberships are not eligible for freezing."
+      - "Pricing depends on group size — contact us for a quote."
+
+  - category: "Students"
+    title: "Student Membership"
+    tagline: "Valid student ID required"
+    perks:
+      - "No joining fees"
+      - "Locker and shower facilities"
+      - "Monthly plans only"
+    plans:
+      - label: "Day"
+        price: 400
+        note: "Same walk-in rate as everyone"
+      - label: "1 Month"
+        price: 2000
+        note: "Weekdays 5:15 AM – 5:00 PM · Unlimited weekends"
+      - label: "1 Month (Advanced)"
+        price: 2500
+        note: "Unlimited gym + all group fitness classes"
+        popular: true
+    terms:
+      - "For students currently enrolled at an accredited institution — certificate, diploma, post-diploma and undergraduate only."
+      - "Proof of enrolment (student ID or enrolment letter) may be required at registration."
+      - "Students are not eligible for the refer-a-friend discount, birthday discount or membership freeze."
+
+# Other services, priced separately from membership.
+services:
   - title: "Personal Training"
-    priceLabel: "KSh 1,500 per month"
-    includes:
-      - "One-on-one coaching"
-      - "Tailored training support"
-      - "Strength, cardio and technique guidance"
-    bestFor: "Members wanting focused support"
+    price: 1500
+    priceFrom: true
+    per: ""
+    description: "One-on-one coaching with a tailored plan for weight loss, strength, body recomposition or recovery. Our resident trainer also gives free general guidance to all members."
+  - title: "Outdoors"
+    price: null
+    priceFrom: false
+    per: ""
+    description: "Hikes, outdoor boot camps and open-air training sessions around Juja."
+  - title: "Swimming"
+    price: null
+    priceFrom: false
+    per: ""
+    description: "Swimming classes with a qualified swimming coach for beginners and improvers."

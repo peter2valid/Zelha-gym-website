@@ -108,6 +108,9 @@
           <p class="section-sub mt-4 max-w-xl mx-auto">New sessions every week. Find a time that fits your busy life in Juja.</p>
         </div>
         <TimetablePreview />
+        <div class="mt-8">
+          <MorningOnDemand />
+        </div>
         <div class="text-center mt-12">
           <NuxtLink to="/timetable" class="btn-primary text-xs px-10 py-4 w-full md:w-auto shadow-xl shadow-primary/10 font-black uppercase">View Full Weekly Schedule</NuxtLink>
         </div>
@@ -119,7 +122,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div class="text-center mb-12 md:mb-16">
           <h2 class="section-heading">Membership Plans</h2>
-          <p class="section-sub mt-4 max-w-2xl mx-auto">Options for every budget — from daily drop-ins to monthly memberships. Student discounts available!</p>
+          <p class="section-sub mt-4 max-w-2xl mx-auto">KSh 400 walk-in for everyone, plus daily, weekly, monthly and yearly plans for individuals, groups and students.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           <div v-for="plan in pricingPlans" :key="plan.name" :class="['card-dark p-8 md:p-10 flex flex-col relative overflow-hidden group', plan.featured ? 'border-primary bg-secondary-light ring-2 ring-primary/20 scale-[1.02] z-10' : '']">
@@ -155,12 +158,13 @@
             <h2 class="section-heading mb-8 md:mb-12 text-left">Meet Your Coaches</h2>
             <div class="space-y-6">
               <div v-for="trainer in trainers" :key="trainer.name" class="card-dark p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center group border-transparent hover:border-primary/20">
-                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors flex-shrink-0 bg-black">
-                  <img :src="trainer.image" :alt="trainer.name" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+                <div class="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors flex-shrink-0 bg-black flex items-center justify-center">
+                  <img v-if="trainer.image" :src="trainer.image" :alt="trainer.name" class="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
+                  <span v-else class="text-primary text-3xl" style="font-family: 'Bebas Neue', Impact, sans-serif;">{{ trainer.name.split(' ').map(n => n[0]).join('') }}</span>
                 </div>
                 <div>
                   <h3 class="text-primary font-black text-lg md:text-xl uppercase tracking-wide leading-none mb-1">{{ trainer.name }}</h3>
-                  <p class="text-gray-500 text-[10px] font-black uppercase tracking-widest mb-3">Certified Lead Coach</p>
+                  <p class="text-gray-500 text-[10px] font-black uppercase tracking-widest mb-3">Zelha Coach</p>
                   <p class="text-gray-400 text-xs md:text-sm leading-relaxed">{{ trainer.specialties }}</p>
                 </div>
               </div>
@@ -257,10 +261,12 @@ import { h } from 'vue'
 import Hero from '~/components/Hero.vue'
 import TimetablePreview from '~/components/TimetablePreview.vue'
 import StudioTour from '~/components/StudioTour.vue'
+import MorningOnDemand from '~/components/MorningOnDemand.vue'
+import { PHONE_DISPLAY, OPENING_HOURS, OPENING_HOURS_SCHEMA } from '~/utils/contact'
 
 // SUPER SEO INJECTION
 const siteTitle = 'Zelha Spin and Fitness Gym — Juja\'s Premier Studio'
-const siteDesc = 'The best gym in Juja, Kenya. Safe and motivating space for Spin, HIIT, Strength Training, and Zumba. Join Zelha Fitness at Kalimoni Highway View Plaza. M-Pesa accepted!'
+const siteDesc = 'The best gym in Juja, on Thika Road. Spin, HIIT, Strength, Step Aerobics, Zumba, Swimming and Personal Training at Kalimoni Highway View Plaza. KSh 400 walk-in for everyone. Opens 5:15 AM.'
 const siteUrl = 'https://zelhafitness.com' // Replace with actual domain
 
 useHead({
@@ -280,7 +286,7 @@ useHead({
     { name: 'twitter:description', content: siteDesc },
     { name: 'twitter:image', content: `${siteUrl}/images/7600786.jpg` },
     // Keywords
-    { name: 'keywords', content: 'gym in juja, fitness center juja, spin classes juja, hiit training juja, zumba juja, strength training juja, affordable gym kiambu, zelha fitness, juja farm gym' }
+    { name: 'keywords', content: 'gym in juja, best gym in juja, gym near jkuat, gym thika road, gym kalimoni, fitness center juja, spin classes juja, hiit training juja, step aerobics juja, zumba juja, personal trainer juja, swimming classes juja, affordable gym kiambu, gym near nairobi thika road, zelha fitness' }
   ],
   script: [
     {
@@ -294,7 +300,7 @@ useHead({
         '@id': siteUrl,
         'url': siteUrl,
         'telephone': '+254702836266',
-        'priceRange': 'KSh 400 - KSh 3000',
+        'priceRange': 'KSh 400 - KSh 28,000',
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': 'Kalimoni Highway View Plaza (Former Uchumi)',
@@ -307,12 +313,8 @@ useHead({
           'latitude': -1.108053,
           'longitude': 37.013838
         },
-        'openingHoursSpecification': {
-          '@type': 'OpeningHoursSpecification',
-          'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-          'opens': '06:00',
-          'closes': '21:00'
-        },
+        'openingHoursSpecification': OPENING_HOURS_SCHEMA,
+        'areaServed': ['Juja', 'Kalimoni', 'Gachororo', 'Ruiru', 'Thika', 'Nairobi'],
         'sameAs': [
           'https://www.instagram.com/zelhafitness',
           'https://www.facebook.com/zelhaaFitness',
@@ -338,7 +340,7 @@ const PhoneIcon = () => h('svg', { fill: 'none', stroke: 'currentColor', 'stroke
 
 const stats = [
   { value: '200+', label: 'Active Members' },
-  { value: '2', label: 'Lead Trainers' },
+  { value: '3', label: 'Expert Coaches' },
   { value: '8+', label: 'Programs' },
   { value: '6', label: 'Days a Week' },
 ]
@@ -359,7 +361,7 @@ const programs = [
 ]
 
 const benefits = [
-  { icon: AwardIcon, title: 'Certified Coaches', desc: 'Levis and Martin are qualified experts in strength and cardio.' },
+  { icon: AwardIcon, title: 'Certified Coaches', desc: 'Martin, Brian and Abby cover strength, weight loss, physio and swimming.' },
   { icon: UsersIcon, title: 'Supportive Tribe', desc: 'Our members motivate each other. No one trains alone.' },
   { icon: ZapIcon, title: 'Modern Gear', desc: 'Spin bikes, free weights and HIIT tools — all well maintained.' },
   { icon: HeartIcon, title: 'Zero Judgment', desc: 'A welcoming space for every body type and fitness level.' },
@@ -367,45 +369,50 @@ const benefits = [
 
 const pricingPlans = [
   {
-    name: 'Drop-In',
+    name: 'Walk-In',
     price: 'KSh 400',
-    period: 'Per day · Students KSh 300',
-    features: ['Access to all classes', 'No commitment', 'Same-day booking'],
+    period: 'Per visit · Same price for everyone',
+    features: ['Gym and that day’s classes', 'Students included', 'No other charges'],
     featured: false,
   },
   {
     name: 'Students',
-    price: 'KSh 2,500',
-    period: 'Per month · ID required',
-    features: ['Full gym access', 'All group classes', 'KSh 500 discount'],
+    price: 'KSh 2,000',
+    period: 'Per month · Student ID required',
+    features: ['Weekdays 5:15 AM – 5 PM', 'Unlimited weekends', 'Advanced plan KSh 2,500'],
     featured: false,
   },
   {
     name: 'Regular',
     price: 'KSh 3,000',
     period: 'Per month · Most popular',
-    features: ['Full gym access', 'Spin & HIIT', 'Zumba included'],
+    features: ['Unlimited gym access', 'All group fitness classes', 'Weekly KSh 1,000 · Yearly KSh 28,000'],
     featured: true,
   },
   {
-    name: 'Personal',
-    price: '+1,500',
-    period: 'Monthly Add-on',
-    features: ['1-on-1 coaching', 'Custom meal plan', 'Weekly check-ins'],
+    name: 'Personal Training',
+    price: 'KSh 1,500',
+    period: 'Starting from · Personal training',
+    features: ['1-on-1 coaching', 'Personalised plan', 'Progress tracking'],
     featured: false,
   },
 ]
 
 const trainers = [
   {
-    name: 'Levis Alozio',
-    specialties: 'Strength training, spin, kickboxing and calisthenics.',
-    image: '/images/coach/1.jpg'
+    name: 'Martin Muturi',
+    specialties: 'Weight loss, bodybuilding, body recomposition and swimming. Also a physiotherapist.',
+    image: '/images/team/martin-muturi.jpg'
   },
   {
-    name: 'Martin Muturi',
-    specialties: 'Strength training, HIIT and swimming classes.',
-    image: '/images/coach/2.png'
+    name: 'Brian Kamau',
+    specialties: 'Athletic performance, functional strength and 1-on-1 personal training.',
+    image: '/images/team/brian-kamau.jpg'
+  },
+  {
+    name: 'Abby',
+    specialties: 'Strength training — building real, lasting strength.',
+    image: '/images/team/abby.jpg'
   },
 ]
 
@@ -424,7 +431,7 @@ const testimonials = [
 
 const locationDetails = [
   { icon: MapPinIcon, title: 'Find Us', content: 'Kalimoni Highway View Plaza (Former Uchumi),<br/>Juja, Kenya (Near Juja Farm & Town CBD)' },
-  { icon: ClockIcon, title: 'Open Hours', content: 'Mon – Sat: 6:00 AM – 9:00 PM<br/>Sunday: Rest Day (Closed)' },
-  { icon: PhoneIcon, title: 'Contact', content: '0702 836 266 / 0110 719 277' },
+  { icon: ClockIcon, title: 'Open Hours', content: OPENING_HOURS.map(o => `${o.days}: ${o.hours}`).join('<br/>') },
+  { icon: PhoneIcon, title: 'Contact', content: PHONE_DISPLAY },
 ]
 </script>

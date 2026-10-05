@@ -5,7 +5,10 @@
       <ul v-if="day.sessions.length > 0" class="space-y-4 md:space-y-5">
         <li v-for="(session, i) in day.sessions.slice(0, 2)" :key="i" class="flex flex-col border-l-2 border-primary/20 group-hover:border-primary pl-4 transition-colors">
           <span class="text-primary font-black uppercase tracking-widest text-[9px] md:text-[10px]">{{ session.time }}</span>
-          <span class="text-white font-bold text-sm md:text-base leading-tight">{{ session.class }}</span>
+          <span class="text-white font-bold text-sm md:text-base leading-tight">
+            {{ session.class }}
+            <span v-if="session.onDemand" class="ml-1 align-middle text-[9px] font-black uppercase tracking-widest text-black bg-primary px-1.5 py-0.5">On Demand</span>
+          </span>
         </li>
       </ul>
       <div v-else class="flex flex-col items-center justify-center py-6 text-center opacity-40">

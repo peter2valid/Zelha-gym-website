@@ -34,17 +34,29 @@
                 <label class="block text-gray-400 text-xs font-black uppercase tracking-widest mb-2">Select a Program</label>
                 <select v-model="form.package" class="w-full px-4 py-3 bg-secondary text-gray-100 border border-gray-800 focus:border-primary focus:outline-none transition-colors appearance-none" required>
                   <option value="" disabled selected>Choose your primary goal</option>
-                  <option value="Regular Membership">Regular Membership (KSh 3,000)</option>
-                  <option value="Student Membership">Student Membership (KSh 2,500)</option>
-                  <option value="Spin Cycling">Spin / Cycling Only</option>
-                  <option value="Personal Training">Personal Training Add-on</option>
-                  <option value="Daily Drop-In">Daily Drop-In (KSh 400)</option>
+                  <option value="Walk-In">Walk-In (KSh 400 — everyone)</option>
+                  <option value="Regular - Week">Regular — 1 Week (KSh 1,000)</option>
+                  <option value="Regular - 1 Month">Regular — 1 Month (KSh 3,000)</option>
+                  <option value="Regular - 3 Months">Regular — 3 Months (KSh 8,000)</option>
+                  <option value="Regular - 6 Months">Regular — 6 Months (KSh 15,000)</option>
+                  <option value="Regular - 1 Year">Regular — 1 Year (KSh 28,000)</option>
+                  <option value="Student - 1 Month">Student — 1 Month (KSh 2,000)</option>
+                  <option value="Student - 1 Month Advanced">Student — 1 Month Advanced (KSh 2,500)</option>
+                  <option value="Group / Corporate">Group / Corporate Package</option>
+                  <option value="Personal Training">Personal Training (from KSh 1,500)</option>
+                  <option value="Outdoors">Outdoors</option>
+                  <option value="Swimming">Swimming</option>
+                  <option value="Morning Class (6-7 AM)">Morning Class 6–7 AM (On Demand)</option>
                 </select>
               </div>
               <div>
                 <label class="block text-gray-400 text-xs font-black uppercase tracking-widest mb-2">Additional Notes (Optional)</label>
                 <textarea v-model="form.notes" rows="3" class="w-full px-4 py-3 bg-secondary text-gray-100 border border-gray-800 focus:border-primary focus:outline-none transition-colors" placeholder="Tell us about your fitness goals..."></textarea>
               </div>
+              <label class="flex items-start gap-3 text-gray-400 text-xs leading-relaxed">
+                <input v-model="form.agree" type="checkbox" required class="mt-0.5 accent-[#F5C400]" />
+                <span>I have read and agree to the <NuxtLink to="/terms" target="_blank" class="text-primary hover:underline">Terms &amp; Conditions</NuxtLink>.</span>
+              </label>
               
               <button type="submit" class="btn-primary w-full py-4 text-sm mt-4 shadow-lg shadow-primary/10 flex items-center justify-center gap-2 uppercase font-black">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -92,7 +104,8 @@ const form = reactive({
   name: '',
   phone: '',
   package: '',
-  notes: ''
+  notes: '',
+  agree: false
 })
 
 function submitForm() {
@@ -110,8 +123,8 @@ function whatsAppLink() {
 
 const joinBenefits = [
   { title: 'Safe & Motivating Space', desc: 'A judgment-free zone where you feel inspired to train.' },
-  { title: 'Expert Guidance', desc: 'Levis and Martin are here to help you with form and motivation.' },
-  { title: 'Flexible Payments', desc: 'Pay via M-Pesa with daily, monthly and student options.' },
+  { title: 'Expert Guidance', desc: 'Our coaches and resident trainer are on hand to help with form, safety and motivation.' },
+  { title: 'Flexible Plans', desc: 'No joining fees. Day, week, monthly, 3-month, 6-month and yearly plans. M-Pesa accepted.' },
   { title: 'Community Atmosphere', desc: 'Join a family of fitness enthusiasts in Juja.' },
 ]
 </script>

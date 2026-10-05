@@ -7,7 +7,7 @@
       <div class="lg:col-span-1">
         <img src="/images/headericon.png" alt="Zelha Spin and Fitness Gym" class="h-16 mb-4" />
         <p class="text-gray-400 text-sm leading-relaxed mb-5">
-          Your Premier Fitness Companion in Juja, Kenya. A safe, motivating space for spin, HIIT, strength training and group classes for every fitness level.
+          Your Premier Fitness Companion in Juja, along Thika Road. A safe, motivating space for body and mind — spin, HIIT, strength, group classes, swimming and personal training for kids and adults.
         </p>
         <div class="flex gap-4">
           <a href="https://www.instagram.com/zelhafitness" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-gray-500 hover:text-primary transition-colors">
@@ -62,14 +62,14 @@
             (Former Uchumi), Juja, Kenya
           </p>
           <p>
-            <a href="tel:+254702836266" class="text-gray-400 hover:text-primary transition-colors">0702 836 266</a>
-            <span class="text-gray-700 mx-1">/</span>
-            <a href="tel:+254110719277" class="text-gray-400 hover:text-primary transition-colors">0110 719 277</a>
+            <a :href="`tel:${PHONE_TEL}`" class="text-gray-400 hover:text-primary transition-colors">{{ PHONE_DISPLAY }}</a>
+          </p>
+          <p>
+            <a :href="`mailto:${EMAIL}`" class="text-gray-400 hover:text-primary transition-colors">{{ EMAIL }}</a>
           </p>
           <div>
             <p class="text-gray-400 font-semibold mb-1">Opening Hours</p>
-            <p class="text-gray-500">Mon – Sat: 6:00 AM – 9:00 PM</p>
-            <p class="text-gray-500">Sunday: Rest Day</p>
+            <p v-for="o in OPENING_HOURS" :key="o.days" class="text-gray-500">{{ o.days }}: {{ o.hours }}</p>
           </div>
         </address>
         <a
@@ -90,13 +90,19 @@
     <div class="border-t border-gray-800/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
         <p class="text-gray-600 text-xs">© {{ new Date().getFullYear() }} Zelha Spin and Fitness Gym. All rights reserved.</p>
-        <p class="text-gray-600 text-xs">Juja, Kiambu County, Kenya 🇰🇪</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs">
+          <NuxtLink to="/terms" class="text-gray-500 hover:text-primary transition-colors">Terms &amp; Conditions</NuxtLink>
+          <NuxtLink to="/contact#complaints" class="text-gray-500 hover:text-primary transition-colors">Complaints</NuxtLink>
+          <span class="text-gray-600">Juja, Kiambu County, Kenya 🇰🇪</span>
+        </div>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
+import { PHONE_DISPLAY, PHONE_TEL, EMAIL, OPENING_HOURS } from '~/utils/contact'
+
 const quickLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About Us' },
@@ -107,16 +113,18 @@ const quickLinks = [
   { to: '/join', label: 'Join Now' },
   { to: '/contact', label: 'Contact Us' },
   { to: '/faq', label: 'FAQs' },
+  { to: '/terms', label: 'Terms & Conditions' },
 ]
 
 const programs = [
   'Spin / Cycling',
   'HIIT Training',
   'Strength Training',
-  'Personal Training',
+  'Step Aerobics',
+  'Zumba (Cardio)',
   'Boot Camp',
-  'Zumba Dance',
-  'Group Fitness',
-  'Hikes',
+  'Personal Training',
+  'Outdoors',
+  'Swimming',
 ]
 </script>
