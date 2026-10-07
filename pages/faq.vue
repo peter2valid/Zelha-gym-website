@@ -65,8 +65,6 @@
 <script setup lang="ts">
 import { ref, computed, h } from 'vue'
 
-const siteTitle = 'Gym FAQs — Zelha Fitness Juja | Prices, Hours, Classes'
-const siteDesc = 'Answers about Zelha Spin and Fitness Gym in Juja, Thika Road: membership prices, KSh 400 walk-in, personal training from KSh 1,500, opening hours, morning classes, swimming, location near JKUAT and Kalimoni.'
 
 const openIndex = ref<number | null>(0)
 const activeCategory = ref('All')
@@ -238,28 +236,22 @@ const visibleFaqs = computed(() =>
   activeCategory.value === 'All' ? faqs : faqs.filter(f => f.category === activeCategory.value)
 )
 
-useHead({
-  title: siteTitle,
-  meta: [
-    { name: 'description', content: siteDesc },
-    { property: 'og:title', content: siteTitle },
-    { property: 'og:description', content: siteDesc },
-    { property: 'og:url', content: 'https://zelhafitness.com/faq' },
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
+usePageSeo({
+  title: "Gym FAQs | Prices, Hours and Classes | Zelha Juja",
+  description: "Answers about Zelha gym in Juja: prices, KSh 400 walk-in, student plans, personal training, opening hours, morning classes, swimming and location near JKUAT.",
+  path: '/faq',
+  breadcrumb: 'FAQs',
+  image: '/images/og-image.jpg',
+  schema: [
+      {
         '@type': 'FAQPage',
-        'mainEntity': faqs.map(f => ({
+        mainEntity: faqs.map(f => ({
           '@type': 'Question',
-          'name': f.question,
-          'acceptedAnswer': { '@type': 'Answer', 'text': f.answer },
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
         })),
-      }),
-    },
-  ],
+      },
+    ],
 })
 </script>
 

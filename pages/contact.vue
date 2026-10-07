@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/zelha banner.png" alt="Zelha Fitness Gym" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <img src="/images/zelha-banner.png" alt="Zelha Fitness Gym" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Get in Touch</p>
@@ -140,19 +140,18 @@
 
 <script setup lang="ts">
 import { h, ref, reactive } from 'vue'
-import { PHONE_DISPLAY, PHONE_TEL, EMAIL, COMPLAINTS_EMAIL, OPENING_HOURS, whatsAppUrl } from '~/utils/contact'
+import { SITE_URL, PHONE_DISPLAY, PHONE_TEL, EMAIL, COMPLAINTS_EMAIL, OPENING_HOURS, whatsAppUrl } from '~/utils/contact'
 
-const siteTitle = 'Contact Zelha Fitness — Gym in Juja, Thika Road'
-const siteDesc = 'Call, WhatsApp or email Zelha Spin and Fitness Gym at Kalimoni Highway View Plaza (Former Uchumi), Juja. Open from 5:15 AM weekdays and 6:30 AM Saturdays. Raise a complaint or send feedback.'
 
-useHead({
-  title: siteTitle,
-  meta: [
-    { name: 'description', content: siteDesc },
-    { property: 'og:title', content: siteTitle },
-    { property: 'og:description', content: siteDesc },
-    { property: 'og:url', content: 'https://zelhafitness.com/contact' },
-  ],
+usePageSeo({
+  title: "Contact Zelha Fitness | Gym Location in Juja, Thika Road",
+  description: "Call or WhatsApp 0702 836 266. Zelha Spin and Fitness Gym, Kalimoni Highway View Plaza (Former Uchumi), Juja. Opens 5:15 AM weekdays, 6:30 AM Saturday.",
+  path: '/contact',
+  breadcrumb: 'Contact',
+  image: '/images/og-image.jpg',
+  schema: [
+      { '@type': 'ContactPage', name: 'Contact Zelha Spin and Fitness Gym', mainEntity: { '@id': `${SITE_URL}/#gym` } },
+    ],
 })
 
 const contactInfo = [

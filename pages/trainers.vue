@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/483933409_632196279569107_5415312179917941573_n.jpg" alt="Zelha Fitness Trainers" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
+      <img src="/images/personal-training-juja.jpg" alt="Zelha Fitness Trainers" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">The Experts</p>
@@ -120,37 +120,9 @@
 </template>
 
 <script setup lang="ts">
-// NEXT-LEVEL SEO INJECTION
-const siteTitle = 'Certified Fitness Coaches in Juja — Meet Our Trainers'
-const siteDesc = 'Meet the Zelha Fitness team in Juja: Martin Muturi (fitness coach, physiotherapist, swimming coach), Brian Kamau (functional strength) and Coach Abby (strength training). Personal training from KSh 1,500.'
-const siteUrl = 'https://zelhafitness.com/trainers'
+import { SITE_URL } from '~/utils/contact'
 
-useHead({
-  title: siteTitle,
-  meta: [
-    { name: 'description', content: siteDesc },
-    { property: 'og:title', content: siteTitle },
-    { property: 'og:description', content: siteDesc },
-    { property: 'og:url', content: siteUrl },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:title', content: siteTitle },
-    { name: 'twitter:description', content: siteDesc },
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'ItemList',
-        'itemListElement': [
-          { '@type': 'ListItem', 'position': 1, 'item': { '@type': 'Person', 'name': 'Martin Muturi', 'jobTitle': 'Fitness Coach, Physiotherapist and Swimming Coach', 'worksFor': { '@type': 'Gym', 'name': 'Zelha Spin and Fitness Gym' } } },
-          { '@type': 'ListItem', 'position': 2, 'item': { '@type': 'Person', 'name': 'Brian Kamau', 'jobTitle': 'Fitness Trainer', 'worksFor': { '@type': 'Gym', 'name': 'Zelha Spin and Fitness Gym' } } },
-          { '@type': 'ListItem', 'position': 3, 'item': { '@type': 'Person', 'name': 'Abby', 'jobTitle': 'Fitness Coach', 'worksFor': { '@type': 'Gym', 'name': 'Zelha Spin and Fitness Gym' } } },
-        ]
-      })
-    }
-  ]
-})
+
 
 const initials = (name: string) => name.split(' ').map(n => n[0]).join('').slice(0, 2)
 
@@ -192,4 +164,24 @@ const team = [
     image: '/images/team/sarah.jpg',
   },
 ]
+
+usePageSeo({
+  title: "Personal Trainers in Juja | Meet the Zelha Coaches",
+  description: "Meet Zelha Fitness coaches in Juja: Martin Muturi (physiotherapist and swimming coach), Brian Kamau (functional strength) and Coach Abby. PT from KSh 1,500.",
+  path: '/trainers',
+  breadcrumb: 'Trainers',
+  image: '/images/team/whole-team.jpg',
+  schema: [
+      ...trainers.map(t => ({
+        '@type': 'Person',
+        name: t.name,
+        jobTitle: t.role,
+        description: t.description,
+        image: `${SITE_URL}${t.image}`,
+        knowsAbout: t.specialties,
+        worksFor: { '@id': `${SITE_URL}/#gym` },
+        ...(t.instagram ? { sameAs: [`https://www.instagram.com/${t.instagram}`] } : {}),
+      })),
+    ],
+})
 </script>

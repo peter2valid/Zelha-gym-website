@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/483066964_632006999588035_23325673919236385_n.jpg" alt="Zelha Fitness Programs" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
+      <img src="/images/strength-training-juja.jpg" alt="Zelha Fitness Programs" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">What We Offer</p>
@@ -82,10 +82,6 @@
 <script setup lang="ts">
 import { h } from 'vue'
 
-// NEXT-LEVEL SEO INJECTION
-const siteTitle = 'Fitness Programs in Juja — Spin, HIIT, Step Aerobics, Zumba & Swimming'
-const siteDesc = 'Fitness programs at Zelha Spin and Fitness Gym, Juja (Thika Road): Spin, HIIT, Strength Training, Step Aerobics, Zumba (Cardio), Boot Camp, plus Personal Training from KSh 1,500, Outdoors and Swimming.'
-const siteUrl = 'https://zelhafitness.com/programs'
 
 const programGroups = [
   {
@@ -96,7 +92,7 @@ const programGroups = [
       {
         name: 'Spin / Cycling',
         category: 'Cardio',
-        image: '/images/577562443_818263040962429_8703738815204600603_n.jpg',
+        image: '/images/spin-class-juja.jpg',
         description: 'High-energy indoor cycling sessions set to pumping music. Build cardiovascular endurance, burn calories and strengthen your legs — all without the weather.',
         benefits: ['Burns 400–600 calories per session', 'Low-impact on joints', 'Great for all fitness levels', 'Improves heart health and stamina'],
         bestFor: 'Cardio fans, weight loss, beginners',
@@ -104,7 +100,7 @@ const programGroups = [
       {
         name: 'HIIT Training',
         category: 'High Intensity',
-        image: '/images/574572522_812280874893979_1305975096083296830_n.jpg',
+        image: '/images/hiit-class-juja.jpg',
         description: 'High-Intensity Interval Training that alternates between intense bursts of activity and short recovery periods. Maximum results in minimum time.',
         benefits: ['Burns fat long after the session', 'Boosts metabolism', 'Improves speed and endurance', 'No equipment needed for some sessions'],
         bestFor: 'Everyone wanting fast results',
@@ -112,7 +108,7 @@ const programGroups = [
       {
         name: 'Strength Training',
         category: 'Strength',
-        image: '/images/483066964_632006999588035_23325673919236385_n.jpg',
+        image: '/images/strength-training-juja.jpg',
         description: 'Progressive weight training using free weights, barbells and resistance equipment. Build lean muscle, increase bone density and improve posture.',
         benefits: ['Build lean muscle mass', 'Increase metabolic rate', 'Improve bone health', 'Better daily functional strength'],
         bestFor: 'Muscle gain, body recomposition',
@@ -120,7 +116,7 @@ const programGroups = [
       {
         name: 'Step Aerobics',
         category: 'Cardio',
-        image: '/images/membersp4.jpeg',
+        image: '/images/group-class-4.jpeg',
         description: 'Rhythmic, music-driven routines on a step platform. A classic cardio workout that builds stamina, coordination and leg strength — every Friday evening.',
         benefits: ['Great cardio conditioning', 'Tones legs and glutes', 'Improves coordination and balance', 'Fun, upbeat group energy'],
         bestFor: 'Cardio lovers, all fitness levels',
@@ -128,7 +124,7 @@ const programGroups = [
       {
         name: 'Zumba (Cardio)',
         category: 'Dance Cardio',
-        image: '/images/membeship1.jpg',
+        image: '/images/group-class-1.jpg',
         description: "Latin-inspired dance cardio that doesn't feel like exercise. Zumba combines fun choreography with heart-pumping cardio for a workout you'll actually look forward to.",
         benefits: ['Fun and energetic sessions', 'Burns 300–500 calories', 'Improves coordination', 'Great for stress relief'],
         bestFor: 'Anyone who loves music and dancing',
@@ -136,7 +132,7 @@ const programGroups = [
       {
         name: 'Boot Camp',
         category: 'Group Training',
-        image: '/images/484517462_632196166235785_8102135649951883908_n.jpg',
+        image: '/images/functional-training-juja.jpg',
         description: 'Military-inspired group training that combines strength, cardio and conditioning. Push your limits alongside motivated classmates with trainer guidance.',
         benefits: ['Full-body conditioning', 'Team motivation and energy', 'Improves overall fitness', 'Burns serious calories'],
         bestFor: 'Those who love group energy',
@@ -144,7 +140,7 @@ const programGroups = [
       {
         name: 'Aerobics & Group Fitness',
         category: 'Group',
-        image: '/images/membership2.webp',
+        image: '/images/group-class-2.webp',
         description: 'Instructor-led aerobics, power training, circuits and core workouts. Train with others, stay motivated, get results.',
         benefits: ['Social, motivating environment', 'Structured workouts', 'Variety keeps it fresh', 'Suitable for all levels'],
         bestFor: 'All fitness levels',
@@ -160,7 +156,7 @@ const programGroups = [
         name: 'Personal Training',
         category: '1-on-1 Coaching',
         price: 'From KSh 1,500',
-        image: '/images/483933409_632196279569107_5415312179917941573_n.jpg',
+        image: '/images/personal-training-juja.jpg',
         description: 'Work one-on-one with a certified trainer who creates a plan tailored specifically to your body, goals and schedule. The fastest way to get results.',
         benefits: ['Custom workout plan', 'Correct form and technique', 'Accountability and motivation', 'Faster, tracked progress'],
         bestFor: 'Beginners, injury recovery, fast results',
@@ -168,7 +164,7 @@ const programGroups = [
       {
         name: 'Outdoors',
         category: 'Outdoor Fitness',
-        image: '/images/7600786.jpg',
+        image: '/images/zelha-gym-community-juja.jpg',
         description: 'Hikes, outdoor boot camps and open-air sessions around Juja and beyond. Breathe fresh air, build endurance and connect with fellow members.',
         benefits: ['Low-impact cardio', 'Mental health benefits', 'Community bonding', 'Explore beautiful Juja'],
         bestFor: 'Nature lovers, stress relief, endurance',
@@ -176,7 +172,7 @@ const programGroups = [
       {
         name: 'Swimming',
         category: 'Aquatics',
-        image: '/images/equipmeents.jpg',
+        image: '/images/gym-equipment-juja.jpg',
         description: 'Swimming classes with Coach Martin, our swimming coach — learn to swim, improve your technique or use the pool as low-impact, full-body training.',
         benefits: ['Full-body, low-impact workout', 'Learn or improve technique', 'Builds lung capacity', 'Great for recovery days'],
         bestFor: 'Beginners and improvers',
@@ -185,29 +181,21 @@ const programGroups = [
   },
 ]
 
-useHead({
-  title: siteTitle,
-  meta: [
-    { name: 'description', content: siteDesc },
-    { property: 'og:title', content: siteTitle },
-    { property: 'og:description', content: siteDesc },
-    { property: 'og:url', content: siteUrl },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:title', content: siteTitle },
-    { name: 'twitter:description', content: siteDesc },
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
+usePageSeo({
+  title: "Gym Classes in Juja | Spin, HIIT, Zumba and Swimming",
+  description: "Spin, HIIT, strength training, step aerobics, Zumba (cardio) and boot camp classes in Juja, plus personal training from KSh 1,500, outdoors and swimming.",
+  path: '/programs',
+  breadcrumb: 'Programs',
+  image: '/images/spin-class-juja.jpg',
+  schema: [
+      {
         '@type': 'ItemList',
-        'itemListElement': programGroups
+        name: 'Fitness programs at Zelha Spin and Fitness Gym',
+        itemListElement: programGroups
           .flatMap(g => g.items)
-          .map((p, i) => ({ '@type': 'ListItem', 'position': i + 1, 'name': p.name })),
-      })
-    }
-  ]
+          .map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: p.name, description: p.description })),
+      },
+    ],
 })
 
 // Icon

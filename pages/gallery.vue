@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/7600786.jpg" alt="Zelha Fitness Gallery" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" decoding="async" />
+      <img src="/images/zelha-gym-community-juja.jpg" alt="Zelha Fitness Gallery" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Inside the Studio</p>
@@ -61,25 +61,41 @@
 </template>
 
 <script setup lang="ts">
-useHead({ title: 'Gallery — Zelha Spin and Fitness Gym' })
+import { SITE_URL } from '~/utils/contact'
+
 
 const images = [
   { src: '/images/team/whole-team.jpg', alt: 'The Zelha Team' },
-  { src: '/images/7600786.jpg', alt: 'Zelha Fitness Community' },
-  { src: '/images/577562443_818263040962429_8703738815204600603_n.jpg', alt: 'Spin Studio' },
-  { src: '/images/483066964_632006999588035_23325673919236385_n.jpg', alt: 'Strength Training' },
-  { src: '/images/574572522_812280874893979_1305975096083296830_n.jpg', alt: 'HIIT Session' },
-  { src: '/images/equipmeents.jpg', alt: 'Modern Equipment' },
-  { src: '/images/484517462_632196166235785_8102135649951883908_n.jpg', alt: 'Functional Training' },
-  { src: '/images/483933409_632196279569107_5415312179917941573_n.jpg', alt: 'Personal Coaching' },
-  { src: '/images/images (2).jpeg', alt: 'Core Workout' },
-  { src: '/images/images (1).jpeg', alt: 'Members in Action' },
-  { src: '/images/membeship1.jpg', alt: 'Group Energy' },
-  { src: '/images/membership2.webp', alt: 'Training Session' },
-  { src: '/images/membership3.jpg', alt: 'Zumba Class' },
-  { src: '/images/membersp4.jpeg', alt: 'Boot Camp' },
-  { src: '/images/zelha banner.png', alt: 'Zelha Brand' },
-  { src: '/images/483066964_632006999588035_23325673919236385_n.jpg', alt: 'Gym Interior' },
-  { src: '/images/484517462_632196166235785_8102135649951883908_n.jpg', alt: 'Morning Session' },
+  { src: '/images/zelha-gym-community-juja.jpg', alt: 'Zelha Fitness Community' },
+  { src: '/images/spin-class-juja.jpg', alt: 'Spin Studio' },
+  { src: '/images/strength-training-juja.jpg', alt: 'Strength Training' },
+  { src: '/images/hiit-class-juja.jpg', alt: 'HIIT Session' },
+  { src: '/images/gym-equipment-juja.jpg', alt: 'Modern Equipment' },
+  { src: '/images/functional-training-juja.jpg', alt: 'Functional Training' },
+  { src: '/images/personal-training-juja.jpg', alt: 'Personal Coaching' },
+  { src: '/images/core-workout.jpeg', alt: 'Core Workout' },
+  { src: '/images/members-training.jpeg', alt: 'Members in Action' },
+  { src: '/images/group-class-1.jpg', alt: 'Group Energy' },
+  { src: '/images/group-class-2.webp', alt: 'Training Session' },
+  { src: '/images/group-class-3.jpg', alt: 'Zumba Class' },
+  { src: '/images/group-class-4.jpeg', alt: 'Boot Camp' },
+  { src: '/images/zelha-banner.png', alt: 'Zelha Brand' },
+  { src: '/images/strength-training-juja.jpg', alt: 'Gym Interior' },
+  { src: '/images/functional-training-juja.jpg', alt: 'Morning Session' },
 ]
+
+usePageSeo({
+  title: "Gym Photos | Zelha Spin and Fitness Gym, Juja",
+  description: "See inside Zelha Spin and Fitness Gym in Juja: the spin studio, free weights, group classes, our coaches and members in action at Kalimoni Highway View Plaza.",
+  path: '/gallery',
+  breadcrumb: 'Gallery',
+  image: '/images/team/whole-team.jpg',
+  schema: [
+      {
+        '@type': 'ImageGallery',
+        name: 'Zelha Spin and Fitness Gym photo gallery',
+        image: images.map(img => ({ '@type': 'ImageObject', contentUrl: `${SITE_URL}${img.src}`, name: img.alt })),
+      },
+    ],
+})
 </script>

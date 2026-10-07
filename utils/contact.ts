@@ -1,6 +1,23 @@
 // Single source of truth for contact details and opening hours.
 // Update values here and every page picks them up.
 
+export const SITE_URL = 'https://zelhaspinfitness.com'
+export const SITE_NAME = 'Zelha Spin and Fitness Gym'
+export const DEFAULT_OG_IMAGE = '/images/og-image.jpg'
+
+export const ADDRESS = {
+  street: 'Kalimoni Highway View Plaza (Former Uchumi), Thika Road',
+  locality: 'Juja',
+  region: 'Kiambu County',
+  country: 'KE',
+}
+export const GEO = { latitude: -1.108053, longitude: 37.013838 }
+export const SOCIAL_LINKS = [
+  'https://www.instagram.com/zelhafitness',
+  'https://www.facebook.com/zelhaaFitness',
+  'https://www.tiktok.com/@zelhafitness',
+]
+
 export const PHONE_DISPLAY = '0702 836 266'
 export const PHONE_TEL = '+254702836266'
 export const WHATSAPP_NUMBER = '254702836266'

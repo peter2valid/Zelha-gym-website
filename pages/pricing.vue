@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/membership3.jpg" alt="Zelha Fitness Pricing" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <img src="/images/group-class-3.jpg" alt="Zelha Fitness Pricing" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Affordable Fitness</p>
@@ -71,37 +71,45 @@
 </template>
 
 <script setup lang="ts">
+import { SITE_URL } from '~/utils/contact'
 import PricingCards from '~/components/PricingCards.vue'
 
-// NEXT-LEVEL SEO INJECTION
-const siteTitle = 'Gym Membership Pricing in Juja — Affordable Fitness Plans'
-const siteDesc = 'Gym membership prices in Juja, Thika Road. KSh 400 walk-in, KSh 1,000 weekly, KSh 3,000 monthly, KSh 28,000 yearly. Students from KSh 2,000 a month. Group packages, personal training from KSh 1,500. No joining fees.'
-const siteUrl = 'https://zelhafitness.com/pricing'
 
-useHead({
-  title: siteTitle,
-  meta: [
-    { name: 'description', content: siteDesc },
-    { property: 'og:title', content: siteTitle },
-    { property: 'og:description', content: siteDesc },
-    { property: 'og:url', content: siteUrl },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:title', content: siteTitle },
-    { name: 'twitter:description', content: siteDesc },
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'PriceSpecification',
-        'priceCurrency': 'KES',
-        'minPrice': '400',
-        'maxPrice': '28000',
-        'description': 'Monthly and daily membership rates for Zelha Spin and Fitness Gym.'
-      })
-    }
-  ]
+usePageSeo({
+  title: "Gym Membership Prices in Juja | From KSh 400 | Zelha",
+  description: "Zelha gym prices in Juja: KSh 400 walk-in, KSh 1,000 a week, KSh 3,000 a month, KSh 28,000 a year. Students from KSh 2,000. No joining fees. M-Pesa accepted.",
+  path: '/pricing',
+  breadcrumb: 'Pricing',
+  image: '/images/group-class-3.jpg',
+  schema: [
+      {
+        '@type': 'OfferCatalog',
+        name: 'Zelha Spin and Fitness Gym membership plans',
+        offeredBy: { '@id': `${SITE_URL}/#gym` },
+        itemListElement: [
+          ['Walk-in (day pass, everyone)', 400],
+          ['Individual membership — 1 week', 1000],
+          ['Individual membership — 1 month', 3000],
+          ['Individual membership — 3 months', 8000],
+          ['Individual membership — 6 months', 15000],
+          ['Individual membership — 1 year', 28000],
+          ['Student membership — 1 month', 2000],
+          ['Student membership — 1 month (Advanced)', 2500],
+        ].map(([name, price]) => ({
+          '@type': 'Offer',
+          name,
+          price,
+          priceCurrency: 'KES',
+          availability: 'https://schema.org/InStock',
+          seller: { '@id': `${SITE_URL}/#gym` },
+        })).concat([{
+          '@type': 'Offer',
+          name: 'Personal training',
+          priceSpecification: { '@type': 'PriceSpecification', minPrice: 1500, priceCurrency: 'KES' },
+          seller: { '@id': `${SITE_URL}/#gym` },
+        }]),
+      },
+    ],
 })
 
 const policies = [

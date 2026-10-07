@@ -49,17 +49,13 @@
 <script setup lang="ts">
 import { EMAIL } from '~/utils/contact'
 
-const siteTitle = 'Terms & Conditions — Zelha Spin and Fitness Gym, Juja'
-const siteDesc = 'Terms and conditions for Zelha Spin and Fitness Gym, Juja: membership plans, student and individual terms, freezing, cancellation, personal training, facility use and photography.'
 
-useHead({
-  title: siteTitle,
-  meta: [
-    { name: 'description', content: siteDesc },
-    { property: 'og:title', content: siteTitle },
-    { property: 'og:description', content: siteDesc },
-    { property: 'og:url', content: 'https://zelhafitness.com/terms' },
-  ],
+usePageSeo({
+  title: "Terms and Conditions | Zelha Spin and Fitness Gym",
+  description: "Zelha Spin and Fitness Gym terms: membership plans, student and individual terms, freezing, cancellation, personal training, facility use and photography.",
+  path: '/terms',
+  breadcrumb: 'Terms and Conditions',
+  image: '/images/og-image.jpg',
 })
 
 const lastUpdated = 'October 2026'

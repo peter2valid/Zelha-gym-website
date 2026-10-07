@@ -89,7 +89,7 @@
           <div class="order-1 lg:order-2 relative">
             <div class="absolute -top-6 -right-6 w-full h-full border-2 border-primary/20 translate-x-4 translate-y-4 -z-10 hidden md:block"></div>
             <div class="aspect-square sm:aspect-video lg:aspect-square overflow-hidden rounded-sm shadow-2xl">
-              <img src="/images/574572522_812280874893979_1305975096083296830_n.jpg" alt="Group training at Zelha Fitness" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              <img src="/images/hiit-class-juja.jpg" alt="Group training at Zelha Fitness" class="w-full h-full object-cover" loading="lazy" decoding="async" />
             </div>
             <div class="absolute -bottom-6 -left-6 bg-primary text-black p-6 md:p-8 shadow-2xl">
               <div class="text-5xl md:text-6xl font-black leading-none" style="font-family: 'Bebas Neue', Impact, sans-serif;">100%</div>
@@ -237,7 +237,7 @@
 
     <!-- Final CTA -->
     <section class="relative py-24 md:py-32 overflow-hidden text-center">
-      <img src="/images/483066964_632006999588035_23325673919236385_n.jpg" alt="Start your fitness journey" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="lazy" decoding="async" />
+      <img src="/images/strength-training-juja.jpg" alt="Start your fitness journey" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="lazy" decoding="async" />
       <div class="absolute inset-0 bg-black/80 backdrop-blur-sm lg:backdrop-blur-none"></div>
       <div class="relative z-10 max-w-3xl mx-auto px-4">
         <h2 class="text-white uppercase mb-6" style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(3rem, 10vw, 6rem); line-height: 0.9;">
@@ -262,67 +262,14 @@ import Hero from '~/components/Hero.vue'
 import TimetablePreview from '~/components/TimetablePreview.vue'
 import StudioTour from '~/components/StudioTour.vue'
 import MorningOnDemand from '~/components/MorningOnDemand.vue'
-import { PHONE_DISPLAY, OPENING_HOURS, OPENING_HOURS_SCHEMA } from '~/utils/contact'
+import { PHONE_DISPLAY, OPENING_HOURS } from '~/utils/contact'
 
-// SUPER SEO INJECTION
-const siteTitle = 'Zelha Spin and Fitness Gym — Juja\'s Premier Studio'
-const siteDesc = 'The best gym in Juja, on Thika Road. Spin, HIIT, Strength, Step Aerobics, Zumba, Swimming and Personal Training at Kalimoni Highway View Plaza. KSh 400 walk-in for everyone. Opens 5:15 AM.'
-const siteUrl = 'https://zelhafitness.com' // Replace with actual domain
 
-useHead({
-  title: siteTitle,
-  meta: [
-    { name: 'description', content: siteDesc },
-    // Open Graph / Facebook
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: siteUrl },
-    { property: 'og:title', content: siteTitle },
-    { property: 'og:description', content: siteDesc },
-    { property: 'og:image', content: `${siteUrl}/images/7600786.jpg` },
-    // Twitter
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:url', content: siteUrl },
-    { name: 'twitter:title', content: siteTitle },
-    { name: 'twitter:description', content: siteDesc },
-    { name: 'twitter:image', content: `${siteUrl}/images/7600786.jpg` },
-    // Keywords
-    { name: 'keywords', content: 'gym in juja, best gym in juja, gym near jkuat, gym thika road, gym kalimoni, fitness center juja, spin classes juja, hiit training juja, step aerobics juja, zumba juja, personal trainer juja, swimming classes juja, affordable gym kiambu, gym near nairobi thika road, zelha fitness' }
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Gym',
-        'name': 'Zelha Spin and Fitness Gym',
-        'image': [`${siteUrl}/images/7600786.jpg`, `${siteUrl}/images/zelha%20banner.png`],
-        'description': siteDesc,
-        '@id': siteUrl,
-        'url': siteUrl,
-        'telephone': '+254702836266',
-        'priceRange': 'KSh 400 - KSh 28,000',
-        'address': {
-          '@type': 'PostalAddress',
-          'streetAddress': 'Kalimoni Highway View Plaza (Former Uchumi)',
-          'addressLocality': 'Juja',
-          'addressRegion': 'Kiambu',
-          'addressCountry': 'KE'
-        },
-        'geo': {
-          '@type': 'GeoCoordinates',
-          'latitude': -1.108053,
-          'longitude': 37.013838
-        },
-        'openingHoursSpecification': OPENING_HOURS_SCHEMA,
-        'areaServed': ['Juja', 'Kalimoni', 'Gachororo', 'Ruiru', 'Thika', 'Nairobi'],
-        'sameAs': [
-          'https://www.instagram.com/zelhafitness',
-          'https://www.facebook.com/zelhaaFitness',
-          'https://www.tiktok.com/@zelhafitness'
-        ]
-      })
-    }
-  ]
+usePageSeo({
+  title: "Zelha Spin and Fitness Gym | Best Gym in Juja, Thika Road",
+  description: "Gym in Juja on Thika Road: spin, HIIT, strength, step aerobics, Zumba, swimming and personal training. KSh 400 walk-in for all. Opens 5:15 AM, near JKUAT.",
+  path: '/',
+  image: '/images/og-image.jpg',
 })
 
 // Icon Components (Surgical SVG Icons)
@@ -354,10 +301,10 @@ const whoWeHelp = [
 ]
 
 const programs = [
-  { name: 'Spin Cycling', desc: 'High-intensity rides to energetic music', image: '/images/577562443_818263040962429_8703738815204600603_n.jpg' },
-  { name: 'HIIT Training', desc: 'Burn fat fast with intense intervals', image: '/images/574572522_812280874893979_1305975096083296830_n.jpg' },
-  { name: 'Strength', desc: 'Build lean muscle and core power', image: '/images/483066964_632006999588035_23325673919236385_n.jpg' },
-  { name: 'Coaching', desc: '1-on-1 focus for maximum results', image: '/images/483933409_632196279569107_5415312179917941573_n.jpg' },
+  { name: 'Spin Cycling', desc: 'High-intensity rides to energetic music', image: '/images/spin-class-juja.jpg' },
+  { name: 'HIIT Training', desc: 'Burn fat fast with intense intervals', image: '/images/hiit-class-juja.jpg' },
+  { name: 'Strength', desc: 'Build lean muscle and core power', image: '/images/strength-training-juja.jpg' },
+  { name: 'Coaching', desc: '1-on-1 focus for maximum results', image: '/images/personal-training-juja.jpg' },
 ]
 
 const benefits = [

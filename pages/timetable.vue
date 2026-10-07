@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/577562443_818263040962429_8703738815204600603_n.jpg" alt="Zelha Fitness Timetable" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <img src="/images/spin-class-juja.jpg" alt="Zelha Fitness Timetable" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Plan Your Week</p>
@@ -73,34 +73,13 @@
 import TimetableGrid from '~/components/TimetableGrid.vue'
 import MorningOnDemand from '~/components/MorningOnDemand.vue'
 
-// NEXT-LEVEL SEO INJECTION
-const siteTitle = 'Gym Class Timetable in Juja — Spin, HIIT, Step Aerobics & Zumba'
-const siteDesc = 'Weekly class timetable for Zelha Spin and Fitness Gym, Juja (Thika Road). Spin, HIIT, Step Aerobics, Zumba (Cardio), Boot Camp and outdoor sessions, plus on-demand 6 AM morning classes Monday to Friday. Book via WhatsApp.'
-const siteUrl = 'https://zelhafitness.com/timetable'
 
-useHead({
-  title: siteTitle,
-  meta: [
-    { name: 'description', content: siteDesc },
-    { property: 'og:title', content: siteTitle },
-    { property: 'og:description', content: siteDesc },
-    { property: 'og:url', content: siteUrl },
-    { property: 'og:type', content: 'website' },
-    { name: 'twitter:title', content: siteTitle },
-    { name: 'twitter:description', content: siteDesc },
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Schedule',
-        'name': 'Zelha Fitness Weekly Timetable',
-        'byDay': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        'description': 'Weekly group fitness classes in Juja including Spin, HIIT, Step Aerobics, Zumba, Boot Camp and on-demand 6–7 AM morning classes.'
-      })
-    }
-  ]
+usePageSeo({
+  title: "Gym Class Timetable in Juja | Zelha Spin and Fitness",
+  description: "Weekly class times at Zelha Fitness, Juja: Spin, HIIT, Step Aerobics, Zumba (Cardio), Boot Camp and outdoor sessions, plus on-demand 6 AM classes Mon to Fri.",
+  path: '/timetable',
+  breadcrumb: 'Timetable',
+  image: '/images/spin-class-juja.jpg',
 })
 
 const classTypes = [

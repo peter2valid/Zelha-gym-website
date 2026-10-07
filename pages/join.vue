@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/483066964_632006999588035_23325673919236385_n.jpg" alt="Join Zelha Fitness" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <img src="/images/strength-training-juja.jpg" alt="Join Zelha Fitness" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Start Your Journey</p>
@@ -98,7 +98,13 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 
-useHead({ title: 'Join Zelha via WhatsApp — Zelha Spin and Fitness Gym' })
+usePageSeo({
+  title: "Join Zelha Gym in Juja | Sign Up via WhatsApp",
+  description: "Join Zelha Spin and Fitness Gym in Juja. Choose a walk-in, weekly, monthly, yearly or student plan and finish registration on WhatsApp. No joining fees.",
+  path: '/join',
+  breadcrumb: 'Join',
+  image: '/images/og-image.jpg',
+})
 
 const form = reactive({
   name: '',
