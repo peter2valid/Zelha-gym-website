@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/strength-training-juja.jpg" alt="Zelha Fitness Programs" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
+      <img src="/images/strength-training-juja.webp" srcset="/images/strength-training-juja-640.webp 640w, /images/strength-training-juja.webp 1000w" sizes="100vw" alt="Zelha Fitness Programs" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">What We Offer</p>
@@ -23,7 +23,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div v-for="prog in group.items" :key="prog.name" class="card-dark overflow-hidden group flex flex-col">
             <div class="relative overflow-hidden h-56">
-              <img :src="prog.image" :alt="prog.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
+              <img :src="prog.image" :srcset="srcsetFor(prog.image)" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" :alt="prog.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               <div class="absolute bottom-4 left-4">
                 <span class="text-primary font-black uppercase tracking-widest text-xs">{{ prog.category }}</span>
@@ -80,6 +80,7 @@
 </template>
 
 <script setup lang="ts">
+import { srcsetFor } from '~/utils/images'
 import { h } from 'vue'
 
 
@@ -100,7 +101,7 @@ const programGroups = [
       {
         name: 'HIIT Training',
         category: 'High Intensity',
-        image: '/images/hiit-class-juja.jpg',
+        image: '/images/hiit-class-juja.webp',
         description: 'High-Intensity Interval Training that alternates between intense bursts of activity and short recovery periods. Maximum results in minimum time.',
         benefits: ['Burns fat long after the session', 'Boosts metabolism', 'Improves speed and endurance', 'No equipment needed for some sessions'],
         bestFor: 'Everyone wanting fast results',
@@ -108,7 +109,7 @@ const programGroups = [
       {
         name: 'Strength Training',
         category: 'Strength',
-        image: '/images/strength-training-juja.jpg',
+        image: '/images/strength-training-juja.webp',
         description: 'Progressive weight training using free weights, barbells and resistance equipment. Build lean muscle, increase bone density and improve posture.',
         benefits: ['Build lean muscle mass', 'Increase metabolic rate', 'Improve bone health', 'Better daily functional strength'],
         bestFor: 'Muscle gain, body recomposition',
@@ -132,7 +133,7 @@ const programGroups = [
       {
         name: 'Boot Camp',
         category: 'Group Training',
-        image: '/images/functional-training-juja.jpg',
+        image: '/images/functional-training-juja.webp',
         description: 'Military-inspired group training that combines strength, cardio and conditioning. Push your limits alongside motivated classmates with trainer guidance.',
         benefits: ['Full-body conditioning', 'Team motivation and energy', 'Improves overall fitness', 'Burns serious calories'],
         bestFor: 'Those who love group energy',
@@ -156,7 +157,7 @@ const programGroups = [
         name: 'Personal Training',
         category: '1-on-1 Coaching',
         price: 'From KSh 1,500',
-        image: '/images/personal-training-juja.jpg',
+        image: '/images/personal-training-juja.webp',
         description: 'Work one-on-one with a certified trainer who creates a plan tailored specifically to your body, goals and schedule. The fastest way to get results.',
         benefits: ['Custom workout plan', 'Correct form and technique', 'Accountability and motivation', 'Faster, tracked progress'],
         bestFor: 'Beginners, injury recovery, fast results',

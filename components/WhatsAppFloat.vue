@@ -3,8 +3,8 @@
     :href="whatsappUrl"
     target="_blank"
     rel="noopener noreferrer"
-    class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-green-500 text-white px-4 py-3 shadow-2xl shadow-green-900/50 hover:bg-green-600 hover:scale-105 active:scale-95 transition-all duration-200"
-    aria-label="Chat with us on WhatsApp"
+    class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-green-700 text-white px-4 py-3 shadow-2xl shadow-green-900/50 hover:bg-green-800 hover:scale-105 active:scale-95 transition-all duration-200"
+    aria-label="WhatsApp Us: chat with Zelha on WhatsApp"
   >
     <!-- Pulse indicator -->
     <span class="relative flex h-2.5 w-2.5">

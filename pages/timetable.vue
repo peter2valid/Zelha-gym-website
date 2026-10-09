@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/spin-class-juja.jpg" alt="Zelha Fitness Timetable" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <img src="/images/spin-class-juja.jpg" srcset="/images/spin-class-juja-640.webp 640w, /images/spin-class-juja.jpg 1369w" sizes="100vw" alt="Zelha Fitness Timetable" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Plan Your Week</p>

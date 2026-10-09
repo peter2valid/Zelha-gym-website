@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/personal-training-juja.jpg" alt="Zelha Fitness Trainers" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
+      <img src="/images/personal-training-juja.webp" srcset="/images/personal-training-juja-640.webp 640w, /images/personal-training-juja.webp 1000w" sizes="100vw" alt="Zelha Fitness Trainers" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">The Experts</p>
@@ -126,7 +126,7 @@ import { SITE_URL } from '~/utils/contact'
 
 const initials = (name: string) => name.split(' ').map(n => n[0]).join('').slice(0, 2)
 
-const teamPhoto = '/images/team/whole-team.jpg'
+const teamPhoto = '/images/team/whole-team.webp'
 
 const trainers = [
   {
@@ -134,7 +134,7 @@ const trainers = [
     role: 'Fitness Coach · Physiotherapist · Swimming Coach',
     description: 'Martin combines fitness coaching with a physiotherapy background, so every programme is built around safe, effective movement. He focuses on weight loss, bodybuilding and body recomposition, and also coaches swimming.',
     specialties: ['Weight Loss', 'Bodybuilding', 'Body Recomposition', 'Physiotherapy', 'Swimming'],
-    image: '/images/team/martin-muturi.jpg',
+    image: '/images/team/martin-muturi.webp',
     instagram: '',
   },
   {
@@ -142,7 +142,7 @@ const trainers = [
     role: 'Fitness Trainer',
     description: 'Brian specialises in athletic performance and functional strength — building strong bodies that move well. He offers one-on-one personal training for members who want focused, results-driven coaching.',
     specialties: ['Athletic Performance', 'Functional Strength', 'Personal Training'],
-    image: '/images/team/brian-kamau.jpg',
+    image: '/images/team/brian-kamau.webp',
     instagram: 'kamau.fit',
   },
   {
@@ -150,7 +150,7 @@ const trainers = [
     role: 'Fitness Coach',
     description: 'Coach Abby specialises in strength training and helps members build real, lasting strength. Her motto: programmes take time — but time passes anyway, so start today.',
     specialties: ['Strength Training'],
-    image: '/images/team/abby.jpg',
+    image: '/images/team/abby.webp',
     instagram: '',
   },
 ]
@@ -161,7 +161,7 @@ const team = [
     name: 'Sarah',
     role: 'Receptionist',
     description: 'The first friendly face you meet at Zelha. Sarah handles registrations, payments, bookings and any questions you have.',
-    image: '/images/team/sarah.jpg',
+    image: '/images/team/sarah.webp',
   },
 ]
 
@@ -170,7 +170,7 @@ usePageSeo({
   description: "Meet Zelha Fitness coaches in Juja: Martin Muturi (physiotherapist and swimming coach), Brian Kamau (functional strength) and Coach Abby. PT from KSh 1,500.",
   path: '/trainers',
   breadcrumb: 'Trainers',
-  image: '/images/team/whole-team.jpg',
+  image: '/images/team/whole-team.webp',
   schema: [
       ...trainers.map(t => ({
         '@type': 'Person',

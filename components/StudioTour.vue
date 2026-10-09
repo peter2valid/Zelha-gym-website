@@ -12,6 +12,7 @@
         <!-- Virtual Tour Iframe with responsive height -->
         <iframe 
           src="https://app.viewora.software/embed/tour-18aca03c" 
+          loading="lazy"
           width="100%" 
           class="w-full h-[400px] md:h-[600px]" 
           frameborder="0" 

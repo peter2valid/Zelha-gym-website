@@ -2,7 +2,7 @@
   <section class="relative min-h-[85vh] md:min-h-[90vh] flex items-center overflow-hidden">
     <!-- Optimized Background for Mobile -->
     <img
-      src="/images/zelha-gym-community-juja.jpg"
+      src="/images/zelha-gym-community-juja.jpg" srcset="/images/zelha-gym-community-juja-640.webp 640w, /images/zelha-gym-community-juja.jpg 1280w" sizes="100vw"
       alt="Zelha Spin and Fitness Gym team training"
       class="absolute inset-0 object-cover w-full h-full"
       loading="eager"

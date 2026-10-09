@@ -16,11 +16,17 @@ module.exports = {
         secondary: {
           DEFAULT: '#080808',
           light: '#111111'
+        },
+        // Lighter than Tailwind's defaults so small grey text meets WCAG AA
+        // (4.5:1) contrast on the near-black backgrounds.
+        gray: {
+          500: '#868d99',
+          600: '#7f8796'
         }
       },
       fontFamily: {
         heading: ['"Bebas Neue"', 'Impact', 'sans-serif'],
-        body: ['Outfit', 'sans-serif']
+        body: ['sans-serif']
       }
     }
   },

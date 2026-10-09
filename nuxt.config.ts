@@ -13,6 +13,23 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css'
   },
+  // Fully static build (`npm run generate`) served from the CDN edge on
+  // Vercel or Cloudflare Pages. Pages are written as /pricing.html (not
+  // /pricing/index.html) so /pricing is served without a trailing-slash
+  // redirect, matching the canonical URLs.
+  // Browser/CDN caching for static files. Photos and icons keep their names
+  // when replaced, so they get 30 days rather than "immutable".
+  routeRules: {
+    '/images/**': { headers: { 'cache-control': 'public, max-age=2592000' } },
+    '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+  },
+  nitro: {
+    prerender: {
+      autoSubfolderIndex: false,
+      crawlLinks: true,
+      routes: ['/'],
+    },
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -32,11 +49,11 @@ export default defineNuxtConfig({
         { property: 'og:locale', content: 'en_KE' }
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-        { rel: 'apple-touch-icon', href: '/favicon.png' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;600;700&display=swap' }
+        { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' },
+        { rel: 'preload', href: '/fonts/bebas-neue-400.woff2', as: 'font', type: 'font/woff2', crossorigin: '' }
       ]
     }
   }

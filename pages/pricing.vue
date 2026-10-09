@@ -2,13 +2,13 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/group-class-3.jpg" alt="Zelha Fitness Pricing" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <img src="/images/group-class-3.webp" alt="Zelha Fitness Pricing" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Affordable Fitness</p>
         <h1 class="text-white uppercase mb-6" style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95;">Membership <span class="text-primary">Plans</span></h1>
         <p class="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-          No joining fees. KSh 400 walk-in for everyone, individual plans from KSh 1,000 a week to KSh 28,000 a year, student plans from KSh 2,000 a month, group packages and personal training from KSh 1,500.
+          No joining fees. KSh 400 walk-in for everyone, individual plans from KSh 1,000 a week to KSh 28,000 a year, student plans from KSh 1,000 a week, group packages and personal training from KSh 1,500.
         </p>
       </div>
     </section>
@@ -23,19 +23,17 @@
           <div>
             <h2 class="section-heading mb-6">Easy Payment via M-Pesa</h2>
             <p class="text-gray-400 mb-6 leading-relaxed">
-              We make it easy for you to focus on your workout. We accept M-Pesa for all memberships, daily classes and personal training sessions. 
+              We make it easy for you to focus on your workout. Pay for any membership, walk-in or personal training via M-Pesa Paybill, or at reception.
             </p>
             <div class="flex items-center gap-6 mb-8">
-              <div class="flex flex-col items-center">
-                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center p-2 mb-2">
-                  <img src="/favicon.png" alt="M-Pesa" class="w-full h-auto" />
-                </div>
-                <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest">M-Pesa Accepted</span>
+              <div class="flex flex-col">
+                <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest">Paybill</span>
+                <span class="text-primary font-black text-2xl">{{ MPESA.paybill }}</span>
               </div>
               <div class="h-12 w-px bg-gray-800"></div>
               <div class="flex flex-col">
-                <span class="text-white font-bold text-sm">Pay at Reception</span>
-                <span class="text-gray-500 text-xs">Safe and secure payments</span>
+                <span class="text-gray-500 text-[10px] font-black uppercase tracking-widest">Account No</span>
+                <span class="text-primary font-black text-2xl">{{ MPESA.account }}</span>
               </div>
             </div>
             <NuxtLink to="/join" class="btn-primary px-8 py-3 text-sm">Sign Up Now</NuxtLink>
@@ -71,16 +69,16 @@
 </template>
 
 <script setup lang="ts">
-import { SITE_URL } from '~/utils/contact'
+import { SITE_URL, MPESA } from '~/utils/contact'
 import PricingCards from '~/components/PricingCards.vue'
 
 
 usePageSeo({
   title: "Gym Membership Prices in Juja | From KSh 400 | Zelha",
-  description: "Zelha gym prices in Juja: KSh 400 walk-in, KSh 1,000 a week, KSh 3,000 a month, KSh 28,000 a year. Students from KSh 2,000. No joining fees. M-Pesa accepted.",
+  description: "Zelha gym prices in Juja: KSh 400 walk-in, KSh 1,000 a week, KSh 3,000 a month, KSh 28,000 a year. Students from KSh 1,000. No joining fees. M-Pesa accepted.",
   path: '/pricing',
   breadcrumb: 'Pricing',
-  image: '/images/group-class-3.jpg',
+  image: '/images/group-class-3.webp',
   schema: [
       {
         '@type': 'OfferCatalog',
@@ -93,6 +91,7 @@ usePageSeo({
           ['Individual membership — 3 months', 8000],
           ['Individual membership — 6 months', 15000],
           ['Individual membership — 1 year', 28000],
+          ['Student membership — 1 week', 1000],
           ['Student membership — 1 month', 2000],
           ['Student membership — 1 month (Advanced)', 2500],
         ].map(([name, price]) => ({

@@ -43,7 +43,7 @@ useHead({
             description: 'Spin, HIIT, strength training, step aerobics, Zumba, swimming and personal training gym in Juja, along Thika Road, Kenya.',
             url: `${SITE_URL}/`,
             logo: `${SITE_URL}/images/headericon.png`,
-            image: [`${SITE_URL}/images/og-image.jpg`, `${SITE_URL}/images/team/whole-team.jpg`],
+            image: [`${SITE_URL}/images/og-image.jpg`, `${SITE_URL}/images/team/whole-team.webp`],
             telephone: PHONE_TEL,
             email: EMAIL,
             priceRange: 'KSh 400 – KSh 28,000',

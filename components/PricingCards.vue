@@ -77,13 +77,13 @@
             <div class="card-dark p-6 md:p-8">
               <h4 class="text-primary font-black uppercase tracking-widest text-xs mb-4">What's Included</h4>
               <ul class="space-y-3">
-                <li v-for="perk in current.perks" :key="perk" class="flex items-start gap-3 text-gray-300 text-sm">
+                <li v-for="perk in [...current.perks, ...pricing.included]" :key="perk" class="flex items-start gap-3 text-gray-300 text-sm">
                   <span class="text-primary mt-0.5 flex-shrink-0"><CheckIcon class="w-4 h-4" /></span>
                   <span class="leading-tight">{{ perk }}</span>
                 </li>
                 <li class="flex items-start gap-3 text-gray-500 text-xs">
                   <span class="text-primary mt-0.5 flex-shrink-0">+</span>
-                  <span class="leading-tight">Overnight locker storage: KSh {{ formatPrice(pricing.lockerStorage) }} per month</span>
+                  <span class="leading-tight">Locker subscription: KSh {{ formatPrice(pricing.lockers.subscription) }} per month · Overnight storage: KSh {{ formatPrice(pricing.lockers.overnight) }} per month (paid with your membership)</span>
                 </li>
               </ul>
             </div>
@@ -97,6 +97,25 @@
               </ul>
               <NuxtLink to="/terms" class="inline-block mt-5 text-primary text-[10px] font-black uppercase tracking-widest hover:underline">Full Terms &amp; Conditions →</NuxtLink>
             </div>
+          </div>
+
+          <!-- How to pay -->
+          <div class="max-w-5xl mx-auto mt-8 card-dark border-primary/40 p-6 md:p-8">
+            <h4 class="text-primary font-black uppercase tracking-widest text-xs mb-5">How to Pay · Lipa na M-Pesa</h4>
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <p class="text-gray-500 text-[10px] font-black uppercase tracking-widest mb-1">Paybill (Preferred)</p>
+                <p class="text-white text-sm">Business No: <span class="text-primary font-black text-xl">{{ MPESA.paybill }}</span></p>
+                <p class="text-white text-sm">Account No: <span class="text-primary font-black text-xl">{{ MPESA.account }}</span></p>
+                <p class="text-gray-500 text-xs mt-1">Name: {{ MPESA.accountName }}</p>
+              </div>
+              <div>
+                <p class="text-gray-500 text-[10px] font-black uppercase tracking-widest mb-1">Send Money</p>
+                <p class="text-white text-sm">Number: <span class="text-primary font-black text-xl">{{ MPESA.sendMoneyNumber }}</span></p>
+                <p class="text-gray-500 text-xs mt-1">Name: {{ MPESA.sendMoneyName }}</p>
+              </div>
+            </div>
+            <p class="text-gray-500 text-xs mt-5">Keep your M-Pesa confirmation message as proof of payment.</p>
           </div>
         </div>
 
@@ -132,7 +151,7 @@
 
 <script setup lang="ts">
 import { ref, computed, h } from 'vue'
-import { whatsAppUrl } from '~/utils/contact'
+import { whatsAppUrl, MPESA } from '~/utils/contact'
 
 const { data: pricing } = await useAsyncData('pricing', () =>
   queryContent('/pricing').findOne()

@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/zelha-gym-community-juja.jpg" alt="Zelha Fitness Gallery" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" decoding="async" />
+      <img src="/images/zelha-gym-community-juja.jpg" srcset="/images/zelha-gym-community-juja-640.webp 640w, /images/zelha-gym-community-juja.jpg 1280w" sizes="100vw" alt="Zelha Fitness Gallery" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Inside the Studio</p>
@@ -18,7 +18,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           <div v-for="(img, i) in images" :key="i" class="group relative overflow-hidden aspect-square card-dark border-transparent">
-            <img :src="img.src" :alt="img.alt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" decoding="async" />
+            <img :src="img.src" :srcset="srcsetFor(img.src)" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" :alt="img.alt" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex items-end p-5">
               <div class="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <p class="text-primary font-black uppercase tracking-widest text-[10px] mb-1">Zelha Fitness</p>
@@ -61,27 +61,28 @@
 </template>
 
 <script setup lang="ts">
+import { srcsetFor } from '~/utils/images'
 import { SITE_URL } from '~/utils/contact'
 
 
 const images = [
-  { src: '/images/team/whole-team.jpg', alt: 'The Zelha Team' },
+  { src: '/images/team/whole-team.webp', alt: 'The Zelha Team' },
   { src: '/images/zelha-gym-community-juja.jpg', alt: 'Zelha Fitness Community' },
   { src: '/images/spin-class-juja.jpg', alt: 'Spin Studio' },
-  { src: '/images/strength-training-juja.jpg', alt: 'Strength Training' },
-  { src: '/images/hiit-class-juja.jpg', alt: 'HIIT Session' },
+  { src: '/images/strength-training-juja.webp', alt: 'Strength Training' },
+  { src: '/images/hiit-class-juja.webp', alt: 'HIIT Session' },
   { src: '/images/gym-equipment-juja.jpg', alt: 'Modern Equipment' },
-  { src: '/images/functional-training-juja.jpg', alt: 'Functional Training' },
-  { src: '/images/personal-training-juja.jpg', alt: 'Personal Coaching' },
+  { src: '/images/functional-training-juja.webp', alt: 'Functional Training' },
+  { src: '/images/personal-training-juja.webp', alt: 'Personal Coaching' },
   { src: '/images/core-workout.jpeg', alt: 'Core Workout' },
   { src: '/images/members-training.jpeg', alt: 'Members in Action' },
   { src: '/images/group-class-1.jpg', alt: 'Group Energy' },
   { src: '/images/group-class-2.webp', alt: 'Training Session' },
-  { src: '/images/group-class-3.jpg', alt: 'Zumba Class' },
+  { src: '/images/group-class-3.webp', alt: 'Zumba Class' },
   { src: '/images/group-class-4.jpeg', alt: 'Boot Camp' },
-  { src: '/images/zelha-banner.png', alt: 'Zelha Brand' },
-  { src: '/images/strength-training-juja.jpg', alt: 'Gym Interior' },
-  { src: '/images/functional-training-juja.jpg', alt: 'Morning Session' },
+  { src: '/images/zelha-banner.webp', alt: 'Zelha Brand' },
+  { src: '/images/strength-training-juja.webp', alt: 'Gym Interior' },
+  { src: '/images/functional-training-juja.webp', alt: 'Morning Session' },
 ]
 
 usePageSeo({
@@ -89,7 +90,7 @@ usePageSeo({
   description: "See inside Zelha Spin and Fitness Gym in Juja: the spin studio, free weights, group classes, our coaches and members in action at Kalimoni Highway View Plaza.",
   path: '/gallery',
   breadcrumb: 'Gallery',
-  image: '/images/team/whole-team.jpg',
+  image: '/images/team/whole-team.webp',
   schema: [
       {
         '@type': 'ImageGallery',

@@ -78,10 +78,10 @@ const sections = [
     items: [
       'The day (walk-in) rate is KSh 400 for everyone, students included, and is valid for that day only.',
       'Individual Regular plans: Week KSh 1,000 · 1 Month KSh 3,000 · 3 Months KSh 8,000 · 6 Months KSh 15,000 · 1 Year KSh 28,000.',
-      'Student plans: 1 Month KSh 2,000 (weekdays 5:15 AM – 5:00 PM, unlimited weekends) · 1 Month Advanced KSh 2,500 (unlimited gym and group fitness classes).',
+      'Student plans: 1 Week KSh 1,000 · 1 Month KSh 2,000 (weekdays 5:15 AM – 5:00 PM, unlimited weekends) · 1 Month Advanced KSh 2,500 (unlimited gym and group fitness classes).',
       'Group/Corporate plans are available monthly, quarterly, bi-annually and annually. Prices depend on group size.',
-      'Overnight locker storage is KSh 500 per month.',
-      'Payments are made in advance via M-Pesa or at reception.',
+      'Locker subscription is KSh 250 per month and overnight locker storage is KSh 500 per month. Locker fees are paid together with your membership fee, and lockers must be secured with a padlock at all times.',
+      'Payments are made in advance via M-Pesa Paybill 522533 (Account No 7838190, Zelha Fitness), Send Money to 0702 836 266, or at reception.',
     ],
   },
   {

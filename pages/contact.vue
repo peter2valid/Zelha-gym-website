@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/zelha-banner.png" alt="Zelha Fitness Gym" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <img src="/images/zelha-banner.webp" alt="Zelha Fitness Gym" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Get in Touch</p>
@@ -140,7 +140,7 @@
 
 <script setup lang="ts">
 import { h, ref, reactive } from 'vue'
-import { SITE_URL, PHONE_DISPLAY, PHONE_TEL, EMAIL, COMPLAINTS_EMAIL, OPENING_HOURS, whatsAppUrl } from '~/utils/contact'
+import { SITE_URL, MPESA, PHONE_DISPLAY, PHONE_TEL, EMAIL, COMPLAINTS_EMAIL, OPENING_HOURS, whatsAppUrl } from '~/utils/contact'
 
 
 usePageSeo({
@@ -178,6 +178,11 @@ const contactInfo = [
     title: 'Email',
     content: EMAIL,
     link: `mailto:${EMAIL}`,
+  },
+  {
+    icon: '💳',
+    title: 'Lipa na M-Pesa',
+    content: `Paybill ${MPESA.paybill} · Account ${MPESA.account}`,
   },
   {
     icon: '🕐',

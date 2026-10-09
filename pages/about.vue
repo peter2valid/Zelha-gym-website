@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/hiit-class-juja.jpg" alt="Zelha Spin and Fitness Gym" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
+      <img src="/images/hiit-class-juja.webp" srcset="/images/hiit-class-juja-640.webp 640w, /images/hiit-class-juja.webp 1280w" sizes="100vw" alt="Zelha Spin and Fitness Gym" class="absolute inset-0 w-full h-full object-cover opacity-25" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Our Story</p>
@@ -30,10 +30,10 @@
             </p>
           </div>
           <div class="grid grid-cols-2 gap-3">
-            <img src="/images/spin-class-juja.jpg" alt="Spin classes at Zelha" class="w-full h-52 object-cover" loading="lazy" decoding="async" />
-            <img src="/images/strength-training-juja.jpg" alt="Strength training" class="w-full h-52 object-cover mt-8" loading="lazy" decoding="async" />
-            <img src="/images/functional-training-juja.jpg" alt="Core training" class="w-full h-52 object-cover" loading="lazy" decoding="async" />
-            <img src="/images/personal-training-juja.jpg" alt="Our community" class="w-full h-52 object-cover mt-8" loading="lazy" decoding="async" />
+            <img src="/images/spin-class-juja.jpg" srcset="/images/spin-class-juja-640.webp 640w, /images/spin-class-juja.jpg 1369w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Spin classes at Zelha" class="w-full h-52 object-cover" loading="lazy" decoding="async" />
+            <img src="/images/strength-training-juja.webp" srcset="/images/strength-training-juja-640.webp 640w, /images/strength-training-juja.webp 1000w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Strength training" class="w-full h-52 object-cover mt-8" loading="lazy" decoding="async" />
+            <img src="/images/functional-training-juja.webp" srcset="/images/functional-training-juja-640.webp 640w, /images/functional-training-juja.webp 900w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Core training" class="w-full h-52 object-cover" loading="lazy" decoding="async" />
+            <img src="/images/personal-training-juja.webp" srcset="/images/personal-training-juja-640.webp 640w, /images/personal-training-juja.webp 1000w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Our community" class="w-full h-52 object-cover mt-8" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@
             </ul>
           </div>
           <div>
-            <img src="/images/zelha-gym-community-juja.jpg" alt="Zelha Fitness community" class="w-full h-80 object-cover rounded-sm shadow-2xl" loading="lazy" decoding="async" />
+            <img src="/images/zelha-gym-community-juja.jpg" srcset="/images/zelha-gym-community-juja-640.webp 640w, /images/zelha-gym-community-juja.jpg 1280w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Zelha Fitness community" class="w-full h-80 object-cover rounded-sm shadow-2xl" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -176,7 +176,7 @@ usePageSeo({
   description: "Zelha Spin and Fitness Gym is a safe, motivating gym in Juja, Thika Road — focused on physical and mental wellness for kids and adults, with expert coaches.",
   path: '/about',
   breadcrumb: 'About',
-  image: '/images/hiit-class-juja.jpg',
+  image: '/images/hiit-class-juja.webp',
 })
 
 // Icon Components

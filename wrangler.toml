@@ -1,0 +1,4 @@
+# Cloudflare Pages project config. Build with `npm run generate` (Nitro auto-selects the cloudflare-pages-static preset and writes to dist/).
+name = "zelha-spin-fitness"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"

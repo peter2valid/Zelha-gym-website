@@ -5,7 +5,7 @@
 
       <!-- Brand column -->
       <div class="lg:col-span-1">
-        <img src="/images/headericon.png" alt="Zelha Spin and Fitness Gym" class="h-16 mb-4" />
+        <img src="/images/headericon.webp" alt="Zelha Spin and Fitness Gym" width="320" height="183" class="h-16 w-auto mb-4" loading="lazy" decoding="async" />
         <p class="text-gray-400 text-sm leading-relaxed mb-5">
           Your Premier Fitness Companion in Juja, along Thika Road. A safe, motivating space for body and mind — spin, HIIT, strength, group classes, swimming and personal training for kids and adults.
         </p>

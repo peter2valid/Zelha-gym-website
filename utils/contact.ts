@@ -23,8 +23,16 @@ export const PHONE_TEL = '+254702836266'
 export const WHATSAPP_NUMBER = '254702836266'
 
 export const EMAIL = 'zelhafitness@gmail.com'
-// TODO: replace with the dedicated complaints email once provided.
 export const COMPLAINTS_EMAIL = 'zelhafitness@gmail.com'
+
+// M-Pesa payment details, as displayed at the gym reception.
+export const MPESA = {
+  paybill: '522533',
+  account: '7838190',
+  accountName: 'Zelha Fitness',
+  sendMoneyNumber: '0702 836 266',
+  sendMoneyName: 'Matabel Odiaga',
+}
 
 export const OPENING_HOURS = [
   { days: 'Mon – Fri', hours: '5:15 AM – 9:00 PM' },

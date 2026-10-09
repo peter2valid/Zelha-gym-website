@@ -2,7 +2,7 @@
   <div>
     <!-- Hero -->
     <section class="relative py-28 overflow-hidden">
-      <img src="/images/strength-training-juja.jpg" alt="Join Zelha Fitness" class="absolute inset-0 w-full h-full object-cover opacity-20" />
+      <img src="/images/strength-training-juja.webp" srcset="/images/strength-training-juja-640.webp 640w, /images/strength-training-juja.webp 1000w" sizes="100vw" alt="Join Zelha Fitness" class="absolute inset-0 w-full h-full object-cover opacity-20" />
       <div class="absolute inset-0 bg-gradient-to-b from-black/80 to-secondary"></div>
       <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <p class="text-primary text-xs font-black uppercase tracking-[0.3em] mb-4">Start Your Journey</p>
@@ -40,6 +40,7 @@
                   <option value="Regular - 3 Months">Regular — 3 Months (KSh 8,000)</option>
                   <option value="Regular - 6 Months">Regular — 6 Months (KSh 15,000)</option>
                   <option value="Regular - 1 Year">Regular — 1 Year (KSh 28,000)</option>
+                  <option value="Student - Week">Student — 1 Week (KSh 1,000)</option>
                   <option value="Student - 1 Month">Student — 1 Month (KSh 2,000)</option>
                   <option value="Student - 1 Month Advanced">Student — 1 Month Advanced (KSh 2,500)</option>
                   <option value="Group / Corporate">Group / Corporate Package</option>

@@ -10,7 +10,9 @@
         <!-- Logo: Auto-adjusting size -->
         <NuxtLink to="/" class="flex-shrink-0 transition-transform active:scale-95">
           <img 
-            src="/images/headericon.png" 
+            src="/images/headericon.webp" 
+            width="320"
+            height="183"
             alt="Zelha Spin and Fitness Gym" 
             class="h-12 sm:h-14 lg:h-16 w-auto transition-all duration-300" 
             :class="{ 'lg:h-14': scrolled }"

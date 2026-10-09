@@ -49,7 +49,7 @@
             class="group relative overflow-hidden bg-secondary border border-gray-800 hover:border-primary transition-all duration-500"
           >
             <div class="aspect-[4/3] md:aspect-[3/4] lg:aspect-square overflow-hidden">
-              <img :src="prog.image" :alt="prog.name" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" />
+              <img :src="prog.image" :srcset="srcsetFor(prog.image)" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" :alt="prog.name" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" />
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 md:opacity-90"></div>
             <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
@@ -89,7 +89,7 @@
           <div class="order-1 lg:order-2 relative">
             <div class="absolute -top-6 -right-6 w-full h-full border-2 border-primary/20 translate-x-4 translate-y-4 -z-10 hidden md:block"></div>
             <div class="aspect-square sm:aspect-video lg:aspect-square overflow-hidden rounded-sm shadow-2xl">
-              <img src="/images/hiit-class-juja.jpg" alt="Group training at Zelha Fitness" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              <img src="/images/hiit-class-juja.webp" srcset="/images/hiit-class-juja-640.webp 640w, /images/hiit-class-juja.webp 1280w" sizes="(min-width: 1024px) 25vw, 50vw" alt="Group training at Zelha Fitness" class="w-full h-full object-cover" loading="lazy" decoding="async" />
             </div>
             <div class="absolute -bottom-6 -left-6 bg-primary text-black p-6 md:p-8 shadow-2xl">
               <div class="text-5xl md:text-6xl font-black leading-none" style="font-family: 'Bebas Neue', Impact, sans-serif;">100%</div>
@@ -237,7 +237,7 @@
 
     <!-- Final CTA -->
     <section class="relative py-24 md:py-32 overflow-hidden text-center">
-      <img src="/images/strength-training-juja.jpg" alt="Start your fitness journey" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="lazy" decoding="async" />
+      <img src="/images/strength-training-juja.webp" srcset="/images/strength-training-juja-640.webp 640w, /images/strength-training-juja.webp 1000w" sizes="100vw" alt="Start your fitness journey" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="lazy" decoding="async" />
       <div class="absolute inset-0 bg-black/80 backdrop-blur-sm lg:backdrop-blur-none"></div>
       <div class="relative z-10 max-w-3xl mx-auto px-4">
         <h2 class="text-white uppercase mb-6" style="font-family: 'Bebas Neue', Impact, sans-serif; font-size: clamp(3rem, 10vw, 6rem); line-height: 0.9;">
@@ -257,6 +257,7 @@
 </template>
 
 <script setup lang="ts">
+import { srcsetFor } from '~/utils/images'
 import { h } from 'vue'
 import Hero from '~/components/Hero.vue'
 import TimetablePreview from '~/components/TimetablePreview.vue'
@@ -302,9 +303,9 @@ const whoWeHelp = [
 
 const programs = [
   { name: 'Spin Cycling', desc: 'High-intensity rides to energetic music', image: '/images/spin-class-juja.jpg' },
-  { name: 'HIIT Training', desc: 'Burn fat fast with intense intervals', image: '/images/hiit-class-juja.jpg' },
-  { name: 'Strength', desc: 'Build lean muscle and core power', image: '/images/strength-training-juja.jpg' },
-  { name: 'Coaching', desc: '1-on-1 focus for maximum results', image: '/images/personal-training-juja.jpg' },
+  { name: 'HIIT Training', desc: 'Burn fat fast with intense intervals', image: '/images/hiit-class-juja.webp' },
+  { name: 'Strength', desc: 'Build lean muscle and core power', image: '/images/strength-training-juja.webp' },
+  { name: 'Coaching', desc: '1-on-1 focus for maximum results', image: '/images/personal-training-juja.webp' },
 ]
 
 const benefits = [
@@ -349,17 +350,17 @@ const trainers = [
   {
     name: 'Martin Muturi',
     specialties: 'Weight loss, bodybuilding, body recomposition and swimming. Also a physiotherapist.',
-    image: '/images/team/martin-muturi.jpg'
+    image: '/images/team/martin-muturi.webp'
   },
   {
     name: 'Brian Kamau',
     specialties: 'Athletic performance, functional strength and 1-on-1 personal training.',
-    image: '/images/team/brian-kamau.jpg'
+    image: '/images/team/brian-kamau.webp'
   },
   {
     name: 'Abby',
     specialties: 'Strength training — building real, lasting strength.',
-    image: '/images/team/abby.jpg'
+    image: '/images/team/abby.webp'
   },
 ]
 
