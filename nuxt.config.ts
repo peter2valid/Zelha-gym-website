@@ -13,21 +13,34 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css'
   },
-  // Fully static build (`npm run generate`) served from the CDN edge on
-  // Vercel or Cloudflare Pages. Pages are written as /pricing.html (not
-  // /pricing/index.html) so /pricing is served without a trailing-slash
-  // redirect, matching the canonical URLs.
   // Browser/CDN caching for static files. Photos and icons keep their names
   // when replaced, so they get 30 days rather than "immutable".
   routeRules: {
     '/images/**': { headers: { 'cache-control': 'public, max-age=2592000' } },
     '/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
   },
+  // Fully static build (`npm run generate`) served from the CDN edge on
+  // Vercel or Cloudflare Pages. Pages are written as /pricing.html (not
+  // /pricing/index.html) so /pricing is served without a trailing-slash
+  // redirect, matching the canonical URLs.
   nitro: {
     prerender: {
       autoSubfolderIndex: false,
       crawlLinks: true,
       routes: ['/'],
+    },
+    // Vercel only: permanently redirect the old domain to the canonical
+    // https://www.zelhafitness.com, keeping the path. These run before all
+    // other routes, so they only affect requests to the old hostnames.
+    vercel: {
+      config: {
+        routes: ['zelhaspinfitness.com', 'www.zelhaspinfitness.com'].map(host => ({
+          src: '/(.*)',
+          has: [{ type: 'host', value: host }],
+          status: 308,
+          headers: { Location: 'https://www.zelhafitness.com/$1' },
+        })),
+      },
     },
   },
   app: {
