@@ -1,7 +1,7 @@
 // Single source of truth for contact details and opening hours.
 // Update values here and every page picks them up.
 
-export const SITE_URL = 'https://zelhaspinfitness.com'
+export const SITE_URL = 'https://zelhafitness.com'
 export const SITE_NAME = 'Zelha Spin and Fitness Gym'
 export const DEFAULT_OG_IMAGE = '/images/og-image.jpg'
 

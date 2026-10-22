@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zelhaspinfitness.com/sitemap.xml
+Sitemap: https://zelhafitness.com/sitemap.xml
