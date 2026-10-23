@@ -325,9 +325,9 @@ const pricingPlans = [
   },
   {
     name: 'Students',
-    price: 'KSh 2,000',
+    price: 'KSh 2,500',
     period: 'Per month · Student ID required',
-    features: ['Weekdays 5:15 AM – 5 PM', 'Unlimited weekends', 'Advanced plan KSh 2,500'],
+    features: ['Unlimited gym access', 'All group fitness classes', 'Weekly plan KSh 1,000'],
     featured: false,
   },
   {

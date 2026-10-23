@@ -92,8 +92,7 @@ usePageSeo({
           ['Individual membership — 6 months', 15000],
           ['Individual membership — 1 year', 28000],
           ['Student membership — 1 week', 1000],
-          ['Student membership — 1 month', 2000],
-          ['Student membership — 1 month (Advanced)', 2500],
+          ['Student membership — 1 month', 2500],
         ].map(([name, price]) => ({
           '@type': 'Offer',
           name,

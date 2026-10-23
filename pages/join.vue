@@ -41,8 +41,7 @@
                   <option value="Regular - 6 Months">Regular — 6 Months (KSh 15,000)</option>
                   <option value="Regular - 1 Year">Regular — 1 Year (KSh 28,000)</option>
                   <option value="Student - Week">Student — 1 Week (KSh 1,000)</option>
-                  <option value="Student - 1 Month">Student — 1 Month (KSh 2,000)</option>
-                  <option value="Student - 1 Month Advanced">Student — 1 Month Advanced (KSh 2,500)</option>
+                  <option value="Student - 1 Month">Student — 1 Month (KSh 2,500)</option>
                   <option value="Group / Corporate">Group / Corporate Package</option>
                   <option value="Personal Training">Personal Training (from KSh 1,500)</option>
                   <option value="Outdoors">Outdoors</option>

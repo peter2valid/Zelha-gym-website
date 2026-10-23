@@ -78,9 +78,9 @@ const sections = [
     items: [
       'The day (walk-in) rate is KSh 400 for everyone, students included, and is valid for that day only.',
       'Individual Regular plans: Week KSh 1,000 · 1 Month KSh 3,000 · 3 Months KSh 8,000 · 6 Months KSh 15,000 · 1 Year KSh 28,000.',
-      'Student plans: 1 Week KSh 1,000 · 1 Month KSh 2,000 (weekdays 5:15 AM – 5:00 PM, unlimited weekends) · 1 Month Advanced KSh 2,500 (unlimited gym and group fitness classes).',
+      'Student plans: 1 Week KSh 1,000 · 1 Month KSh 2,500 (unlimited gym and group fitness classes).',
       'Group/Corporate plans are available monthly, quarterly, bi-annually and annually. Prices depend on group size.',
-      'Locker subscription is KSh 250 per month and overnight locker storage is KSh 500 per month. Locker fees are paid together with your membership fee, and lockers must be secured with a padlock at all times.',
+      'Locker subscription is KSh 250 per month, paid together with your membership fee. Lockers must be secured with a padlock at all times.',
       'Payments are made in advance via M-Pesa Paybill 522533 (Account No 7838190, Zelha Fitness), Send Money to 0702 836 266, or at reception.',
     ],
   },
@@ -102,8 +102,7 @@ const sections = [
       'Only valid for certificate, diploma, post-diploma and undergraduate students.',
       'Proof of current enrolment, such as a valid student ID or enrolment verification, may be required during registration. Please provide a copy or scan of your student ID or enrolment verification.',
       'Student members are NOT eligible for the refer-a-friend discount, birthday discount or gym freeze policy.',
-      'Student members on the standard monthly plan have gym access on weekdays from 5:15 AM to 5:00 PM and unlimited access on weekends.',
-      'Student members enrolled in the Advanced monthly package have unlimited access to both the group fitness classes and the gym facilities.',
+      'Student members have unlimited access to both the group fitness classes and the gym facilities.',
     ],
   },
   {

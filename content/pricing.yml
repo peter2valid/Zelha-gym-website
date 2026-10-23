@@ -7,10 +7,9 @@ walkIn:
   price: 400
   note: "One flat day rate for everyone — students included. No joining fees, no other charges."
 
-# Locker fees (KSh per month), paid together with the membership fee.
+# Locker subscription (KSh per month), paid together with the membership fee.
 lockers:
   subscription: 250
-  overnight: 500
 
 # Included in every membership (from the Zelha membership flyer).
 included:
@@ -89,9 +88,6 @@ memberships:
       - label: "Week"
         price: 1000
       - label: "1 Month"
-        price: 2000
-        note: "Weekdays 5:15 AM – 5:00 PM · Unlimited weekends"
-      - label: "1 Month (Advanced)"
         price: 2500
         note: "Unlimited gym + all group fitness classes"
         popular: true

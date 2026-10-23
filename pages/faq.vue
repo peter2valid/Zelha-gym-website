@@ -118,7 +118,7 @@ const faqs = [
   {
     category: 'Pricing',
     question: 'Do you offer student discounts?',
-    answer: 'Yes. Students pay KSh 1,000 a week, KSh 2,000 a month (weekdays 5:15 AM – 5:00 PM, unlimited weekends) or KSh 2,500 a month for the Advanced plan (unlimited gym and group classes). Student plans are for certificate, diploma, post-diploma and undergraduate students with proof of enrolment. The KSh 400 day rate is the same for everyone.',
+    answer: 'Yes. Students pay KSh 1,000 a week or KSh 2,500 a month, with unlimited gym and group classes. Student plans are for certificate, diploma, post-diploma and undergraduate students with proof of enrolment. The KSh 400 day rate is the same for everyone.',
   },
   {
     category: 'Pricing',
@@ -153,7 +153,7 @@ const faqs = [
   {
     category: 'Pricing',
     question: 'Do you have lockers and showers?',
-    answer: 'Yes, every membership includes hot showers. A locker subscription is KSh 250 per month and overnight storage is KSh 500 per month, paid together with your membership. Lockers must be secured with a padlock at all times.',
+    answer: 'Yes, every membership includes hot showers. A locker subscription is KSh 250 per month, paid together with your membership. Lockers must be secured with a padlock at all times.',
   },
   // Classes
   {
@@ -210,7 +210,7 @@ const faqs = [
   {
     category: 'Location & Hours',
     question: 'Is there a good gym near JKUAT?',
-    answer: 'Yes — Zelha Spin and Fitness Gym in Juja is a short trip from JKUAT, with student plans from KSh 1,000 a week or KSh 2,000 a month, and a KSh 400 walk-in rate.',
+    answer: 'Yes — Zelha Spin and Fitness Gym in Juja is a short trip from JKUAT, with student plans of KSh 1,000 a week or KSh 2,500 a month, and a KSh 400 walk-in rate.',
   },
   {
     category: 'Location & Hours',

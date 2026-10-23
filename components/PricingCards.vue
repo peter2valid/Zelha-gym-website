@@ -83,7 +83,7 @@
                 </li>
                 <li class="flex items-start gap-3 text-gray-500 text-xs">
                   <span class="text-primary mt-0.5 flex-shrink-0">+</span>
-                  <span class="leading-tight">Locker subscription: KSh {{ formatPrice(pricing.lockers.subscription) }} per month · Overnight storage: KSh {{ formatPrice(pricing.lockers.overnight) }} per month (paid with your membership)</span>
+                  <span class="leading-tight">Locker subscription: KSh {{ formatPrice(pricing.lockers.subscription) }} per month (paid with your membership)</span>
                 </li>
               </ul>
             </div>
